@@ -32,6 +32,7 @@ const Header = () => {
               <Nav.Link className={"is-7"}>Student</Nav.Link>
             </Nav.Item>
           ))}
+
           {/* search */}
           <Nav.Item
             onClick={() => {

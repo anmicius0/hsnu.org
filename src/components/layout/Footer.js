@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav } from "react-bootstrap"
+import { Navbar, Nav, Container, Row, Col } from "react-bootstrap"
 
 // icons
 import medium from "../../images/icons/medium.svg"
@@ -9,21 +9,12 @@ const Footer = () => {
   return (
     <>
       <Navbar as="footer" bg="dark">
-        <Navbar.Brand href="#">
-          <h4>React-Bootstrap</h4>
-        </Navbar.Brand>
-        <Navbar.Collapse className="justify-content-end">
-          <Nav.Item>
-            <Nav.Link>
-              <img src={medium} alt="Medium"></img>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <img src={twitter} alt="Twitter"></img>
-            </Nav.Link>
-          </Nav.Item>
-        </Navbar.Collapse>
+        <Container fluid>
+          <Row>
+            <Col>8</Col>
+            <Col>4</Col>
+          </Row>
+        </Container>
       </Navbar>
     </>
   )

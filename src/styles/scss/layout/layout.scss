@@ -47,8 +47,8 @@ body {
 
 // font sizes
 .is-1 {
-  font-size: 3.5rem;
-  line-height: 110%;
+  font-size: 8vw;
+  line-height: 150%;
   font-weight: 700;
 }
 .is-2 {
@@ -107,6 +107,9 @@ body {
   font-weight: 400;
 }
 @media (min-width: 992px) {
+  .is-1 {
+    font-size: 3vw;
+  }
   .is-6 {
     font-size: 1.5rem;
   }

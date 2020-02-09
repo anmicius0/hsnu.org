@@ -1,0 +1,22 @@
+// endorsment dots
+.endorsement {
+  // flex
+  display: flex;
+  justify-content: space-between;
+
+  // box
+  height: auto;
+  width: 65%;
+  max-width: 200px;
+  margin: 2rem 0;
+  padding: 0;
+
+  .dot {
+    // position
+    display: inline-block;
+
+    // box
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+}

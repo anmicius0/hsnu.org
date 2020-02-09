@@ -1,0 +1,66 @@
+// sidebar
+#sidebar {
+  // position
+  position: fixed;
+  z-index: 7;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+
+  // box
+  height: 100vh;
+  width: 80vw;
+  max-width: 500px;
+  background-color: white;
+  margin: 0;
+  padding: 2rem;
+  overflow-y: scroll;
+
+  // toggle animation
+  transition: all ease 0.25s;
+  &.active {
+    transform: translateX(0);
+  }
+
+  // Menu Cards (Component)
+  .menu-cards {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .menu-card {
+      margin: 2rem 0;
+      padding: 0;
+      list-style-type: none;
+
+      // title of card
+      h4 {
+        margin: 0;
+      }
+
+      // items in the card
+      li {
+        margin: 1rem 0;
+
+        a {
+          color: rgba($color: #000000, $alpha: 0.7);
+        }
+      }
+    }
+  }
+}
+
+#sidebar-overlay {
+  display: none;
+
+  &.active {
+    display: initial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+}

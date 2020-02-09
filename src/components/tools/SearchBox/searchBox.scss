@@ -1,0 +1,43 @@
+// search-box
+.search-box {
+  width: 100%;
+
+  // text
+  input {
+    // box
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    padding: 0.5rem 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid black 0.5px;
+
+    // when it's focused
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  button {
+    // box
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+
+    // when it's hoverd, clicked
+    &:hover,
+    &:active,
+    &:focus {
+      background: none !important;
+      border: none !important;
+    }
+  }
+}

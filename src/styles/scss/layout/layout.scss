@@ -1,0 +1,122 @@
+@import "header";
+@import "sidebar";
+@import "footer";
+
+// fonts
+// Taipei Sans
+@font-face {
+  font-family: "Taipei Sans";
+  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Taipei Sans";
+  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Taipei Sans";
+  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Bold.ttf");
+  font-weight: 700;
+}
+
+// Noto Serif
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-SemiBold.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-Bold.otf");
+  font-weight: 700;
+}
+
+// font uses
+body {
+  font-family: "Taipei Sans", sans-serif;
+}
+.logo {
+  font-family: "Noto Serif", serif;
+}
+
+// font sizes
+.is-1 {
+  font-size: 3.5rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-2 {
+  font-size: 3rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-3 {
+  font-size: 2.5rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-4 {
+  font-size: 2rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-4-regular {
+  font-size: 2rem;
+  line-height: 110%;
+  font-weight: 400;
+}
+.is-5 {
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-5-regular {
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 400;
+}
+.is-5-semi {
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 600;
+}
+.is-6 {
+  font-size: 1.25rem;
+  line-height: 110%;
+  font-weight: 700;
+}
+.is-6-regular {
+  font-size: 1.25rem;
+  line-height: 110%;
+  font-weight: 400;
+}
+.is-7 {
+  font-size: 1rem;
+  line-height: 135%;
+  font-weight: 700;
+}
+.is-7-regular {
+  font-size: 1rem;
+  line-height: 135%;
+  font-weight: 400;
+}
+@media (min-width: 992px) {
+  .is-6 {
+    font-size: 1.5rem;
+  }
+  .is-6-regular {
+    font-size: 1.5rem;
+  }
+  .is-7 {
+    font-size: 1.25rem;
+  }
+  .is-7-regular {
+    font-size: 1.25rem;
+  }
+}

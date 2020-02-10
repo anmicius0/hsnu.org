@@ -47,67 +47,67 @@ body {
 
 // font sizes
 .is-1 {
-  font-size: 8vw;
+  font-size: 7vw;
   line-height: 150%;
   font-weight: 700;
 }
 .is-2 {
-  font-size: 3rem;
+  font-size: 6.5vw;
   line-height: 110%;
   font-weight: 700;
 }
 .is-3 {
-  font-size: 7vw;
+  font-size: 6vw;
   line-height: 110%;
   font-weight: 700;
 }
 .is-4 {
-  font-size: 2rem;
+  font-size: 5.75vw;
   line-height: 110%;
   font-weight: 700;
 }
 .is-4-regular {
-  font-size: 2rem;
+  font-size: 5.75vw;
   line-height: 110%;
   font-weight: 400;
 }
 .is-5 {
-  font-size: 1.5rem;
+  font-size: 5.5vw;
   line-height: 110%;
   font-weight: 700;
 }
 .is-5-regular {
-  font-size: 1.5rem;
+  font-size: 5.5vw;
   line-height: 110%;
   font-weight: 400;
 }
 .is-5-semi {
-  font-size: 1.5rem;
+  font-size: 5.5vw;
   line-height: 110%;
   font-weight: 600;
 }
 .is-6 {
-  font-size: 1.25rem;
+  font-size: 5vw;
   line-height: 110%;
   font-weight: 700;
 }
 .is-6-regular {
-  font-size: 1.25rem;
+  font-size: 5vw;
   line-height: 110%;
   font-weight: 400;
 }
 .is-7 {
-  font-size: 4vw;
+  font-size: 4.5vw;
   line-height: 135%;
   font-weight: 700;
 }
 .is-7-regular {
-  font-size: 4vw;
+  font-size: 4.5vw;
   line-height: 135%;
   font-weight: 400;
 }
 .is-7-light {
-  font-size: 4vw;
+  font-size: 4.5vw;
   line-height: 135%;
   font-weight: 300;
 }
@@ -116,17 +116,28 @@ body {
   .is-1 {
     font-size: 3vw;
   }
+  .is-2 {
+    font-size: 2vw;
+  }
   .is-3 {
     font-size: 1.5vw;
   }
+  .is-4 {
+    font-size: 1.5vw;
+  }
+  .is-5,
+  .is-5-regular,
+  .is-5-semi {
+    font-size: 1vw;
+  }
   .is-6,
   .is-6-regular {
-    font-size: 1.5rem;
+    font-size: 1vw;
   }
   .is-7,
   .is-7-regular,
   .is-7-light {
-    font-size: 0.8vw;
+    font-size: 1vw;
   }
 }
 

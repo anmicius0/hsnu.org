@@ -9,7 +9,7 @@ const Sidebar = () => {
     <>
       <div id={"sidebar"}>
         {/* title */}
-        <h3 className={"is-4 logo"}>國立臺灣大學附屬高級中學</h3>
+        <h3 className={"is-3 logo"}>國立臺灣大學附屬高級中學</h3>
 
         <Endorsement />
         <SearchBox />
@@ -19,7 +19,7 @@ const Sidebar = () => {
           {[1, 2, 3, 4].map(item => (
             <li>
               <ul className={"menu-card"}>
-                <h4 className={"is-6"}>招生專區</h4>
+                <h4 className={"is-4"}>招生專區</h4>
                 <li className={"is-7-regular"}>
                   <a href="#">108年科學班招生專區</a>
                 </li>

@@ -5,7 +5,7 @@
 
   // position
   position: relative;
-  top: -50px;
+  top: -5vh;
 
   // 1st layer
   .swiper-container {
@@ -75,6 +75,7 @@
   .swiper-button-next,
   .swiper-button-prev {
     top: 65%;
+    z-index: auto;
   }
 }
 

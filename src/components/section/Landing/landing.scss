@@ -1,13 +1,12 @@
 .jumbotron {
   // position
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 
   // box
   height: 70vh;
   width: 100%;
   padding: 0;
+  margin: 0;
 
   // background (image)
   background-image: url("../../../images/cover/fire.jpg");

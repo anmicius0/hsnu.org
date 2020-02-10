@@ -1,0 +1,118 @@
+#news-slider {
+  // box
+  width: 100%;
+  height: 50vh;
+
+  // position
+  position: relative;
+  top: -50px;
+
+  // 1st layer
+  .swiper-container {
+    // box
+    position: static;
+  }
+
+  // News Card Large (Component)
+  .news-card-l.swiper-slide {
+    width: 100%;
+    height: 100%;
+
+    a {
+      // box
+      height: 100%;
+
+      // flex align
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      // cover
+      figure {
+        width: 90%;
+        height: 50%;
+
+        // image itself
+        img {
+          width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      // title and sub-title
+      .text {
+        width: 70%;
+        height: 100%;
+
+        // title
+        h3 {
+          // box
+          margin-bottom: 1rem;
+
+          // limit line
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3; /* number of lines to show */
+        }
+
+        // sub-title
+        p {
+          // limit line
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; /* number of lines to show */
+        }
+      }
+    }
+  }
+
+  // navigation button
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 65%;
+  }
+}
+
+@media (min-width: 992px) {
+  #news-slider {
+    // box
+    width: 70%;
+    height: 70vh;
+    margin: 0 auto;
+
+    // News Card Large
+    .news-card-l.swiper-slide {
+      width: 50%;
+      height: 100%;
+
+      a {
+        // cover
+        figure {
+          height: 50%;
+        }
+
+        // title and sub-title
+        text {
+          height: 50%;
+        }
+      }
+    }
+
+    // navigation button
+    .swiper-button-next {
+      position: absolute;
+      top: 50%;
+      right: -50px;
+    }
+    .swiper-button-prev {
+      position: absolute;
+      top: 50%;
+      left: -50px;
+    }
+  }
+}

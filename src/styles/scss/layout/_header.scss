@@ -30,10 +30,12 @@
 @media (min-width: 992px) {
   #header {
     // position
+    position: fixed;
     width: 90vw;
-    margin: 0 auto;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
     padding: 1rem 3rem;
-    top: 35px;
 
     // shadow
     background: #ffffff;

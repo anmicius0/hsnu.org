@@ -2,7 +2,6 @@ import React from "react"
 import { Jumbotron, Container, Row, Col } from "react-bootstrap"
 
 import "./landing.scss"
-import fire from "../../../images/cover/fire.jpg"
 
 const Landing = () => {
   return (

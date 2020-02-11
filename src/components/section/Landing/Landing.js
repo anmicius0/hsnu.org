@@ -8,7 +8,7 @@ const Landing = () => {
     <Jumbotron fluid>
       <div className={"fade-layer"}></div>
       <a>
-        <h1 className={"is-1 logo"}>
+        <h1 className={"is-1 serif bold"}>
           澳洲大火的全球教訓：政治與科學之間，民主國家如何「複製危機」？
         </h1>
       </a>

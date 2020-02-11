@@ -1,0 +1,136 @@
+#clubs {
+  // box
+  width: 100%;
+  height: auto;
+
+  // position
+  position: relative;
+  top: -5vh;
+
+  // 1st layer
+  .swiper-container {
+    // box
+    width: 100%;
+    height: 100%;
+    position: static;
+  }
+
+  // Club Card Large (Component)
+  .swiper-slide {
+    // box
+    width: 100%;
+    height: 100%;
+
+    // flex align
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .club-card {
+      // box
+      width: 70%;
+      max-height: 100%;
+
+      // cover
+      figure {
+        width: 100%;
+        height: 50%;
+        max-height: 50%;
+
+        // image itself
+        img {
+          width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      // club info
+      .club-info {
+        // box
+        width: 100%;
+        height: auto;
+        padding: 2rem;
+        margin: 1rem 0;
+        background: #ffffff;
+        box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.3);
+
+        // name
+        h3 {
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+
+        // icons
+        .icons {
+          .icon {
+            height: 2rem;
+            width: 2rem;
+            padding: 0;
+            margin: 1rem 0;
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // navigation button
+  .swiper-button-next {
+    background-image: url("../../../images/icons/next-min.svg");
+
+    // position
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  #clubs {
+    // box
+    height: auto;
+    width: 90%;
+
+    // position
+    right: -50%;
+    transform: translateX(-50%);
+
+    .swiper-slide {
+      width: 80%;
+
+      .club-card {
+        position: relative;
+
+        // cover
+        figure {
+          height: 100%;
+          width: 90%;
+          max-height: 100%;
+        }
+
+        .club-info {
+          // box
+          width: 50%;
+
+          // position
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    // navigation button
+    .swiper-button-next {
+      // position
+      top: 50%;
+      right: 20%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

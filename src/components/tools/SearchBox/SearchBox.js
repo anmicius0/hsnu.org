@@ -10,11 +10,7 @@ import search from "../../../images/icons/search.svg"
 const SearchBox = () => {
   return (
     <Form className={"search-box"}>
-      <FormControl
-        type="text"
-        placeholder="Search"
-        className={"is-6-regular"}
-      />
+      <FormControl type="text" placeholder="Search" className={"is-4"} />
       <Button type="submit" variant="light">
         <img src={search}></img>
       </Button>

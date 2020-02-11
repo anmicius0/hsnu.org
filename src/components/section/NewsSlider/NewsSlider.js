@@ -44,12 +44,12 @@ const newsSlider = () => {
                 {/* title and sub-title */}
                 <div className={"text"}>
                   {/* title */}
-                  <h3 className={"is-3 logo"}>
+                  <h3 className={"is-3 serif bold"}>
                     等待落實的人權－臺灣《難民法草案》
                     等待落實的人權－臺灣《難民法草案》
                   </h3>
                   {/* sub-title */}
-                  <p className={"sub-title is-7-light"}>
+                  <p className={"sub-title is-7 light"}>
                     臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》草案》
                   </p>
                 </div>

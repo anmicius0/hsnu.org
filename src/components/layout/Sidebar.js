@@ -9,7 +9,7 @@ const Sidebar = () => {
     <>
       <div id={"sidebar"}>
         {/* title */}
-        <h3 className={"is-3 logo"}>國立臺灣大學附屬高級中學</h3>
+        <h3 className={"is-3 serif bold"}>國立臺灣大學附屬高級中學</h3>
 
         <Endorsement />
         <SearchBox />
@@ -19,20 +19,20 @@ const Sidebar = () => {
           {[1, 2, 3, 4].map(item => (
             <li>
               <ul className={"menu-card"}>
-                <h4 className={"is-4"}>招生專區</h4>
-                <li className={"is-7-regular"}>
+                <h4 className={"is-4 bold"}>招生專區</h4>
+                <li className={"is-5"}>
                   <a href="#">108年科學班招生專區</a>
                 </li>
-                <li className={"is-7-regular"}>
+                <li className={"is-5"}>
                   <a href="#">108年資訊班招生專區</a>
                 </li>
-                <li className={"is-7-regular"}>
+                <li className={"is-5"}>
                   <a href="#">108年國中音樂班聯招專區</a>
                 </li>
-                <li className={"is-7-regular"}>
+                <li className={"is-5"}>
                   <a href="#">教師甄選作業系統</a>
                 </li>
-                <li className={"is-7-regular"}>
+                <li className={"is-5"}>
                   <a href="#">109學測校內網路報名系統</a>
                 </li>
               </ul>

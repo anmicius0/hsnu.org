@@ -10,6 +10,7 @@
   // 1st layer
   .swiper-container {
     // box
+    height: 100%;
     position: static;
   }
 
@@ -43,7 +44,7 @@
       // title and sub-title
       .text {
         width: 70%;
-        height: 100%;
+        height: 50%;
 
         // title
         h3 {
@@ -72,6 +73,13 @@
   }
 
   // navigation button
+  // swiper navigation buttons
+  .swiper-button-next {
+    background-image: url("../../../images/icons/next.svg ");
+  }
+  .swiper-button-prev {
+    background-image: url("../../../images/icons/prev.svg");
+  }
   .swiper-button-next,
   .swiper-button-prev {
     top: 65%;

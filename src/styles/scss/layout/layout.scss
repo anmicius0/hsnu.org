@@ -41,111 +41,57 @@
 body {
   font-family: "Taipei Sans", sans-serif;
 }
-.logo {
+.serif {
   font-family: "Noto Serif", serif;
 }
 
 // font sizes
 .is-1 {
-  font-size: 7vw;
+  font-size: 2rem;
   line-height: 150%;
-  font-weight: 700;
 }
 .is-2 {
-  font-size: 6.5vw;
+  font-size: 1.5rem;
   line-height: 110%;
-  font-weight: 700;
 }
 .is-3 {
-  font-size: 6vw;
+  font-size: 1.4rem;
   line-height: 110%;
-  font-weight: 700;
 }
 .is-4 {
-  font-size: 5.75vw;
+  font-size: 1.2rem;
   line-height: 110%;
-  font-weight: 700;
-}
-.is-4-regular {
-  font-size: 5.75vw;
-  line-height: 110%;
-  font-weight: 400;
 }
 .is-5 {
-  font-size: 5.5vw;
+  font-size: 1rem;
   line-height: 110%;
-  font-weight: 700;
-}
-.is-5-regular {
-  font-size: 5.5vw;
-  line-height: 110%;
-  font-weight: 400;
-}
-.is-5-semi {
-  font-size: 5.5vw;
-  line-height: 110%;
-  font-weight: 600;
-}
-.is-6 {
-  font-size: 5vw;
-  line-height: 110%;
-  font-weight: 700;
-}
-.is-6-regular {
-  font-size: 5vw;
-  line-height: 110%;
-  font-weight: 400;
-}
-.is-7 {
-  font-size: 4.5vw;
-  line-height: 135%;
-  font-weight: 700;
-}
-.is-7-regular {
-  font-size: 4.5vw;
-  line-height: 135%;
-  font-weight: 400;
-}
-.is-7-light {
-  font-size: 4.5vw;
-  line-height: 135%;
-  font-weight: 300;
 }
 
 @media (min-width: 720px) {
   .is-1 {
-    font-size: 3vw;
+    font-size: 3rem;
   }
   .is-2 {
-    font-size: 2vw;
+    font-size: 2.5rem;
   }
   .is-3 {
-    font-size: 1.5vw;
+    font-size: 1.75rem;
   }
   .is-4 {
-    font-size: 1.5vw;
+    font-size: 1.2rem;
   }
-  .is-5,
-  .is-5-regular,
-  .is-5-semi {
-    font-size: 1vw;
-  }
-  .is-6,
-  .is-6-regular {
-    font-size: 1vw;
-  }
-  .is-7,
-  .is-7-regular,
-  .is-7-light {
-    font-size: 1vw;
+  .is-5 {
+    font-size: 1.2rem;
   }
 }
 
-// swiper navigation buttons
-// swiper navigation buttons
-.swiper-button-next {
-  background-image: url("../../../images/icons/next.svg") !important;
+// font weight
+.light {
+  font-weight: 300;
 }
-.swiper-button-prev {
-  background-image: url("../../../images/icons/prev.svg") !important;
+.semi {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
 }

@@ -27,7 +27,8 @@ const Clubs = () => {
   }
 
   return (
-    <div id="clubs">
+    <section id="clubs">
+      <h2 className={"is-2 serif bold"}>社團</h2>
       <Swiper {...params}>
         {[1, 2, 3].map(item => (
           <div>
@@ -56,7 +57,9 @@ const Clubs = () => {
                       twitter,
                     ].map(icon => (
                       <Col className={"icon col-4 col-sm-3"}>
-                        <img src={icon} />
+                        <a hre="#">
+                          <img src={icon} />
+                        </a>
                       </Col>
                     ))}
                   </Row>
@@ -66,7 +69,7 @@ const Clubs = () => {
           </div>
         ))}
       </Swiper>
-    </div>
+    </section>
   )
 }
 

@@ -29,7 +29,7 @@ const Header = () => {
         <Nav>
           {[1, 2, 3, 4].map(item => (
             <Nav.Item>
-              <Nav.Link className={"is-5"}>Student</Nav.Link>
+              <Nav.Link className={"is-5 bold"}>Student</Nav.Link>
             </Nav.Item>
           ))}
 
@@ -72,7 +72,7 @@ const Header = () => {
             id="nav-search-box"
             type="text"
             placeholder="Search"
-            className={"is-4 "}
+            className={"is-3 bold"}
           />
         </Form>
       </div>

@@ -1,18 +1,23 @@
 #clubs {
   // box
-  width: 100%;
+  width: 80%;
   height: auto;
 
   // position
   position: relative;
-  top: -5vh;
+  right: -50%;
+  transform: translateX(-50%);
+
+  // title
+  h2 {
+    margin: 2rem 0;
+  }
 
   // 1st layer
   .swiper-container {
     // box
     width: 100%;
     height: 100%;
-    position: static;
   }
 
   // Club Card Large (Component)
@@ -28,8 +33,9 @@
 
     .club-card {
       // box
-      width: 70%;
+      width: 90%;
       max-height: 100%;
+      margin: 1.5rem 0;
 
       // cover
       figure {
@@ -83,7 +89,7 @@
     background-image: url("../../../images/icons/next-min.svg");
 
     // position
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     z-index: 1;
   }
@@ -98,6 +104,10 @@
     // position
     right: -50%;
     transform: translateX(-50%);
+
+    .swiper-wrapper {
+      left: -10%;
+    }
 
     .swiper-slide {
       width: 80%;
@@ -114,7 +124,7 @@
 
         .club-info {
           // box
-          width: 50%;
+          width: 60%;
 
           // position
           position: absolute;
@@ -129,7 +139,7 @@
     .swiper-button-next {
       // position
       top: 50%;
-      right: 20%;
+      right: 30%;
       transform: translate(-50%, -50%);
     }
   }

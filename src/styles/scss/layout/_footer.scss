@@ -1,2 +1,45 @@
 footer {
+  // box
+  height: auto;
+  background-color: black;
+  padding: 3rem 1rem;
+
+  .row {
+    width: 100%;
+    margin: 0;
+    align-items: center;
+  }
+
+  // logo
+  .logo {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h3 {
+      color: white;
+    }
+  }
+
+  .icons {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  footer {
+    padding: 1rem 5rem;
+
+    .logo {
+      margin: 0;
+      text-align: left;
+    }
+  }
 }

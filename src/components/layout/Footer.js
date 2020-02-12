@@ -8,14 +8,22 @@ import twitter from "../../images/icons/twitter.svg"
 const Footer = () => {
   return (
     <>
-      <Navbar as="footer" bg="dark">
+      <footer>
         <Container fluid>
           <Row>
-            <Col>8</Col>
-            <Col>4</Col>
+            <Col lg="8" className={"logo"}>
+              <h3 className={"is-3 bold"}>We Are HSNUer</h3>
+            </Col>
+            <Col lg="4" className={"icons"}>
+              {[medium, twitter, medium, twitter].map(icon => (
+                <a href="#">
+                  <img src={icon}></img>
+                </a>
+              ))}
+            </Col>
           </Row>
         </Container>
-      </Navbar>
+      </footer>
     </>
   )
 }

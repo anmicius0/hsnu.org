@@ -15,7 +15,7 @@ const Footer = () => {
               <h3 className={"is-3 bold"}>We Are HSNUer</h3>
             </Col>
             <Col lg="4" className={"icons"}>
-              {[medium, twitter, medium, twitter].map(icon => (
+              {[medium, twitter, medium, twitter, medium, twitter].map(icon => (
                 <a href="#">
                   <img src={icon}></img>
                 </a>

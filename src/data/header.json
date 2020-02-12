@@ -1,0 +1,24 @@
+{
+  "navs": [
+    {
+      "title": "查段考新姿勢！",
+      "url": "https://sschool.tp.edu.tw/Login.action"
+    },
+    {
+      "title": "iLearning",
+      "url": "https://ilearning.hs.ntnu.edu.tw/"
+    },
+    {
+      "title": "報修",
+      "url": "http://artlife.hs.ntnu.edu.tw/case122/index.php"
+    },
+    {
+      "title": "學習歷程",
+      "url": "https://e-portfolio.cooc.tp.edu.tw/Portal.do"
+    },
+    {
+      "title": "English",
+      "url": "/english"
+    }
+  ]
+}

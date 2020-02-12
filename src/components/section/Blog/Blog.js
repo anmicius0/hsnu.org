@@ -12,12 +12,12 @@ const Posts = () => {
     <Container as="section" id="Blog">
       <Row>
         {/* posts */}
-        <Col className={"col-md-8"}>
+        <Col lg="8">
           <PostLists />
         </Col>
 
         {/* side news (component) */}
-        <Col md="4">
+        <Col lg="4">
           <SideNews />
         </Col>
       </Row>

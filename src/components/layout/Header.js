@@ -1,5 +1,6 @@
 import React from "react"
 import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap"
+import { useStaticQuery, graphql } from "gatsby"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"
@@ -7,6 +8,23 @@ import menu from "../../images/icons/menu.svg"
 import search from "../../images/icons/search.svg"
 
 const Header = () => {
+  const navs = useStaticQuery(
+    graphql`
+      query {
+        allDataJson {
+          edges {
+            node {
+              navs {
+                title
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  ).allDataJson.edges[0].node.navs
+
   return (
     <Navbar expand="xl" id="header">
       {/* Brand */}
@@ -27,9 +45,11 @@ const Header = () => {
       {/* Navbar Items */}
       <Navbar.Collapse>
         <Nav>
-          {[1, 2, 3, 4].map(item => (
+          {navs.map(nav => (
             <Nav.Item>
-              <Nav.Link className={"is-5 bold"}>Student</Nav.Link>
+              <Nav.Link className={"is-5 bold"} href={nav.url}>
+                {nav.title}
+              </Nav.Link>
             </Nav.Item>
           ))}
 

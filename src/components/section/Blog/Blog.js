@@ -5,6 +5,7 @@ import "./blog.scss"
 
 // tools
 import PostLists from "../../tools/PostsList/PostsList"
+import SideNews from "../../tools/SidewNews/SideNews"
 
 const Posts = () => {
   return (
@@ -12,11 +13,13 @@ const Posts = () => {
       <Row>
         {/* posts */}
         <Col className={"col-md-8"}>
-          <PostLists></PostLists>
+          <PostLists />
         </Col>
 
         {/* side news (component) */}
-        <Col md="4">hello</Col>
+        <Col md="4">
+          <SideNews />
+        </Col>
       </Row>
     </Container>
   )

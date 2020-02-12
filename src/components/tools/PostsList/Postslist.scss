@@ -1,9 +1,11 @@
 .posts {
+  margin-bottom: 3rem;
+
   // genres
   .genres {
     // box
     border: none;
-    margin: 1rem 0;
+    margin: 1rm 0;
     padding-right: 15px;
 
     // position
@@ -72,8 +74,8 @@
     // genres
     .genres .genre {
       // active
-      &.active {
-        font-size: 3rem;
+      &.active h3 {
+        font-size: 2.5rem;
       }
 
       // deactive
@@ -89,5 +91,11 @@
         font-size: 1.4rem;
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .posts {
+    margin: 0 2rem 0 0;
   }
 }

@@ -2,11 +2,10 @@
   // box
   width: 80%;
   height: auto;
+  margin: 1rem auto;
 
   // position
   position: relative;
-  right: -50%;
-  transform: translateX(-50%);
 
   // title
   h2 {
@@ -40,7 +39,7 @@
       // cover
       figure {
         width: 100%;
-        height: 50%;
+        height: auto;
         max-height: 50%;
 
         // image itself
@@ -100,10 +99,6 @@
     // box
     height: auto;
     width: 90%;
-
-    // position
-    right: -50%;
-    transform: translateX(-50%);
 
     .swiper-wrapper {
       left: -10%;

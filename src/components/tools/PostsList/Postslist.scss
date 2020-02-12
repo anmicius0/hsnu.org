@@ -1,0 +1,93 @@
+.posts {
+  // genres
+  .genres {
+    // box
+    border: none;
+    margin: 1rem 0;
+    padding-right: 15px;
+
+    // position
+    justify-content: space-between;
+
+    // each genre
+    .genre {
+      // box
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+
+      // position
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // default status
+      h3 {
+        color: #9c9c9c;
+      }
+
+      // the current genre
+      &.active h3 {
+        // font change
+        font-family: "Noto Serif";
+        font-size: 2rem;
+        font-weight: 700;
+        color: black;
+      }
+
+      //  hide other genres ( on mobile )
+      &:not(.active):not(.more) {
+        display: none;
+      }
+    }
+  }
+
+  // posts
+  .container {
+    margin: 0;
+    padding: 0;
+
+    .post {
+      // box
+      width: 100%;
+      margin: 0.6rem 0;
+      border-left: solid red 5px;
+
+      h4 {
+        color: black;
+
+        // limit line
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* number of lines to show */
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .posts {
+    // genres
+    .genres .genre {
+      // active
+      &.active {
+        font-size: 3rem;
+      }
+
+      // deactive
+      &:not(.active):not(.more) {
+        display: flex;
+      }
+    }
+
+    // posts
+    .container .post {
+      margin: 1rem 0;
+      h4 {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
-import "./blog.scss"
+import "./Blog.scss"
 
 // tools
 import PostLists from "../../tools/PostsList/PostsList"
@@ -18,7 +18,7 @@ const Posts = () => {
 
         {/* side news (component) */}
         <Col lg="4">
-          <SideNews />
+          <SideNews news={[1, 2, 3, 4, 5]} />
         </Col>
       </Row>
     </Container>

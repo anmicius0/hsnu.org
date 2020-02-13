@@ -1,0 +1,25 @@
+.RecommandVideo {
+  // box
+  height: auto;
+  margin-bottom: 3rem;
+
+  // position
+  position: sticky;
+  top: 10rem;
+
+  h2 {
+    margin-bottom: 1.3rem;
+  }
+
+  // embeded
+  iframe {
+    // box
+    width: 100%;
+    height: 65vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .RecommandVideo {
+  }
+}

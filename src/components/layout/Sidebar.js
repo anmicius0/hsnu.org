@@ -1,10 +1,30 @@
 import React from "react"
-
+import { useStaticQuery, graphql } from "gatsby"
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
 
 const Sidebar = () => {
+  const menus = useStaticQuery(
+    graphql`
+      query {
+        allMenuJson {
+          edges {
+            node {
+              title
+              items {
+                title
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  ).allMenuJson.edges
+
+  console.log(menus)
+
   return (
     <>
       <div id={"sidebar"}>
@@ -16,25 +36,15 @@ const Sidebar = () => {
 
         {/* menu cards*/}
         <ul className={"menu-cards"}>
-          {[1, 2, 3, 4].map(item => (
+          {menus.map(menu => (
             <li>
               <ul className={"menu-card"}>
-                <h4 className={"is-4 bold"}>招生專區</h4>
-                <li className={"is-5"}>
-                  <a href="#">108年科學班招生專區</a>
-                </li>
-                <li className={"is-5"}>
-                  <a href="#">108年資訊班招生專區</a>
-                </li>
-                <li className={"is-5"}>
-                  <a href="#">108年國中音樂班聯招專區</a>
-                </li>
-                <li className={"is-5"}>
-                  <a href="#">教師甄選作業系統</a>
-                </li>
-                <li className={"is-5"}>
-                  <a href="#">109學測校內網路報名系統</a>
-                </li>
+                <h4 className={"is-4 bold"}>{menu.node.title}</h4>
+                {menu.node.items.map(item => (
+                  <li className={"is-5"}>
+                    <a href={item.url}>{item.title}</a>
+                  </li>
+                ))}
               </ul>
             </li>
           ))}

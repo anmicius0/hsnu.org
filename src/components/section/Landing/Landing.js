@@ -1,7 +1,7 @@
 import React from "react"
-import { Jumbotron, Container, Row, Col } from "react-bootstrap"
+import { Jumbotron } from "react-bootstrap"
 
-import "./landing.scss"
+import "./Landing.scss"
 
 const Landing = () => {
   return (

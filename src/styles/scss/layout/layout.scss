@@ -95,3 +95,16 @@ body {
 .bold {
   font-weight: 700;
 }
+
+// header padding
+#header-padding {
+  width: 100%;
+  height: 0;
+}
+
+@media (min-width: 992px) {
+  // header padding
+  #header-padding {
+    margin: 12rem;
+  }
+}

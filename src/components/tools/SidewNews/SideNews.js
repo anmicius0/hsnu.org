@@ -4,11 +4,11 @@ import "./SideNews.scss"
 
 import asylum from "../../../images/cover/asylum.jpeg"
 
-const SideNews = () => {
+const SideNews = ({ news }) => {
   return (
     <section className={"side-news"}>
       <h2 className={"is-2 serif bold"}>更多作品</h2>
-      {[1, 2, 3, 4].map(item => (
+      {news.map(item => (
         // news card small (component)
         <a href="#" className={"news-card-s"}>
           {/* cover */}

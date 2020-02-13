@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 import asylum from "../../../images/cover/asylum.jpeg"
 
 // style
-import "./newsSlider.scss"
+import "./NewsSlider.scss"
 
 const newsSlider = () => {
   // config of swiper

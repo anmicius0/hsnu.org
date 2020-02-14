@@ -15,6 +15,8 @@
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-remark-embedder": "^1.11.2",
     "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-source-graphql": "^2.1.33",
+    "gatsby-source-wordpress": "^3.1.62",
     "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-sharp": "^2.3.13",
     "node-sass": "^4.13.1",

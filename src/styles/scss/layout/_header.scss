@@ -4,20 +4,25 @@
   background-color: white;
 
   // HSNU logo
-  .navbar-brand img {
-    width: 70vw;
-    max-width: 400px;
+  .navbar-brand {
+    width: 70%;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+    }
   }
 
   // toggler
   .navbar-toggler {
     border: none;
+    width: 20%;
 
     // icon iteself
     .navbar-toggler-icon {
       background-image: url("../../../images/icons/menu.svg");
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 
@@ -47,6 +52,12 @@
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
 
+    // HSNU logo
+    .navbar-brand {
+      width: auto;
+    }
+
+    // Navbar Collapse
     .navbar-collapse {
       justify-content: flex-end;
 

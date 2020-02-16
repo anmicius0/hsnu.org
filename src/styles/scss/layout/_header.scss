@@ -39,14 +39,16 @@
 
 @media (min-width: 992px) {
   #header {
+    // box
+    width: 90vw;
+
     // position
     position: fixed;
-    width: 90vw;
     top: 3%;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 1rem 3rem;
-
+    justify-content: space-between;
     // shadow
     background: #ffffff;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
@@ -60,6 +62,8 @@
     // Navbar Collapse
     .navbar-collapse {
       justify-content: flex-end;
+      flex-grow: 1;
+      flex-basis: auto;
 
       // Each buttom in navbar
       .nav-item {

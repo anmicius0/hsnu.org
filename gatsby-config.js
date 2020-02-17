@@ -36,14 +36,15 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-wordpress`,
       options: {
-        // Arbitrary name for the remote schema Query type
-        typeName: "wordpress",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "wordpress",
-        // Url to query from
-        url: "http://hsnu.local/graphql",
+        // your WordPress source
+        baseUrl: `hsnu.local`,
+        protocol: `http`,
+        // is it hosted on wordpress.com, or self-hosted?
+        hostingWPCOM: false,
+        // does your site use the Advanced Custom Fields Plugin?
+        useACF: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

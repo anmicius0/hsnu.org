@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
 import { Container, Row, Col, Nav } from "react-bootstrap"
 
 import "./Postslist.scss"
-const PostsList = () => {
-  // query
-  const result = useStaticQuery(graphql`
-    query {
-      wordpress {
-        sposts {
-          edges {
-            node {
-              title(format: RENDERED)
-            }
-          }
-        }
-      }
-    }
-  `).wordpress.sposts.edges
 
+const PostsList = props => {
   // toggle tabs
   useEffect(() => {
     const genres = document.querySelectorAll(".genre:not(.more)")
@@ -36,18 +21,42 @@ const PostsList = () => {
     }
   }, [])
 
+  // tabs
+  const genreTabs = [
+    { name: "學生", codeName: "studentPosts" },
+    { name: "研習", codeName: "researchPosts" },
+    { name: "競賽", codeName: "racePosts" },
+    { name: "教師", codeName: "teacherPosts" },
+  ]
+
+  const [postlist, setPostlist] = useState(props.postlist.allPosts.edges)
+
   return (
     <div className={"posts"}>
       {/* genres */}
       <Nav variant="tabs" className={"genres"}>
-        {["學生事務", "研習", "競賽", "教師"].map((item, index) =>
+        {genreTabs.map((item, index) =>
           index === 0 ? (
             <Nav.Item className={"genre active"}>
-              <h3 className={"is-3"}>{item}</h3>
+              <h3
+                className={"is-3"}
+                onClick={() => {
+                  setPostlist(props.postlist[item.codeName].edges)
+                }}
+              >
+                {item.name}
+              </h3>
             </Nav.Item>
           ) : (
             <Nav.Item className={"genre"}>
-              <h3 className={"is-3"}>{item}</h3>
+              <h3
+                className={"is-3"}
+                onClick={() => {
+                  setPostlist(props.postlist[item.codeName].edges)
+                }}
+              >
+                {item.name}
+              </h3>
             </Nav.Item>
           )
         )}
@@ -58,7 +67,7 @@ const PostsList = () => {
 
       <Container>
         <Row className={"flex-column"}>
-          {result.map(item => (
+          {postlist.map(item => (
             <Col className={"post"}>
               <a href="#">
                 <h4

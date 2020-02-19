@@ -26,6 +26,7 @@ export const query = graphql`
       edges {
         node {
           title
+          wordpress_id
         }
       }
     }
@@ -36,6 +37,7 @@ export const query = graphql`
       edges {
         node {
           title
+          wordpress_id
         }
       }
     }
@@ -46,6 +48,7 @@ export const query = graphql`
       edges {
         node {
           title
+          wordpress_id
         }
       }
     }
@@ -57,6 +60,7 @@ export const query = graphql`
       edges {
         node {
           title
+          wordpress_id
         }
       }
     }
@@ -67,6 +71,7 @@ export const query = graphql`
       edges {
         node {
           title
+          wordpress_id
         }
       }
     }

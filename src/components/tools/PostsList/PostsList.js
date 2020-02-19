@@ -69,7 +69,7 @@ const PostsList = props => {
         <Row className={"flex-column"}>
           {postlist.map(item => (
             <Col className={"post"}>
-              <a href="#">
+              <a href={"/post/" + item.node.wordpress_id}>
                 <h4
                   className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: item.node.title }}

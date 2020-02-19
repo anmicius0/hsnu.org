@@ -7,7 +7,10 @@ const Content = props => {
   return (
     <article className={"content"}>
       {/* title */}
-      <h2 className={"is-2 bold serif"}>{props.title}</h2>
+      <h2
+        className={"is-2 bold serif"}
+        dangerouslySetInnerHTML={{ __html: props.title }}
+      />
 
       {/* meta */}
       <div className={"meta"}>
@@ -18,30 +21,34 @@ const Content = props => {
 
       {/* files */}
       <div className={"files"}>
-        {props.files.map(file => (
-          <>
-            <a href={file.file.url}>
-              <div className={"file pdf"}>
-                {/* icon */}
-                <img src={pdf}></img>
-                {/* name */}
-                <p className={"is-5"}>{file.file.filename}</p>
-              </div>
-            </a>
-          </>
-        ))}
-        {props.urls.map(url => (
-          <>
-            <a href={url.url}>
-              <div className={"file pdf"}>
-                {/* icon */}
-                <img src={pdf}></img>
-                {/* name */}
-                <p className={"is-5"}>{url.description}</p>
-              </div>
-            </a>
-          </>
-        ))}
+        {props.files
+          ? props.files.map(file => (
+              <>
+                <a href={file.file.url}>
+                  <div className={"file pdf"}>
+                    {/* icon */}
+                    <img src={pdf}></img>
+                    {/* name */}
+                    <p className={"is-5"}>{file.file.filename}</p>
+                  </div>
+                </a>
+              </>
+            ))
+          : null}
+        {props.urls
+          ? props.urls.map(url => (
+              <>
+                <a href={url.url}>
+                  <div className={"file pdf"}>
+                    {/* icon */}
+                    <img src={pdf}></img>
+                    {/* name */}
+                    <p className={"is-5"}>{url.description}</p>
+                  </div>
+                </a>
+              </>
+            ))
+          : null}
       </div>
 
       {/* context */}

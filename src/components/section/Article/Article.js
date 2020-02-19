@@ -8,12 +8,12 @@ import SideNews from "../../tools/SidewNews/SideNews"
 import Content from "../../tools/Content/Content"
 import RecommandVideo from "../../tools/RecommandVideo/RecommandVideo"
 
-const Article = () => {
+const Article = props => {
   const [news, setNews] = useState([1, 2, 3, 4, 5])
 
   // when scroll near the bottom, add news
   useEffect(() => {
-    window.onscroll = function(ev) {
+    window.onscroll = function() {
       if (
         window.innerHeight + window.scrollY >=
         document.body.offsetHeight / 7
@@ -33,7 +33,7 @@ const Article = () => {
       <Container id="article" fluid>
         <Row>
           <Col lg="7">
-            <Content />
+            <Content {...props} />
             <RecommandVideo />
           </Col>
           <Col lg={{ span: 4, offset: 1 }}>

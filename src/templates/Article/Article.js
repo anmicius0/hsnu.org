@@ -11,9 +11,8 @@ import Content from "../../components/tools/Content/Content"
 import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
-  const [news, setNews] = useState([1, 2, 3, 4, 5])
-
   // when scroll near the bottom, add news
+  const [news, setNews] = useState([1, 2, 3, 4, 5])
   useEffect(() => {
     window.onscroll = function() {
       if (

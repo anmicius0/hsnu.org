@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "gatsby"
 import { Container, Row, Col, Nav } from "react-bootstrap"
 
 import "./Postslist.scss"
@@ -69,12 +70,12 @@ const PostsList = props => {
         <Row className={"flex-column"}>
           {postlist.map(item => (
             <Col className={"post"}>
-              <a href={"/post/" + item.node.wordpress_id}>
+              <Link to={"/post/" + item.node.wordpress_id}>
                 <h4
                   className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: item.node.title }}
                 />
-              </a>
+              </Link>
             </Col>
           ))}
         </Row>

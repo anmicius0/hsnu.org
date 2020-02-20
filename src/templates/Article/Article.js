@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/layout/Layout"
+import Layout from "../../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
 
 // style
 import "./Article.scss"
 
 // tools
-import SideNews from "../components/tools/SidewNews/SideNews"
-import Content from "../components/tools/Content/Content"
-import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
+import SideNews from "../../components/tools/SidewNews/SideNews"
+import Content from "../../components/tools/Content/Content"
+import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
   const [news, setNews] = useState([1, 2, 3, 4, 5])
@@ -70,9 +70,7 @@ export const query = graphql`
             repeater_file {
               file {
                 filename
-                url {
-                  source_url
-                }
+                url
               }
             }
             repeater_link {

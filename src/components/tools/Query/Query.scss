@@ -1,0 +1,41 @@
+#search-result-container {
+  // box
+  padding: 1rem 0;
+
+  .row {
+    flex-direction: column;
+
+    // search result card (component)
+    .search-result {
+      // box
+      margin: 0.8rem 0;
+      padding: 0 1rem;
+
+      // title
+      h3 {
+        color: black;
+      }
+
+      //   meta
+      .meta {
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          display: inline-block;
+          color: black;
+
+          &.tag {
+            color: white;
+            background-color: red;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

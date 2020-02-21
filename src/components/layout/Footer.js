@@ -2,8 +2,8 @@ import React from "react"
 import { Navbar, Nav, Container, Row, Col } from "react-bootstrap"
 
 // icons
-import medium from "../../images/icons/medium.svg"
-import twitter from "../../images/icons/twitter.svg"
+import medium from "../../images/icons/socialMedia/medium.svg"
+import twitter from "../../images/icons/socialMedia/twitter.svg"
 
 const Footer = () => {
   return (

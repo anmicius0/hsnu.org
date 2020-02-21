@@ -4,8 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"
-import menu from "../../images/icons/menu.svg"
-import search from "../../images/icons/search.svg"
+import menu from "../../images/icons/functional/menu.svg"
+import search from "../../images/icons/functional/search.svg"
 
 const Header = () => {
   const navs = useStaticQuery(

@@ -1,14 +1,14 @@
 import React from "react"
-import { Form, Button } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 
 // stlye
 import "./Filter.scss"
 
-export default () => {
+export default ({ id }) => {
   return (
-    <Form id="filter-group">
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>大分類</Form.Label>
+    <Form className={"filter"} id={id ? id : Math.random()}>
+      <Form.Group controlId="genre">
+        <Form.Label className={"is-5 bold"}>大分類:</Form.Label>
         <Form.Control as="select">
           <option>1</option>
           <option>2</option>
@@ -17,9 +17,8 @@ export default () => {
           <option>5</option>
         </Form.Control>
       </Form.Group>
-
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>小分類</Form.Label>
+      <Form.Group controlId="genre">
+        <Form.Label className={"is-5 bold"}>小分類:</Form.Label>
         <Form.Control as="select">
           <option>1</option>
           <option>2</option>
@@ -28,9 +27,8 @@ export default () => {
           <option>5</option>
         </Form.Control>
       </Form.Group>
-
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>處室</Form.Label>
+      <Form.Group controlId="genre">
+        <Form.Label className={"is-5 bold"}>處室:</Form.Label>
         <Form.Control as="select">
           <option>1</option>
           <option>2</option>

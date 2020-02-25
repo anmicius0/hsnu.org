@@ -2,11 +2,16 @@
 .search-box {
   width: 100%;
 
+  // flex
+  display: flex;
+  align-items: center;
+
   // text
   input {
     // box
     display: inline-block;
-    max-width: 70%;
+    width: 70%;
+    flex-grow: 1;
     height: 100%;
     padding: 0.5rem 0;
     margin: 0;
@@ -25,7 +30,7 @@
   button {
     // box
     display: inline-block;
-    width: 10%;
+    max-width: 10%;
     height: 100%;
     margin: 0 2.5%;
     padding: 0;
@@ -39,6 +44,14 @@
     &:focus {
       background: none !important;
       border: none !important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .search-box {
+    button.filter {
+      display: none;
     }
   }
 }

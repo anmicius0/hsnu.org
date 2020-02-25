@@ -59,17 +59,16 @@ export const query = graphql`
       edges {
         node {
           title
-          date(formatString: "YYYY/MM/DD")
+          wordpress_id
           content
           acf {
             genre
-            sub_genre_race
-            sub_genre_teacher
-            sub_genre_student
             repeater_file {
               file {
+                url {
+                  source_url
+                }
                 filename
-                url
               }
             }
             repeater_link {

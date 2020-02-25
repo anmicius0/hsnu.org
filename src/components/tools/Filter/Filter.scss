@@ -1,3 +1,52 @@
-#filter-group {
+// filter
+.filter {
   display: none;
+  margin: 2rem 0;
+  height: auto;
+
+  // each filter
+  .form-group {
+    width: 100%;
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // name
+    label {
+      display: inline-block;
+      margin: 0 1.5rem 0 0;
+      width: auto;
+    }
+
+    // options
+    select.form-control {
+      // box
+      display: inline-block;
+      width: 70%;
+      flex-shrink: 1;
+      border: solid #9c9c9c 0.1px;
+
+      // arrow
+      appearance: none;
+      background-image: url("../../../images/icons/functional/dropdown-arrow.svg");
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+
+      option {
+        border: solid red 1px;
+      }
+    }
+  }
+}
+
+.filter.show {
+  display: initial;
+}
+
+@media (min-width: 992px) {
+  #search-page-filter {
+    display: block;
+    margin-bottom: 7rem;
+  }
 }

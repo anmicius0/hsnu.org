@@ -26,7 +26,7 @@ const Content = props => {
         {props.files
           ? props.files.map(file => (
               <>
-                <a href={file.file.url}>
+                <a href={file.file.url.source_url}>
                   <div className={"file pdf"}>
                     {/* icon */}
                     <img src={pdf}></img>
@@ -55,7 +55,7 @@ const Content = props => {
 
       {/* context */}
       <p
-        className={"is-4  context"}
+        className={"is-4 context"}
         dangerouslySetInnerHTML={{ __html: props.content }}
       />
     </article>

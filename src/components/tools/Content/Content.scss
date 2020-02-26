@@ -81,6 +81,14 @@
       }
     }
   }
+
+  // context
+  .context {
+    a {
+      color: #212529 !important;
+      text-decoration: underline black;
+    }
+  }
 }
 
 @media (min-width: 992px) {

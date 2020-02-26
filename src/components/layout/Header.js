@@ -1,6 +1,6 @@
 import React from "react"
 import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"
@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <Navbar expand="xl" id="header">
       {/* Brand */}
-      <Navbar.Brand href="#">
+      <Navbar.Brand href="/">
         <img src={hsnu} alt="Logo of HSNU"></img>
       </Navbar.Brand>
 

@@ -57,6 +57,7 @@
     // HSNU logo
     .navbar-brand {
       width: auto;
+      margin: 0 auto;
     }
 
     // Navbar Collapse
@@ -65,13 +66,20 @@
       flex-grow: 1;
       flex-basis: auto;
 
-      // Each buttom in navbar
-      .nav-item {
-        margin: 0 1rem;
+      // the container of buttons
+      .navbar-nav {
+        flex-grow: 1;
+        justify-content: space-evenly;
+        margin: 0.5rem 2rem;
 
-        // text inside
-        .nav-link {
-          color: black;
+        // Each buttom in navbar
+        .nav-item {
+          margin: 0 1rem;
+
+          // text inside
+          .nav-link {
+            color: black;
+          }
         }
       }
     }

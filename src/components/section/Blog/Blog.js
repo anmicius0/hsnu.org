@@ -13,12 +13,12 @@ const Posts = props => {
     <Container as="section" id="Blog">
       <Row>
         {/* posts */}
-        <Col lg="8">
+        <Col lg="7">
           <PostLists postlist={props.postlist} />
         </Col>
 
         {/* side news (component) */}
-        <Col lg="4">
+        <Col lg={{ span: 4, offset: 1 }}>
           <SideNews news={[1, 2, 3, 4, 5]} />
         </Col>
       </Row>

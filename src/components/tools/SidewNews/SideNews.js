@@ -4,23 +4,21 @@ import "./SideNews.scss"
 
 import asylum from "../../../images/cover/asylum.jpeg"
 
-const SideNews = ({ news }) => {
+const SideNews = ({ newses }) => {
   return (
     <section className={"side-news"}>
       <h2 className={"is-2 serif bold"}>更多作品</h2>
-      {news.map(item => (
+      {newses.map(news => (
         // news card small (component)
-        <a href="#" className={"news-card-s"}>
+        <a href={news.node.acf.link} className={"news-card-s"}>
           {/* cover */}
           <figure>
-            <img src={asylum}></img>
+            <img src={news.node.acf.image.source_url}></img>
           </figure>
 
           {/* title */}
           <div className={"title"}>
-            <h4 className={"is-4 serif bold"}>
-              從武漢到世界──2019新型冠狀病毒疫情即時脈動
-            </h4>
+            <h4 className={"is-4 serif bold"}>{news.node.title}</h4>
           </div>
         </a>
       ))}

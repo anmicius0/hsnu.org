@@ -1,5 +1,5 @@
 import React from "react"
-
+import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
 import "./Blog.scss"
@@ -9,6 +9,24 @@ import PostLists from "../../tools/PostsList/PostsList"
 import SideNews from "../../tools/SidewNews/SideNews"
 
 const Posts = props => {
+  const newses = useStaticQuery(graphql`
+    query {
+      allWordpressWpNews(limit: 4) {
+        edges {
+          node {
+            title
+            acf {
+              link
+              image {
+                source_url
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpNews.edges
+
   return (
     <Container as="section" id="Blog">
       <Row>
@@ -19,7 +37,7 @@ const Posts = props => {
 
         {/* side news (component) */}
         <Col lg={{ span: 4, offset: 1 }}>
-          <SideNews news={[1, 2, 3, 4, 5]} />
+          <SideNews newses={newses} />
         </Col>
       </Row>
     </Container>

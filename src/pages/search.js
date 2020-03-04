@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout/Layout"
 
@@ -13,6 +13,24 @@ import Filter from "../components/tools/Filter/Filter"
 import SideNews from "../components/tools/SidewNews/SideNews"
 
 export default () => {
+  const newses = useStaticQuery(graphql`
+    {
+      allWordpressWpNews(limit: 4) {
+        edges {
+          node {
+            title
+            acf {
+              link
+              image {
+                source_url
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpNews.edges
+
   return (
     <Layout>
       <div id="header-padding" />
@@ -24,7 +42,7 @@ export default () => {
           </Col>
           <Col lg={{ span: 4, offset: 1 }}>
             <Filter id="search-page-filter" />
-            <SideNews news={[1, 2, 3, 4]} />
+            <SideNews newses={newses} />
           </Col>
         </Row>
       </Container>

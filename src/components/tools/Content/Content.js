@@ -4,8 +4,6 @@ import "./Content.scss"
 import pdf from "../../../images/icons/files/pdf.svg"
 
 const Content = props => {
-  console.log(props)
-
   return (
     <article className={"content"}>
       {/* title */}

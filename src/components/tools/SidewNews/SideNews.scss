@@ -1,7 +1,7 @@
 section.side-news {
   height: auto;
   width: 100%;
-  margin: 0;
+  margin: 1.5rem 0;
   padding: 0;
 
   // posiiton
@@ -54,6 +54,10 @@ section.side-news {
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3; /* number of lines to show */
+
+      h4 {
+        line-height: 180%;
+      }
     }
   }
 }

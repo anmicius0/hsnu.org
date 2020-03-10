@@ -84,6 +84,29 @@
 
   // context
   .context {
+    line-height: 160%;
+
+    h1,
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    p + h1,
+    h2 {
+      margin-top: 3rem;
+    }
+
+    p,
+    strong,
+    a {
+      font-size: 1.3rem;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
     a {
       color: #212529 !important;
       text-decoration: underline black;

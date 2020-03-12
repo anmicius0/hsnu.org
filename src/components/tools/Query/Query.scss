@@ -8,7 +8,7 @@
     // search result card (component)
     .search-result {
       // box
-      margin: 0.8rem 0;
+      margin: 1.3rem 0;
       padding: 0 1rem;
 
       // title
@@ -18,16 +18,20 @@
 
       //   meta
       .meta {
+        // box
         height: auto;
         width: auto;
+        margin: 0.8rem 0;
+
+        // flex
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: nowrap;
 
         p {
           display: inline-block;
           color: black;
+          max-width: 30%;
 
           &.tag {
             color: white;
@@ -35,6 +39,18 @@
             padding: 0.3rem 1rem;
             border-radius: 20px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #search-result-container {
+    .row {
+      .search-result {
+        .meta {
+          width: 60%;
         }
       }
     }

@@ -65,7 +65,7 @@ export default () => {
   //////////////
   //  search  //
   //////////////
-  const [results, setResults] = useState()
+  const [results, setResults] = useState([])
 
   // get search paramaters
   var search_param = new URL(document.URL).searchParams.get("search")
@@ -110,7 +110,7 @@ export default () => {
         <Row>
           <Col lg="7">
             <Searchbox showFilter />
-            {results ? (
+            {results.length ? (
               <Query results={results} />
             ) : (
               <Container fluid id="search-result-container">

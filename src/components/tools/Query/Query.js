@@ -22,7 +22,7 @@ export default ({ results }) => {
               <div className={"meta"}>
                 <p className={"is-5 light"}>教務處</p>
                 <p className={"is-5 light"}>2020/1/11</p>
-                <p className={"is-5 tag"}>熱門</p>
+                {/* <p classNam e={"is-5 tag"}>熱門</p> */}
               </div>
             </Link>
           </Col>

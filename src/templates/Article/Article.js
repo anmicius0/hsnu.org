@@ -22,7 +22,7 @@ export default ({ data }) => {
   useEffect(() => {
     axios
       .get(
-        `http://104.196.34.86/index.php/wp-json/wp/v2/news?per_page=20&page=1`
+        `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=1`
       )
       .then(res => {
         console.log(res.data)
@@ -43,7 +43,7 @@ export default ({ data }) => {
       ) {
         axios
           .get(
-            `http://104.196.34.86/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
+            `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
           )
           .then(res => {
             console.log(res.data)
@@ -91,6 +91,7 @@ export const query = graphql`
       edges {
         node {
           title
+          date
           wordpress_id
           content
           acf {

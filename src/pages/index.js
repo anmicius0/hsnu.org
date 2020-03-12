@@ -22,7 +22,10 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allPosts: allWordpressWpSpost(limit: 10) {
+    allPosts: allWordpressWpSpost(
+      limit: 10
+      sort: { fields: date, order: DESC }
+    ) {
       edges {
         node {
           title
@@ -33,6 +36,7 @@ export const query = graphql`
     studentPosts: allWordpressWpSpost(
       filter: { acf: { genre: { eq: "學生" } } }
       limit: 10
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
@@ -44,6 +48,7 @@ export const query = graphql`
     teacherPosts: allWordpressWpSpost(
       filter: { acf: { genre: { eq: "教師" } } }
       limit: 10
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
@@ -56,6 +61,7 @@ export const query = graphql`
     racePosts: allWordpressWpSpost(
       filter: { acf: { genre: { eq: "競賽" } } }
       limit: 10
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {
@@ -67,6 +73,7 @@ export const query = graphql`
     researchPosts: allWordpressWpSpost(
       filter: { acf: { genre: { eq: "講座及課程" } } }
       limit: 10
+      sort: { fields: date, order: DESC }
     ) {
       edges {
         node {

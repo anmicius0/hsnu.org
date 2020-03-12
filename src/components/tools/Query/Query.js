@@ -5,15 +5,18 @@ import { Link } from "gatsby"
 // style
 import "./Query.scss"
 
-export default () => {
+export default ({ results }) => {
   return (
     <Container fluid id="search-result-container">
       <Row>
-        {[1, 2, 3, 4].map(item => (
+        {results.map(result => (
           <Col className={"search-result"}>
             <Link to="#">
               {/* title */}
-              <h3 className={"is-3 bold"}>title</h3>
+              <h3
+                className={"is-3 semi"}
+                dangerouslySetInnerHTML={{ __html: result.title.rendered }}
+              />
 
               {/* meta */}
               <div className={"meta"}>

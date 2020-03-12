@@ -19,10 +19,11 @@
       //   meta
       .meta {
         height: auto;
-        width: 100%;
+        width: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: nowrap;
 
         p {
           display: inline-block;

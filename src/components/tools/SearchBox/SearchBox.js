@@ -14,8 +14,13 @@ import filter from "../../../images/icons/functional/filter.svg"
 const SearchBox = ({ showFilter = false }) => {
   return (
     <>
-      <Form className={"search-box"}>
-        <FormControl type="text" placeholder="Search" className={"is-4"} />
+      <Form className={"search-box"} action="/search" method="get">
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className={"is-4"}
+          name="search"
+        />
         <Button type="submit" variant="light">
           <img src={search}></img>
         </Button>

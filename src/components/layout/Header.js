@@ -87,11 +87,12 @@ const Header = () => {
 
       {/* search box in the nav */}
       <div id="nav-search">
-        <Form>
+        <Form action="/search" method="get">
           <FormControl
             id="nav-search-box"
             type="text"
             placeholder="Search"
+            name="search"
             className={"is-3 bold"}
           />
         </Form>

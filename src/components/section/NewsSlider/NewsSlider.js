@@ -1,6 +1,5 @@
 import React from "react"
 import Swiper from "react-id-swiper"
-import { Helmet } from "react-helmet"
 
 import asylum from "../../../images/cover/asylum.jpeg"
 
@@ -20,17 +19,6 @@ const newsSlider = () => {
 
   return (
     <>
-      <Helmet>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
-        />
-      </Helmet>
-
       <div id="news-slider">
         <Swiper {...params}>
           {[1, 2, 3].map(item => (

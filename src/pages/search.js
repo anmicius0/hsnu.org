@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import { Link } from "gatsby"
-import Layout from "../components/layout/Layout"
 import axios from "axios"
+import Layout from "../components/layout/Layout"
 
 // style
 import "../styles/scss/search/search.scss"
@@ -80,12 +79,12 @@ export default () => {
           search_param ? "search=" + search_param : ""
         }${
           genre_param
-            ? "filter[meta_query][0][key]=genre&filter[meta_query][0][value]=" +
+            ? "&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=" +
               genre_param
             : ""
         }${
           subgenre_param
-            ? "filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=" +
+            ? "&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=" +
               subgenre_param
             : ""
         }
@@ -116,10 +115,8 @@ export default () => {
               <Container fluid id="search-result-container">
                 <Row>
                   <Col className={"search-result"}>
-                    <Link>
-                      {/* title */}
-                      <h3 className={"is-3 bold"}>No result found</h3>
-                    </Link>
+                    {/* title */}
+                    <h3 className={"is-3 bold"}>No result found</h3>
                   </Col>
                 </Row>
               </Container>

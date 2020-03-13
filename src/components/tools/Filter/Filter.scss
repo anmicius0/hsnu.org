@@ -1,7 +1,7 @@
 // filter
 .filter {
   display: none;
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
   height: auto;
 
   // each filter
@@ -37,6 +37,13 @@
         border: solid red 1px;
       }
     }
+  }
+
+  button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 2rem;
   }
 }
 

@@ -13,9 +13,7 @@ import Filter from "../components/tools/Filter/Filter"
 import SideNews from "../components/tools/SidewNews/SideNews"
 
 export default () => {
-  ////////////////////////////////////////////////
   //    when scroll near the bottom, add news   //
-  ////////////////////////////////////////////////
   const [newses, setNewses] = useState(null)
   const [page_now, setPage_now] = useState(1)
 
@@ -57,14 +55,11 @@ export default () => {
       }
     }
   }, [newses])
-  ///////////////
   //    End   ///
-  ///////////////
 
-  //////////////
-  //  search  //
-  //////////////
+  //  search
   const [results, setResults] = useState([])
+  const [status, setStatus] = useState("Searching...")
 
   // get search paramaters
   var search_param = new URL(document.URL).searchParams.get("search")
@@ -92,7 +87,9 @@ export default () => {
       )
       .then(res => {
         console.log(res.data)
-        setResults(res.data)
+        res.data.length === 0
+          ? setStatus("Nothing Found (´･_･`)")
+          : setResults(res.data)
       })
       .catch(err => {
         console.log(err)
@@ -116,7 +113,7 @@ export default () => {
                 <Row>
                   <Col className={"search-result"}>
                     {/* title */}
-                    <h3 className={"is-3 bold"}>No result found</h3>
+                    <h3 className={"is-3 bold"}>{status}</h3>
                   </Col>
                 </Row>
               </Container>

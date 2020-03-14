@@ -25,7 +25,10 @@
     // box
     width: 100%;
     padding: 0 1rem;
-    color: white;
+
+    h1 {
+      color: white;
+    }
 
     // limit line
     overflow: hidden;
@@ -36,7 +39,6 @@
   }
   a:hover {
     cursor: pointer;
-    color: white;
   }
 
   // fade (component)

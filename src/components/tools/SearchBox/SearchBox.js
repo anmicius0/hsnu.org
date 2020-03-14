@@ -15,15 +15,20 @@ const SearchBox = ({ showFilter = false }) => {
   return (
     <>
       <Form className={"search-box"} action="/search" method="get">
+        {/* textbox */}
         <FormControl
           type="text"
           placeholder="Search"
           className={"is-4"}
           name="search"
         />
+
+        {/* submit */}
         <Button type="submit" variant="light">
           <img src={search}></img>
         </Button>
+
+        {/* filter button on mobile */}
         {showFilter ? (
           <Button
             variant="light"
@@ -38,6 +43,8 @@ const SearchBox = ({ showFilter = false }) => {
           </Button>
         ) : null}
       </Form>
+
+      {/* filter */}
       {showFilter ? <Filter id="search-box-filter" /> : null}
     </>
   )

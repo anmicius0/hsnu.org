@@ -63,7 +63,9 @@ const PostsList = props => {
           )
         )}
         <Nav.Item className={"genre more"}>
-          <h3 className={"is-3"}>更多...</h3>
+          <Link to="/search">
+            <h3 className={"is-3"}>更多...</h3>
+          </Link>
         </Nav.Item>
       </Nav>
 

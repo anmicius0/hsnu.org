@@ -1,12 +1,29 @@
 import React from "react"
 import Swiper from "react-id-swiper"
-
-import asylum from "../../../images/cover/asylum.jpeg"
+import { useStaticQuery, graphql } from "gatsby"
 
 // style
 import "./NewsSlider.scss"
 
 const newsSlider = () => {
+  const news = useStaticQuery(graphql`
+    {
+      allWordpressWpNews(limit: 4, skip: 1) {
+        edges {
+          node {
+            title
+            acf {
+              image {
+                source_url
+              }
+              link
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpNews.edges
+
   // config of swiper
   const params = {
     loop: "true",
@@ -21,25 +38,21 @@ const newsSlider = () => {
     <>
       <div id="news-slider">
         <Swiper {...params}>
-          {[1, 2, 3].map(item => (
+          {news.map(news => (
             <div className={"news-card-l"}>
-              <a>
+              <a href={news.node.acf.link}>
                 {/* cover */}
                 <figure>
-                  <img src={asylum} />
+                  <img
+                    src={news.node.acf.image.source_url}
+                    alt="feature news"
+                  />
                 </figure>
 
                 {/* title and sub-title */}
                 <div className={"text"}>
                   {/* title */}
-                  <h3 className={"is-3 serif bold"}>
-                    等待落實的人權－臺灣《難民法草案》
-                    等待落實的人權－臺灣《難民法草案》
-                  </h3>
-                  {/* sub-title */}
-                  <p className={"sub-title is-7 light"}>
-                    臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》臺灣《難民法草案》草案》
-                  </p>
+                  <h3 className={"is-3 serif bold"}>{news.node.title}</h3>
                 </div>
               </a>
             </div>

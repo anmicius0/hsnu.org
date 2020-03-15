@@ -1,8 +1,12 @@
 import React from "react"
+import { get_news } from "../../../data/news.js"
 
 import "./SideNews.scss"
 
 const SideNews = ({ newses }) => {
+  const top_news = get_news(0, 1)
+  console.log(top_news)
+
   return (
     <section className={"side-news"}>
       <h2 className={"is-2 serif bold"}>更多作品</h2>

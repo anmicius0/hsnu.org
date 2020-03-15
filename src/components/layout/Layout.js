@@ -11,7 +11,7 @@ import Sidebar from "./Sidebar"
 import "../../styles/scss/layout/layout.scss"
 import "bootstrap/scss/bootstrap.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title = "師大附中" }) => {
   return (
     <>
       <Helmet>
@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"
         />
+        <title>{title}</title>
       </Helmet>
 
       <Header />

@@ -100,7 +100,7 @@ export default () => {
   ///////////////
 
   return (
-    <Layout>
+    <Layout title={`${search_param} - 搜尋 師大附中`}>
       <div id="header-padding" />
       <Container id="search-page" fluid>
         <Row>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
+import { Helmet } from "react-helmet"
 import axios from "axios"
 
 // style
@@ -61,27 +63,32 @@ export default ({ data }) => {
   ///////////////
 
   return (
-    <Layout>
-      <div id="header-padding" />
-      <Container id="article" fluid>
-        <Row>
-          <Col lg="7">
-            <Content
-              title={data.allWordpressWpSpost.edges[0].node.title}
-              genre={data.allWordpressWpSpost.edges[0].node.acf.genre}
-              date={data.allWordpressWpSpost.edges[0].node.date}
-              content={data.allWordpressWpSpost.edges[0].node.content}
-              urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
-              files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
-            />
-            <RecommandVideo />
-          </Col>
-          <Col lg={{ span: 4, offset: 1 }}>
-            {newses ? <SideNews newses={newses} /> : null}
-          </Col>
-        </Row>
-      </Container>
-    </Layout>
+    <>
+      <Helmet>
+        <title>{data.allWordpressWpSpost.edges[0].node.title}</title>
+      </Helmet>
+      <Layout>
+        <div id="header-padding" />
+        <Container id="article" fluid>
+          <Row>
+            <Col lg="7">
+              <Content
+                title={data.allWordpressWpSpost.edges[0].node.title}
+                genre={data.allWordpressWpSpost.edges[0].node.acf.genre}
+                date={data.allWordpressWpSpost.edges[0].node.date}
+                content={data.allWordpressWpSpost.edges[0].node.content}
+                urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
+                files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
+              />
+              <RecommandVideo />
+            </Col>
+            <Col lg={{ span: 4, offset: 1 }}>
+              {newses ? <SideNews newses={newses} /> : null}
+            </Col>
+          </Row>
+        </Container>
+      </Layout>
+    </>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { Form, Button } from "react-bootstrap"
 
 // stlye
@@ -7,7 +7,6 @@ import "./Filter.scss"
 export default ({ id }) => {
   //          dynamic options         //
 
-  const genre_ref = useRef()
   const [genre, setGenre] = useState("全部")
   const [subgenre, setSubgenre] = useState(["全部"])
 
@@ -22,10 +21,8 @@ export default ({ id }) => {
       switch (genre) {
         case "學生":
           return ["周輔", "檢定", "活動", "段考", "徵才", "課表", "獎學金"]
-          break
         case "競賽":
           return ["語文", "自然", "美術", "資訊", "其他"]
-          break
         default:
           return [`${genre}`]
       }

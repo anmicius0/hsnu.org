@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `HSNU.org`,
+    description: ``,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -45,6 +45,14 @@ module.exports = {
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: true,
+        // Blacklisted routes using glob patterns
+        excludedRoutes: [
+          "**/blocks",
+          "**/users",
+          "**/settings",
+          "**/themes",
+          "**/taxonomies",
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

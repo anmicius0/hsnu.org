@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav, Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 // icons
 import medium from "../../images/icons/socialMedia/medium.svg"

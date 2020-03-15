@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap"
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 // icon and images
@@ -65,7 +65,7 @@ const Header = () => {
             }}
           >
             <Nav.Link>
-              <img src={search} />
+              <img src={search} alt="search" />
             </Nav.Link>
           </Nav.Item>
 
@@ -79,7 +79,7 @@ const Header = () => {
             }}
           >
             <Nav.Link>
-              <img src={menu} />
+              <img src={menu} alt="menu" />
             </Nav.Link>
           </Nav.Item>
         </Nav>

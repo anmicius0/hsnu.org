@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
-import { Helmet } from "react-helmet"
 import axios from "axios"
 
 // style
@@ -14,9 +13,7 @@ import Content from "../../components/tools/Content/Content"
 import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
-  ////////////////////////////////////////////////
-  //    when scroll near the bottom, add news   //
-  ////////////////////////////////////////////////
+  //  when scroll near the bottom, add news
   const [newses, setNewses] = useState(null)
   const [page_now, setPage_now] = useState(1)
 
@@ -24,7 +21,7 @@ export default ({ data }) => {
   useEffect(() => {
     axios
       .get(
-        `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=1`
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=1`
       )
       .then(res => {
         console.log(res.data)
@@ -45,7 +42,7 @@ export default ({ data }) => {
       ) {
         axios
           .get(
-            `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
+            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
           )
           .then(res => {
             console.log(res.data)
@@ -58,16 +55,10 @@ export default ({ data }) => {
       }
     }
   }, [newses])
-  ///////////////
-  //    End   ///
-  ///////////////
 
   return (
     <>
-      <Helmet>
-        <title>{data.allWordpressWpSpost.edges[0].node.title}</title>
-      </Helmet>
-      <Layout>
+      <Layout title={data.allWordpressWpSpost.edges[0].node.title}>
         <div id="header-padding" />
         <Container id="article" fluid>
           <Row>

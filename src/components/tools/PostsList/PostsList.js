@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col, Nav } from "react-bootstrap"
+import PropTypes from "prop-types"
 
 import "./Postslist.scss"
 
-const PostsList = props => {
+const PostsList = ({ posts }) => {
   // toggle tabs
   useEffect(() => {
     const genres = document.querySelectorAll(".genre:not(.more)")
@@ -31,7 +32,7 @@ const PostsList = props => {
     { name: "教師", codeName: "teacherPosts" },
   ]
 
-  const [postlist, setPostlist] = useState(props.postlist.allPosts.edges)
+  const [current_posts, setCurrent_posts] = useState(posts.allPosts.edges)
 
   return (
     <div className={"posts"}>
@@ -43,7 +44,7 @@ const PostsList = props => {
               <h3
                 className={"is-3"}
                 onClick={() => {
-                  setPostlist(props.postlist[item.codeName].edges)
+                  setCurrent_posts(posts[item.codeName].edges)
                 }}
               >
                 {item.name}
@@ -54,7 +55,7 @@ const PostsList = props => {
               <h3
                 className={"is-3"}
                 onClick={() => {
-                  setPostlist(props.postlist[item.codeName].edges)
+                  setCurrent_posts(posts[item.codeName].edges)
                 }}
               >
                 {item.name}
@@ -71,12 +72,12 @@ const PostsList = props => {
 
       <Container>
         <Row className={"flex-column"}>
-          {postlist.map(item => (
+          {current_posts.map(post => (
             <Col className={"post"}>
-              <Link to={"/post/" + item.node.wordpress_id}>
+              <Link to={"/post/" + post.node.wordpress_id}>
                 <h4
                   className={"is-4"}
-                  dangerouslySetInnerHTML={{ __html: item.node.title }}
+                  dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
               </Link>
             </Col>
@@ -85,6 +86,10 @@ const PostsList = props => {
       </Container>
     </div>
   )
+}
+
+PostsList.prototype = {
+  posts: PropTypes.array,
 }
 
 export default PostsList

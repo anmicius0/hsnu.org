@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import "./SideNews.scss"
 
@@ -14,7 +15,10 @@ const SideNews = ({ newses }) => {
             <a href={news.node.acf.link} className={"news-card-s"}>
               {/* cover */}
               <figure>
-                <img src={news.node.acf.image.source_url}></img>
+                <img
+                  src={news.node.acf.image.source_url}
+                  alt={news.node.title}
+                />
               </figure>
 
               {/* title */}
@@ -29,7 +33,10 @@ const SideNews = ({ newses }) => {
             <a href={news.acf.link} className={"news-card-s"}>
               {/* cover */}
               <figure>
-                <img src={news.acf.image.url}></img>
+                <img
+                  src={news.acf.image.sizes.thumbnail}
+                  alt={news.title.rendered}
+                />
               </figure>
 
               {/* title */}
@@ -43,6 +50,10 @@ const SideNews = ({ newses }) => {
           ))}
     </section>
   )
+}
+
+SideNews.prototype = {
+  newses: PropTypes.array,
 }
 
 export default SideNews

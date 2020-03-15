@@ -1,7 +1,7 @@
 import React from "react"
-import Swiper from "react-id-swiper"
 import { Container, Row, Col } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
+import Swiper from "react-id-swiper"
 
 // icons
 import spotify from "../../../images/icons/socialMedia-colored/spotify-colored.svg"
@@ -81,7 +81,10 @@ const Clubs = () => {
             <div className={"club-card"}>
               {/* cover */}
               <figure>
-                <img src={club.node.featured_media.source_url} />
+                <img
+                  src={club.node.featured_media.source_url}
+                  alt={club.node.title}
+                />
               </figure>
 
               {/* club info card */}
@@ -95,7 +98,10 @@ const Clubs = () => {
                     {club.node.acf.social_medias.map(media => (
                       <Col className={"icon col-4 col-sm-3"}>
                         <a href={media.media_link}>
-                          <img src={type_to_icon(media.media_type)} />
+                          <img
+                            src={type_to_icon(media.media_type)}
+                            alt={media.media_type}
+                          />
                         </a>
                       </Col>
                     ))}

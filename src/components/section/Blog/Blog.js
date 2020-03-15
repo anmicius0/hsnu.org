@@ -8,10 +8,10 @@ import "./Blog.scss"
 import PostLists from "../../tools/PostsList/PostsList"
 import SideNews from "../../tools/SidewNews/SideNews"
 
-const Posts = props => {
+const Blog = ({ posts }) => {
   const newses = useStaticQuery(graphql`
-    query {
-      allWordpressWpNews(limit: 4) {
+    {
+      allWordpressWpNews(limit: 4, skip: 1) {
         edges {
           node {
             title
@@ -32,7 +32,7 @@ const Posts = props => {
       <Row>
         {/* posts */}
         <Col lg="7">
-          <PostLists postlist={props.postlist} />
+          <PostLists posts={posts} />
         </Col>
 
         {/* side news (component) */}
@@ -44,4 +44,4 @@ const Posts = props => {
   )
 }
 
-export default Posts
+export default Blog

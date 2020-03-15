@@ -14,7 +14,7 @@ export default ({ data }) => {
     <Layout>
       <Landing />
       <NewsSlider />
-      <Blog postlist={data} />
+      <Blog posts={data} />
       <Clubs />
     </Layout>
   )

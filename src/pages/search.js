@@ -12,8 +12,10 @@ import Searchbox from "../components/tools/SearchBox/SearchBox"
 import Filter from "../components/tools/Filter/Filter"
 import SideNews from "../components/tools/SidewNews/SideNews"
 
-export default () => {
-  //    when scroll near the bottom, add news   //
+export default ({ location }) => {
+  //
+  //  News
+  //
   const [newses, setNewses] = useState(null)
   const [page_now, setPage_now] = useState(1)
 
@@ -21,7 +23,7 @@ export default () => {
   useEffect(() => {
     axios
       .get(
-        `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=1`
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=1`
       )
       .then(res => {
         console.log(res.data)
@@ -42,7 +44,7 @@ export default () => {
       ) {
         axios
           .get(
-            `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
+            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
           )
           .then(res => {
             console.log(res.data)
@@ -55,22 +57,33 @@ export default () => {
       }
     }
   }, [newses])
-  //    End   ///
 
+  //
   //  search
+  //
   const [results, setResults] = useState([])
   const [status, setStatus] = useState("Searching...")
 
   // get search paramaters
-  var search_param = new URL(document.URL).searchParams.get("search")
-  var genre_param = new URL(document.URL).searchParams.get("genre")
-  var subgenre_param = new URL(document.URL).searchParams.get("subgenre")
+  // (remember, there is no browser at build time)
+  var search_param =
+    typeof window !== "undefined"
+      ? new URL(location.href).searchParams.get("search")
+      : ""
+  var genre_param =
+    typeof window !== "undefined"
+      ? new URL(location.href).searchParams.get("genre")
+      : ""
+  var subgenre_param =
+    typeof window !== "undefined"
+      ? new URL(location.href).searchParams.get("subgenre")
+      : ""
 
   // request wordpress api
   useEffect(() => {
     axios
       .get(
-        `https://anmicius.cnmc.tw/index.php/wp-json/wp/v2/spost?${
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?${
           search_param ? "search=" + search_param : ""
         }${
           genre_param
@@ -95,9 +108,6 @@ export default () => {
         console.log(err)
       })
   }, [])
-  ///////////////
-  //    End   ///
-  ///////////////
 
   return (
     <Layout title={`${search_param} - 搜尋 師大附中`}>

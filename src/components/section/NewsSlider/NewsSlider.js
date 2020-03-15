@@ -1,11 +1,12 @@
 import React from "react"
-import Swiper from "react-id-swiper"
 import { useStaticQuery, graphql } from "gatsby"
+import Swiper from "react-id-swiper"
 
 // style
 import "./NewsSlider.scss"
 
 const newsSlider = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const news = useStaticQuery(graphql`
     {
       allWordpressWpNews(limit: 4, skip: 1) {
@@ -39,7 +40,7 @@ const newsSlider = () => {
       <div id="news-slider">
         <Swiper {...params}>
           {news.map(news => (
-            <div className={"news-card-l"}>
+            <div className={"news-card-l"} key={news.node.title}>
               <a href={news.node.acf.link}>
                 {/* cover */}
                 <figure>

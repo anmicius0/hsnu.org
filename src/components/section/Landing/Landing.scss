@@ -8,10 +8,12 @@
   padding: 0;
   margin: 0;
 
-  // background (image)
-  background-image: url("../../../images/cover/fire.jpg");
-  background-size: cover;
-  background-position: center;
+  // cover
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 
   // title
   a {
@@ -39,6 +41,7 @@
   }
   a:hover {
     cursor: pointer;
+    text-decoration: none;
   }
 
   // fade (component)

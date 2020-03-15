@@ -1,5 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
+
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
@@ -42,7 +43,7 @@ const Sidebar = () => {
                 <h4 className={"is-4 bold"}>{menu.node.title}</h4>
                 {menu.node.items.map(item => (
                   <li className={"is-5"}>
-                    <a href={item.url}>{item.title}</a>
+                    <Link href={item.url}>{item.title}</Link>
                   </li>
                 ))}
               </ul>

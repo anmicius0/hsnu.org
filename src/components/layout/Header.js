@@ -1,6 +1,6 @@
 import React from "react"
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"

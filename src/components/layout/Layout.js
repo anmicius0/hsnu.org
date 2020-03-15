@@ -43,6 +43,7 @@ const Layout = ({ children, title = "師大附中" }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  title: PropTypes.string,
 }
 
 export default Layout

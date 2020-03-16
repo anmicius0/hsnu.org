@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Swiper from "react-id-swiper"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 
 // style
 import "./NewsSlider.scss"
@@ -44,7 +45,7 @@ const newsSlider = () => {
               <a href={news.node.acf.link}>
                 {/* cover */}
                 <figure>
-                  <img
+                  <LazyLoadImage
                     src={news.node.acf.image.source_url}
                     alt="feature news"
                   />

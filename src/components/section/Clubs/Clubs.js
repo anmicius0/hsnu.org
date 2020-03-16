@@ -2,6 +2,7 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import Swiper from "react-id-swiper"
+import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 // icons
 import spotify from "../../../images/icons/socialMedia-colored/spotify-colored.svg"
@@ -75,43 +76,45 @@ const Clubs = () => {
   return (
     <section id="clubs">
       <h2 className={"is-2 serif bold"}>社團</h2>
-      <Swiper {...params}>
-        {clubs.map(club => (
-          <div>
-            <div className={"club-card"}>
-              {/* cover */}
-              <figure>
-                <img
-                  src={club.node.featured_media.source_url}
-                  alt={club.node.title}
-                />
-              </figure>
+      <LazyLoadComponent>
+        <Swiper {...params}>
+          {clubs.map(club => (
+            <div>
+              <div className={"club-card"}>
+                {/* cover */}
+                <figure>
+                  <img
+                    src={club.node.featured_media.source_url}
+                    alt={club.node.title}
+                  />
+                </figure>
 
-              {/* club info card */}
-              <div className={"club-info"}>
-                {/* title */}
-                <h3 className={"is-3 bold serif"}>{club.node.title}</h3>
+                {/* club info card */}
+                <div className={"club-info"}>
+                  {/* title */}
+                  <h3 className={"is-3 bold serif"}>{club.node.title}</h3>
 
-                {/* social media */}
-                <Container>
-                  <Row className={"icons"}>
-                    {club.node.acf.social_medias.map(media => (
-                      <Col className={"icon col-4 col-sm-3"}>
-                        <a href={media.media_link}>
-                          <img
-                            src={type_to_icon(media.media_type)}
-                            alt={media.media_type}
-                          />
-                        </a>
-                      </Col>
-                    ))}
-                  </Row>
-                </Container>
+                  {/* social media */}
+                  <Container>
+                    <Row className={"icons"}>
+                      {club.node.acf.social_medias.map(media => (
+                        <Col className={"icon col-4 col-sm-3"}>
+                          <a href={media.media_link}>
+                            <img
+                              src={type_to_icon(media.media_type)}
+                              alt={media.media_type}
+                            />
+                          </a>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Container>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Swiper>
+          ))}
+        </Swiper>
+      </LazyLoadComponent>
     </section>
   )
 }

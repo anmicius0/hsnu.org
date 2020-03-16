@@ -32,6 +32,7 @@
     "react-helmet": "^5.2.1",
     "react-id-swiper": "^2.4.0",
     "react-lazy-load": "^3.0.13",
+    "react-lazy-load-image-component": "^1.4.1",
     "swiper": "^5.3.1"
   },
   "devDependencies": {

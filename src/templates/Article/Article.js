@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
+import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 // style
 import "./Article.scss"
@@ -75,7 +76,9 @@ export default ({ data }) => {
                 urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
                 files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
               />
-              <RecommandVideo />
+              <LazyLoadComponent>
+                <RecommandVideo />
+              </LazyLoadComponent>
             </Col>
             <Col lg={{ span: 4, offset: 1 }}>
               {newses ? <SideNews newses={newses} /> : null}

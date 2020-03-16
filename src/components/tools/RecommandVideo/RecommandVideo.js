@@ -10,6 +10,7 @@ const RecommandVideo = () => {
 
       {/* embed */}
       <iframe
+        title="youtube"
         width="560"
         height="315"
         src="https://www.youtube-nocookie.com/embed/w0mog_xxY9Q?autoplay=1"

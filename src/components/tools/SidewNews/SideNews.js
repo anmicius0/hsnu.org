@@ -1,4 +1,5 @@
 import React from "react"
+import { LazyLoadImage } from "react-lazy-load-image-component"
 import PropTypes from "prop-types"
 
 import "./SideNews.scss"
@@ -15,7 +16,7 @@ const SideNews = ({ newses }) => {
             <a href={news.node.acf.link} className={"news-card-s"}>
               {/* cover */}
               <figure>
-                <img
+                <LazyLoadImage
                   src={news.node.acf.image.source_url}
                   alt={news.node.title}
                 />

@@ -15,6 +15,7 @@ const SearchBox = ({ showFilter = false }) => {
   return (
     <>
       <Form className={"search-box"} action="/search" method="get">
+        <Form.Label hidden>Search Box</Form.Label>
         {/* textbox */}
         <FormControl
           type="text"
@@ -25,7 +26,7 @@ const SearchBox = ({ showFilter = false }) => {
 
         {/* submit */}
         <Button type="submit" variant="light">
-          <img src={search}></img>
+          <img src={search} alt={"search!"}></img>
         </Button>
 
         {/* filter button on mobile */}
@@ -39,7 +40,7 @@ const SearchBox = ({ showFilter = false }) => {
                 .classList.toggle("show")
             }}
           >
-            <img src={filter}></img>
+            <img src={filter} alt="filter"></img>
           </Button>
         ) : null}
       </Form>

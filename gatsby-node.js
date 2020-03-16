@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const Sposts = result.data.allWordpressWpSpost.edges
+  const Sposts = result.allWordpressWpSpost.edges
   Sposts.forEach(post => {
     createPage({
       path: `/post/${post.node.wordpress_id}`,

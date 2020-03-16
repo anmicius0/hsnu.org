@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, pathname, article }) => (
+const SEO = ({ title, description, pathname, article }) => (
   <StaticQuery
     query={query}
     render={({
@@ -13,22 +13,30 @@ const SEO = ({ title, description, image, pathname, article }) => (
           titleTemplate,
           defaultDescription,
           siteUrl,
-          defaultImage,
+          siteImage,
         },
       },
     }) => {
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname || "/"}`,
+        image: siteImage,
       }
 
       return (
         <>
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
+            <meta charset="UTF-8" />
+            <meta
+              name="keywords"
+              content="HSNU, 師大附中, 附中, 臺北高中, 大安區"
+            />
+            <meta name="author" content="github@Anmicius0" />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
+
+            {/* open graph (Face Book)*/}
             {seo.url && <meta property="og:url" content={seo.url} />}
             {(article ? true : null) && (
               <meta property="og:type" content="article" />
@@ -38,12 +46,20 @@ const SEO = ({ title, description, image, pathname, article }) => (
               <meta property="og:description" content={seo.description} />
             )}
             {seo.image && <meta property="og:image" content={seo.image} />}
+
+            {/* twitter */}
             <meta name="twitter:card" content="summary_large_image" />
             {seo.title && <meta name="twitter:title" content={seo.title} />}
             {seo.description && (
               <meta name="twitter:description" content={seo.description} />
             )}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
+
+            {/* Google Search Console */}
+            <meta
+              name="google-site-verification"
+              content="Wy3ED0joPSTy8mtnur6mrxByXxOhP6LT4sMrnu5p818"
+            />
           </Helmet>
         </>
       )
@@ -77,6 +93,7 @@ const query = graphql`
         titleTemplate
         defaultDescription: description
         siteUrl: url
+        image
       }
     }
   }

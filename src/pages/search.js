@@ -110,7 +110,7 @@ export default ({ location }) => {
   }, [])
 
   return (
-    <Layout title={`${search_param} - 搜尋 師大附中`}>
+    <Layout title={`搜尋「${search_param}」`}>
       <div id="header-padding" />
       <Container id="search-page" fluid>
         <Row>

@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 // components
+import Seo from "./Seo"
 import Header from "./Header"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"
@@ -11,16 +12,10 @@ import Sidebar from "./Sidebar"
 import "../../styles/scss/layout/layout.scss"
 import "bootstrap/scss/bootstrap.scss"
 
-const Layout = ({ children, title = "師大附中" }) => {
+const Layout = ({ children, title, description, article }) => {
   return (
     <>
       <Helmet defer={false}>
-        {/* google site verification */}
-        <meta
-          name="google-site-verification"
-          content="WJOAOHiQsleRZO9iTrag_b9Vso1D9x7GQ2w99EZgrxg"
-        />
-
         {/* swiper */}
         <link
           rel="stylesheet"
@@ -32,6 +27,8 @@ const Layout = ({ children, title = "師大附中" }) => {
         />
         <title>{title}</title>
       </Helmet>
+
+      <Seo title={title} description={description} article={article} />
 
       <Header />
       <Sidebar />

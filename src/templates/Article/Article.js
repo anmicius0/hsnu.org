@@ -58,7 +58,11 @@ export default ({ data }) => {
 
   return (
     <>
-      <Layout title={data.allWordpressWpSpost.edges[0].node.title}>
+      <Layout
+        title={data.allWordpressWpSpost.edges[0].node.title}
+        description={data.allWordpressWpSpost.edges[0].node.content}
+        article
+      >
         <div id="header-padding" />
         <Container id="article" fluid>
           <Row>

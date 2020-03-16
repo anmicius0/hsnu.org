@@ -45,10 +45,10 @@
 
 // font uses
 body {
-  font-family: "Taipei Sans", sans-serif;
+  font-family: "Taipei Sans", sans-serif !important;
 }
 .serif {
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Serif", serif !important;
 }
 
 // font sizes
@@ -65,7 +65,7 @@ body {
   line-height: 130%;
 }
 .is-4 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 150%;
 }
 .is-5 {
@@ -75,19 +75,19 @@ body {
 
 @media (min-width: 720px) {
   .is-1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important ;
   }
   .is-2 {
-    font-size: 2rem;
+    font-size: 2rem !important ;
   }
   .is-3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
   .is-4 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
   .is-5 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 }
 

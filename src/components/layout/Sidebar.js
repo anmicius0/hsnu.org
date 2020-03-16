@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
@@ -38,12 +38,12 @@ const Sidebar = () => {
         {/* menu cards*/}
         <ul className={"menu-cards"}>
           {menus.map(menu => (
-            <li>
+            <li key={menu.node.title}>
               <ul className={"menu-card"}>
                 <h4 className={"is-4 bold"}>{menu.node.title}</h4>
                 {menu.node.items.map(item => (
-                  <li className={"is-5"}>
-                    <Link href={item.url}>{item.title}</Link>
+                  <li className={"is-5"} key={item.title}>
+                    <a href={item.url}>{item.title}</a>
                   </li>
                 ))}
               </ul>

@@ -79,7 +79,7 @@ const Clubs = () => {
       <LazyLoadComponent>
         <Swiper {...params}>
           {clubs.map(club => (
-            <div>
+            <div key={club.node.title}>
               <div className={"club-card"}>
                 {/* cover */}
                 <figure>
@@ -98,7 +98,10 @@ const Clubs = () => {
                   <Container>
                     <Row className={"icons"}>
                       {club.node.acf.social_medias.map(media => (
-                        <Col className={"icon col-4 col-sm-3"}>
+                        <Col
+                          className={"icon col-4 col-sm-3"}
+                          key={media.media_link}
+                        >
                           <a href={media.media_link}>
                             <img
                               src={type_to_icon(media.media_type)}

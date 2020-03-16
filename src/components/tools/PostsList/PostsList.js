@@ -40,9 +40,9 @@ const PostsList = ({ posts }) => {
       <Nav variant="tabs" className={"genres"}>
         {genreTabs.map((item, index) =>
           index === 0 ? (
-            <Nav.Item className={"genre active"}>
+            <Nav.Item className={"genre active"} key={item.name}>
               <h3
-                className={"is-3"}
+                className={"is-3 serif bold"}
                 onClick={() => {
                   setCurrent_posts(posts[item.codeName].edges)
                 }}
@@ -51,9 +51,9 @@ const PostsList = ({ posts }) => {
               </h3>
             </Nav.Item>
           ) : (
-            <Nav.Item className={"genre"}>
+            <Nav.Item className={"genre"} key={item.name}>
               <h3
-                className={"is-3"}
+                className={"is-3 serif bold"}
                 onClick={() => {
                   setCurrent_posts(posts[item.codeName].edges)
                 }}
@@ -65,7 +65,7 @@ const PostsList = ({ posts }) => {
         )}
         <Nav.Item className={"genre more"}>
           <Link to="/search">
-            <h3 className={"is-3"}>更多...</h3>
+            <h3 className={"is-3 serif bold"}>更多...</h3>
           </Link>
         </Nav.Item>
       </Nav>
@@ -73,10 +73,10 @@ const PostsList = ({ posts }) => {
       <Container>
         <Row className={"flex-column"}>
           {current_posts.map(post => (
-            <Col className={"post"}>
+            <Col className={"post"} key={post.node.title}>
               <Link to={"/post/" + post.node.wordpress_id}>
                 <h4
-                  className={"is-4"}
+                  className={"is-4 serif semi"}
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
               </Link>

@@ -46,7 +46,7 @@ const Header = () => {
       <Navbar.Collapse>
         <Nav>
           {navs.map(nav => (
-            <Nav.Item>
+            <Nav.Item key={nav.title}>
               <Nav.Link className={"is-5 bold"} href={nav.url}>
                 {nav.title}
               </Nav.Link>

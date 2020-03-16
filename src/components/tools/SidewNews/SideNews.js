@@ -13,7 +13,11 @@ const SideNews = ({ newses }) => {
         ? // from GraphQl
           newses.map(news => (
             // news card small (component)
-            <a href={news.node.acf.link} className={"news-card-s"}>
+            <a
+              href={news.node.acf.link}
+              className={"news-card-s"}
+              key={news.node.title}
+            >
               {/* cover */}
               <figure>
                 <LazyLoadImage
@@ -31,7 +35,11 @@ const SideNews = ({ newses }) => {
         : // from REST
           newses.map(news => (
             // news card small (component)
-            <a href={news.acf.link} className={"news-card-s"}>
+            <a
+              href={news.acf.link}
+              className={"news-card-s"}
+              key={news.title.rendered}
+            >
               {/* cover */}
               <figure>
                 <img

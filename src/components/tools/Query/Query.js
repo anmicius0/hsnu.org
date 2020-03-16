@@ -14,7 +14,7 @@ export default ({ results }) => {
             <Link to={`/post/${result.id}`}>
               {/* title */}
               <h3
-                className={"is-3 semi"}
+                className={"is-3 bold"}
                 dangerouslySetInnerHTML={{ __html: result.title.rendered }}
               />
 

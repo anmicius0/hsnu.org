@@ -33,19 +33,13 @@
 
     h1,
     h2 {
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: 700;
     }
 
-    p + h1,
+    h1,
     h2 {
       margin-top: 3rem;
-    }
-
-    p,
-    strong,
-    a {
-      font-size: 1.3rem;
     }
 
     strong {

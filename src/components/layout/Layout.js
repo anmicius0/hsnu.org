@@ -14,7 +14,7 @@ import "bootstrap/scss/bootstrap.scss"
 const Layout = ({ children, title = "師大附中" }) => {
   return (
     <>
-      <Helmet>
+      <Helmet defer={false}>
         {/* google site verification */}
         <meta
           name="google-site-verification"

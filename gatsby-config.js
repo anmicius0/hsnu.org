@@ -1,25 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `HSNU.org`,
-    description: ``,
-    author: `@gatsbyjs`,
+    title: `國立臺灣師範大學附屬高級中學`,
+    titleTemplate: "%s · HSNU",
+    description: `國立臺灣師範大學附屬高級中學，簡稱台師大附中、師大附中、附中，官方英文簡稱為HSNU，是一所位處台北市中心、位於臺北市大安區信義路上的高級中學，附屬於國立臺灣師範大學。`,
+    url: "https://hsnu.org", // No trailing slash allowed!
+    author: `@anmicius0`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `師大附中`,
+        short_name: `HSNU`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -55,8 +50,7 @@ module.exports = {
         ],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
   ],
 }

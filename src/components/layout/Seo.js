@@ -28,6 +28,7 @@ const SEO = ({ title, description, pathname, article }) => (
         <>
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <meta charset="UTF-8" />
+            <link rel="icon" href="src/images/icons/HSNU.png"></link>
             <meta
               name="keywords"
               content="HSNU, 師大附中, 附中, 臺北高中, 大安區"

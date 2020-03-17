@@ -29,7 +29,7 @@ const Header = () => {
     <Navbar expand="xl" id="header">
       {/* Brand */}
       <Navbar.Brand href="/">
-        <img src={hsnu} alt="Logo of HSNU"></img>
+        <img src={hsnu} alt="師大附中"></img>
       </Navbar.Brand>
 
       {/* Toggler */}

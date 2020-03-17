@@ -20,10 +20,10 @@ const Footer = () => {
       <footer>
         <Container fluid>
           <Row>
-            <Col lg="7" className={"logo"}>
-              <h3 className={"is-3 bold"}>We Are HSNUer</h3>
+            <Col lg="6" className={"logo"}>
+              <h2 className={"is-2 bold"}>We Are HSNUer</h2>
             </Col>
-            <Col lg="5" className={"icons"}>
+            <Col lg="6" className={"icons"}>
               {footers.map(icon => (
                 <a href={icon.link} key={icon.name}>
                   <img src={icon.icon} alt={icon.name}></img>

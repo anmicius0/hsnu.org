@@ -62,6 +62,8 @@ module.exports = {
         configFile: "robots-txt.config.js",
       },
     },
+    "gatsby-plugin-minify-html",
+    "gatsby-plugin-brotli",
     `gatsby-plugin-compression`,
     `gatsby-plugin-offline`,
   ],

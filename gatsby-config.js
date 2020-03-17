@@ -62,6 +62,7 @@ module.exports = {
         configFile: "robots-txt.config.js",
       },
     },
+    `gatsby-plugin-compression`,
     `gatsby-plugin-offline`,
   ],
 }

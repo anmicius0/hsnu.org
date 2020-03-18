@@ -88,6 +88,15 @@
   .swiper-button-next {
     display: none;
   }
+
+  // dots below
+  .swiper-pagination {
+    position: relative;
+
+    .swiper-pagination-bullet-active {
+      background: #000000;
+    }
+  }
 }
 
 @media (min-width: 992px) {

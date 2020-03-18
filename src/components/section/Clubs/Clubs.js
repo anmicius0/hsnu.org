@@ -25,6 +25,9 @@ const Clubs = () => {
     navigation: {
       nextEl: ".swiper-button-next",
     },
+    pagination: {
+      el: ".swiper-pagination",
+    },
   }
 
   // get clubs data from wordpress

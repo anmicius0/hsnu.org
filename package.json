@@ -23,7 +23,7 @@
     "gatsby-plugin-sitemap": "^2.2.30",
     "gatsby-remark-embedder": "^1.11.2",
     "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-source-graphql": "^2.1.11",
+    "gatsby-source-graphql": "^2.1.35",
     "gatsby-source-wordpress": "^3.1.62",
     "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-sharp": "^2.3.14",

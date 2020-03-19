@@ -7,8 +7,8 @@ import "./Landing.scss"
 
 const Landing = () => {
   const headline = useStaticQuery(graphql`
-    query MyQuery {
-      allWordpressWpNews(limit: 1) {
+    {
+      allWordpressWpNews(limit: 1, sort: { fields: date, order: DESC }) {
         edges {
           node {
             title

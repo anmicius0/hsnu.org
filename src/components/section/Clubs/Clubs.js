@@ -5,12 +5,13 @@ import Swiper from "react-id-swiper"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 // icons
-import spotify from "../../../images/icons/socialMedia-colored/spotify-colored.svg"
 import facebook from "../../../images/icons/socialMedia-colored/facebook-colored.svg"
-import telegram from "../../../images/icons/socialMedia-colored/telegram-colored.svg"
 import instagram from "../../../images/icons/socialMedia-colored/instagram-colored.svg"
+import line from "../../../images/icons/socialMedia-colored/line-colored.svg"
 import patreon from "../../../images/icons/socialMedia-colored/patreon-colored.svg"
 import soundcloud from "../../../images/icons/socialMedia-colored/soundcloud-colored.svg"
+import spotify from "../../../images/icons/socialMedia-colored/spotify-colored.svg"
+import telegram from "../../../images/icons/socialMedia-colored/telegram-colored.svg"
 import twitter from "../../../images/icons/socialMedia-colored/twitter-colored.svg"
 import youtube from "../../../images/icons/socialMedia-colored/youtube-colored.svg"
 
@@ -32,18 +33,20 @@ const Clubs = () => {
 
   // get clubs data from wordpress
   const clubs = useStaticQuery(graphql`
-    query {
-      allWordpressWpClubs(limit: 5) {
+    {
+      allWordpressWpClubs {
         edges {
           node {
             title
-            featured_media {
-              source_url
-            }
             acf {
+              image {
+                sizes {
+                  large
+                }
+              }
               social_medias {
-                media_link
                 media_type
+                media_link
               }
             }
           }
@@ -55,18 +58,20 @@ const Clubs = () => {
   // switch type to icon
   function type_to_icon(type) {
     switch (type) {
-      case "spotify":
-        return spotify
       case "facebook":
         return facebook
-      case "telegram":
-        return telegram
       case "instagram":
         return instagram
+      case "line":
+        return line
       case "patreon":
         return patreon
       case "soundcloud":
         return soundcloud
+      case "spotify":
+        return spotify
+      case "telegram":
+        return telegram
       case "twitter":
         return twitter
       case "youtube":
@@ -87,7 +92,7 @@ const Clubs = () => {
                 {/* cover */}
                 <figure>
                   <img
-                    src={club.node.featured_media.source_url}
+                    src={club.node.acf.image.sizes.large}
                     alt={club.node.title}
                   />
                 </figure>

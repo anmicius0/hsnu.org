@@ -14,51 +14,6 @@ import SideNews from "../components/tools/SidewNews/SideNews"
 
 export default ({ location }) => {
   //
-  //  News
-  //
-  const [newses, setNewses] = useState(null)
-  const [page_now, setPage_now] = useState(1)
-
-  // first render
-  useEffect(() => {
-    axios
-      .get(
-        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=1`
-      )
-      .then(res => {
-        console.log(res.data)
-        setPage_now(page_now + 1)
-        setNewses(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
-
-  // load when hit the (1/2) bottom
-  useEffect(() => {
-    window.onscroll = function() {
-      if (
-        window.innerHeight + window.scrollY >=
-        document.body.offsetHeight / 2
-      ) {
-        axios
-          .get(
-            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
-          )
-          .then(res => {
-            console.log(res.data)
-            setPage_now(page_now + 1)
-            setNewses(newses.concat(res.data))
-          })
-          .catch(err => {
-            console.log(err)
-          })
-      }
-    }
-  }, [newses])
-
-  //
   //  search
   //
   const [results, setResults] = useState([])
@@ -108,6 +63,51 @@ export default ({ location }) => {
         console.log(err)
       })
   }, [])
+
+  //
+  //  News
+  //
+  const [newses, setNewses] = useState(null)
+  const [page_now, setPage_now] = useState(1)
+
+  // first render
+  useEffect(() => {
+    axios
+      .get(
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=1`
+      )
+      .then(res => {
+        console.log(res.data)
+        setPage_now(page_now + 1)
+        setNewses(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
+  // load when hit the (1/2) bottom
+  useEffect(() => {
+    window.onscroll = function() {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight / 2
+      ) {
+        axios
+          .get(
+            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
+          )
+          .then(res => {
+            console.log(res.data)
+            setPage_now(page_now + 1)
+            setNewses(newses.concat(res.data))
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    }
+  }, [newses])
 
   return (
     <Layout title={`搜尋「${search_param}」`}>

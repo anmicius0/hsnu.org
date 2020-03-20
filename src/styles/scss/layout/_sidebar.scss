@@ -17,7 +17,8 @@
   overflow-y: scroll;
 
   // toggle animation
-  transition: all ease 0.25s;
+  transition: all ease-in 0.25s;
+
   &.active {
     transform: translateX(0);
   }

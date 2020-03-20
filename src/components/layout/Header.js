@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -24,6 +24,21 @@ const Header = () => {
       }
     `
   ).allDataJson.edges[0].node.navs
+
+  useEffect(() => {
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset
+      if (prevScrollpos > currentScrollPos) {
+        document.querySelector("#header").classList.remove("header-hide")
+      } else {
+        document.querySelector("#header").classList.add("header-hide")
+        document.querySelector("#nav-search").classList.remove("active")
+      }
+      prevScrollpos = currentScrollPos
+    }
+  }, [])
 
   return (
     <Navbar expand="xl" id="header">

@@ -49,10 +49,18 @@
     transform: translate(-50%, 0);
     padding: 1rem 3rem;
     justify-content: space-between;
+
     // shadow
     background: #ffffff;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
+
+    // animation
+    transition: all ease-in-out 0.4s;
+
+    &.header-hide {
+      top: -15%;
+    }
 
     // HSNU logo
     .navbar-brand {
@@ -91,7 +99,9 @@
       height: 0;
       padding: 0 0.5rem;
       overflow: hidden;
-      transition: all 0.25s ease;
+
+      // animation
+      transition: all 0.25s ease-in-out;
 
       // text
       input {

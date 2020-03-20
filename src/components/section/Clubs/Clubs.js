@@ -92,7 +92,7 @@ const Clubs = () => {
                 {/* cover */}
                 <figure>
                   <img
-                    src={club.node.acf.image.sizes.large}
+                    src={club.node.acf.image.sizes.large + ".webp"}
                     alt={club.node.title}
                   />
                 </figure>

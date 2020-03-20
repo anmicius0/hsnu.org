@@ -26,7 +26,10 @@ const Landing = () => {
 
   return (
     <Jumbotron fluid>
-      <img src={headline.node.acf.image.source_url} alt={"Headline"}></img>
+      <img
+        src={headline.node.acf.image.source_url + ".webp"}
+        alt={"Headline"}
+      ></img>
       <div className={"fade-layer"}></div>
       <a href={headline.node.acf.link}>
         <h1 className={"is-1 serif bold"}>{headline.node.title}</h1>

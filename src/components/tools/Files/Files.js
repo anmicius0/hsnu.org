@@ -60,7 +60,10 @@ const Content = ({ files, urls }) => {
                 <a href={file.file.url.source_url}>
                   <div className={`file ${identity_file(file.file.filename)}`}>
                     {/* icon */}
-                    <img src={get_icon(file.file.filename)}></img>
+                    <img
+                      src={get_icon(file.file.filename)}
+                      alt={"File icon"}
+                    ></img>
                     {/* name */}
                     <p className={"is-5"}>{file.file.filename}</p>
                   </div>
@@ -76,7 +79,7 @@ const Content = ({ files, urls }) => {
                 <a href={url.url}>
                   <div className={"file link"}>
                     {/* icon */}
-                    <img src={link}></img>
+                    <img src={link} alt={"Link icon"}></img>
                     {/* name */}
                     <p className={"is-5"}>{url.description}</p>
                   </div>

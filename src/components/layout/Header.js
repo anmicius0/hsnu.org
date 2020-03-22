@@ -26,18 +26,23 @@ const Header = () => {
   ).allDataJson.edges[0].node.navs
 
   useEffect(() => {
-    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-    var prevScrollpos = window.pageYOffset
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset
-      if (prevScrollpos > currentScrollPos) {
-        document.querySelector("#header").classList.remove("header-hide")
-      } else {
-        document.querySelector("#header").classList.add("header-hide")
-        document.querySelector("#nav-search").classList.remove("active")
-      }
-      prevScrollpos = currentScrollPos
-    }
+    var lastScrollTop = 0
+    window.addEventListener(
+      "scroll",
+      function() {
+        var st = window.pageYOffset || document.documentElement.scrollTop
+        if (st > lastScrollTop) {
+          // downscroll code
+          document.querySelector("#header").classList.add("header-hide")
+          document.querySelector("#nav-search").classList.remove("active")
+        } else {
+          // upscroll code
+          document.querySelector("#header").classList.remove("header-hide")
+        }
+        lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+      },
+      false
+    )
   }, [])
 
   return (

@@ -10,12 +10,12 @@ import search from "../../images/icons/functional/search.svg"
 const Header = () => {
   const navs = useStaticQuery(
     graphql`
-      query {
-        allDataJson {
+      {
+        allWordpressWpHeader(limit: 4, sort: { order: ASC, fields: date }) {
           edges {
             node {
-              navs {
-                title
+              acf {
+                name
                 url
               }
             }
@@ -23,21 +23,26 @@ const Header = () => {
         }
       }
     `
-  ).allDataJson.edges[0].node.navs
+  ).allWordpressWpHeader.edges
 
   useEffect(() => {
-    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-    var prevScrollpos = window.pageYOffset
-    window.onscroll = function() {
-      var currentScrollPos = window.pageYOffset
-      if (prevScrollpos > currentScrollPos) {
-        document.querySelector("#header").classList.remove("header-hide")
-      } else {
-        document.querySelector("#header").classList.add("header-hide")
-        document.querySelector("#nav-search").classList.remove("active")
-      }
-      prevScrollpos = currentScrollPos
-    }
+    var lastScrollTop = 0
+    window.addEventListener(
+      "scroll",
+      function() {
+        var st = window.pageYOffset || document.documentElement.scrollTop
+        if (st > lastScrollTop) {
+          // downscroll code
+          document.querySelector("#header").classList.add("header-hide")
+          document.querySelector("#nav-search").classList.remove("active")
+        } else {
+          // upscroll code
+          document.querySelector("#header").classList.remove("header-hide")
+        }
+        lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+      },
+      false
+    )
   }, [])
 
   return (
@@ -61,12 +66,18 @@ const Header = () => {
       <Navbar.Collapse>
         <Nav>
           {navs.map(nav => (
-            <Nav.Item key={nav.title}>
-              <Nav.Link className={"is-5 bold"} href={nav.url}>
-                {nav.title}
+            <Nav.Item key={nav.node.acf.name}>
+              <Nav.Link className={"is-5 bold"} href={nav.node.acf.url}>
+                {nav.node.acf.name}
               </Nav.Link>
             </Nav.Item>
           ))}
+
+          <Nav.Item>
+            <Nav.Link className={"is-5 bold"} href="/english">
+              English
+            </Nav.Link>
+          </Nav.Item>
 
           {/* search */}
           <Nav.Item

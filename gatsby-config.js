@@ -42,6 +42,7 @@ module.exports = {
         useACF: true,
         // Blacklisted routes using glob patterns
         excludedRoutes: [
+          // acf
           "**/acf/v3/posts",
           "**/acf/v3/pages",
           "**/acf/v3/categories",
@@ -49,6 +50,7 @@ module.exports = {
           "**/acf/v3/comments",
           "**/acf/v3/blocks",
           "**/acf/v3/users",
+          // wordpress
           "**/wp/v2/blocks",
           "**/wp/v2/statuses",
           "**/wp/v2/taxonomies",

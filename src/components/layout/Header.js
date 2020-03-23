@@ -8,6 +8,7 @@ import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
 const Header = () => {
+  // source header items
   const navs = useStaticQuery(
     graphql`
       {
@@ -25,6 +26,7 @@ const Header = () => {
     `
   ).allWordpressWpHeader.edges
 
+  // hide when scroll down (add/remove ".header-hide" to "#header")
   useEffect(() => {
     var lastScrollTop = 0
     window.addEventListener(

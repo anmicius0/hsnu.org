@@ -16,9 +16,9 @@ module.exports = {
         name: `師大附中`,
         short_name: `HSNU`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        display: `standalone`,
         icon: `src/images/icons/HSNU.png`, // This path is relative to the root of the site.
       },
     },

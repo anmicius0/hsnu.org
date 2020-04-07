@@ -2,53 +2,12 @@
 @import "sidebar";
 @import "footer";
 
-// fonts
-// Taipei Sans
-@font-face {
-  font-family: "Taipei Sans";
-  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Light.ttf");
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Taipei Sans";
-  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Regular.ttf");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Taipei Sans";
-  src: url("../../fonts/TaipeiSans/TaipeiSansTCBeta-Bold.ttf");
-  font-weight: 700;
-  font-display: swap;
-}
-
-// Noto Serif
-@font-face {
-  font-family: "Noto Serif";
-  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-Regular.otf");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-SemiBold.otf");
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("../../fonts/NotoSerif/NotoSerifCJKtc-Bold.otf");
-  font-weight: 700;
-  font-display: swap;
-}
-
 // font uses
 body {
-  font-family: "Taipei Sans", sans-serif !important;
+  font-family: 'Noto Sans TC', sans-serif !important;
 }
 .serif {
-  font-family: "Noto Serif", serif !important;
+  font-family: 'Noto Serif TC', serif  !important;
 }
 
 // font sizes
@@ -94,9 +53,6 @@ body {
 // font weight
 .light {
   font-weight: 300;
-}
-.semi {
-  font-weight: 600;
 }
 .bold {
   font-weight: 700;

@@ -11,7 +11,7 @@ const Content = ({ title, genre, date, content, files, urls }) => {
     <article className={"content"}>
       {/* title */}
       <h1
-        className={"is-2 bold serif"}
+        className={"is-2 bold"}
         dangerouslySetInnerHTML={{ __html: title }}
       />
 

@@ -7,7 +7,7 @@ import "./SideNews.scss"
 const SideNews = ({ newses }) => {
   return (
     <section className={"side-news"}>
-      <h2 className={"is-2 serif bold"}>更多作品</h2>
+      <h2 className={"is-2 bold"}>更多作品</h2>
       {/* It's from GraphQL or REST */}
       {newses[0].node
         ? // from GraphQl
@@ -28,7 +28,7 @@ const SideNews = ({ newses }) => {
 
               {/* title */}
               <div className={"title"}>
-                <h4 className={"is-4 serif bold"}>{news.node.title}</h4>
+                <h4 className={"is-4 bold"}>{news.node.title}</h4>
               </div>
             </a>
           ))
@@ -51,7 +51,7 @@ const SideNews = ({ newses }) => {
               {/* title */}
               <div className={"title"}>
                 <h4
-                  className={"is-4 serif bold"}
+                  className={"is-4 bold"}
                   dangerouslySetInnerHTML={{ __html: news.title.rendered }}
                 />
               </div>

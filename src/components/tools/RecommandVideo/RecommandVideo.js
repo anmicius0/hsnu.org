@@ -6,7 +6,7 @@ const RecommandVideo = () => {
   return (
     <div className={"RecommandVideo"}>
       {/* title */}
-      <h2 className={"is-2 bold serif"}>推薦內容</h2>
+      <h2 className={"is-2 bold"}>推薦內容</h2>
 
       {/* embed */}
       <iframe

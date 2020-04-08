@@ -42,7 +42,7 @@ const PostsList = ({ posts }) => {
           index === 0 ? (
             <Nav.Item className={"genre active"} key={item.name}>
               <h2
-                className={"is-3 serif bold"}
+                className={"is-3 bold"}
                 onClick={() => {
                   setCurrent_posts(posts[item.codeName].edges)
                 }}
@@ -53,7 +53,7 @@ const PostsList = ({ posts }) => {
           ) : (
             <Nav.Item className={"genre"} key={item.name}>
               <h2
-                className={"is-3 serif bold"}
+                className={"is-3 bold"}
                 onClick={() => {
                   setCurrent_posts(posts[item.codeName].edges)
                 }}
@@ -65,7 +65,7 @@ const PostsList = ({ posts }) => {
         )}
         <Nav.Item className={"genre more"}>
           <Link to="/search">
-            <h2 className={"is-3 serif bold"}>更多...</h2>
+            <h2 className={"is-3 bold"}>更多...</h2>
           </Link>
         </Nav.Item>
       </Nav>
@@ -76,7 +76,7 @@ const PostsList = ({ posts }) => {
             <Col className={"post"} key={post.node.title}>
               <Link to={"/post/" + post.node.wordpress_id}>
                 <p
-                  className={"is-4 serif bold"}
+                  className={"is-4 bold"}
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
               </Link>

@@ -30,7 +30,7 @@ const Sidebar = () => {
     <>
       <div id={"sidebar"}>
         {/* title */}
-        <h3 className={"is-3 serif bold"}>國立臺灣大學附屬高級中學</h3>
+        <h3 className={"is-3 bold"}>國立臺灣大學附屬高級中學</h3>
 
         <Endorsement />
         <SearchBox />

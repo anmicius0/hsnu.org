@@ -83,7 +83,7 @@ const Clubs = () => {
 
   return (
     <section id="clubs">
-      <h2 className={"is-2 serif bold"}>社團</h2>
+      <h2 className={"is-2 bold"}>社團</h2>
       <LazyLoadComponent>
         <Swiper {...params}>
           {clubs.map(club => (
@@ -100,7 +100,7 @@ const Clubs = () => {
                 {/* club info card */}
                 <div className={"club-info"}>
                   {/* title */}
-                  <h3 className={"is-3 bold serif"}>{club.node.title}</h3>
+                  <h3 className={"is-3 bold"}>{club.node.title}</h3>
 
                   {/* social media */}
                   <Container>

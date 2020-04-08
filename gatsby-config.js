@@ -22,7 +22,6 @@ module.exports = {
         icon: `src/images/icons/HSNU.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -30,6 +29,7 @@ module.exports = {
         path: `./src/data/`,
       },
     },
+    // source from WordPress
     {
       resolve: `gatsby-source-wordpress`,
       options: {
@@ -65,21 +65,27 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-robots-txt`,
+    // sitemap
     {
       resolve: `gatsby-plugin-sitemap`,
       options: { exclude: [`/search/*`] },
     },
+    // robot.txt
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         configFile: "robots-txt.config.js",
       },
     },
+    // css
+    `gatsby-plugin-sass`,
     "gatsby-plugin-minify-html",
-    "gatsby-plugin-brotli",
-    `gatsby-plugin-compression`,
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js', 'svg']
+      }
+    },
     `gatsby-plugin-offline`,
   ],
 }

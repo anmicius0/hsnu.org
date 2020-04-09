@@ -18,7 +18,10 @@ const Layout = ({ children, title, description, article }) => {
       <Helmet defer={false}>
         {/* Google Fonts */}
 
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap" rel="stylesheet" />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap"
+        />
 
         {/* swiper */}
         <link

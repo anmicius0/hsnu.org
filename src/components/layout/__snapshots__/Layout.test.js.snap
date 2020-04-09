@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Footer renders correctly 1`] = `
+exports[`Layout/Footer renders correctly 1`] = `
 <footer>
   <div
     className="container-fluid"
@@ -58,7 +58,7 @@ exports[`Footer renders correctly 1`] = `
 </footer>
 `;
 
-exports[`Header renders correctly 1`] = `
+exports[`Layout/Header renders correctly 1`] = `
 <nav
   className="navbar navbar-expand-xl navbar-light"
   id="header"
@@ -213,9 +213,9 @@ exports[`Header renders correctly 1`] = `
 </nav>
 `;
 
-exports[`SEO renders correctly 1`] = `null`;
+exports[`Layout/SEO renders correctly 1`] = `null`;
 
-exports[`Sidebar renders correctly 1`] = `
+exports[`Layout/Sidebar renders correctly 1`] = `
 Array [
   <div
     id="sidebar"

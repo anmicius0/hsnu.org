@@ -1,8 +1,9 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import { HeaderPure } from "./Header"
+import Footer from "./Footer"
 
-describe("Header", () =>
+describe("Header", () => {
   it("renders correctly", () => {
     // mock navs
     const navs = [
@@ -42,4 +43,12 @@ describe("Header", () =>
 
     const tree = renderer.create(<HeaderPure navs={navs} />).toJSON()
     expect(tree).toMatchSnapshot()
-  }))
+  })
+})
+
+describe("Footer", () => {
+  it("renders correctly", () => {
+    const tree = renderer.create(<Footer />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})

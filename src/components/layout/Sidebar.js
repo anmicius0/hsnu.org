@@ -5,27 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
 
-const Sidebar = () => {
-  const menus = useStaticQuery(
-    graphql`
-      query {
-        allMenuJson {
-          edges {
-            node {
-              title
-              items {
-                title
-                url
-              }
-            }
-          }
-        }
-      }
-    `
-  ).allMenuJson.edges
-
-  console.log(menus)
-
+export const SidebarPure = ({ menus }) => {
   return (
     <>
       <div id={"sidebar"}>
@@ -67,6 +47,28 @@ const Sidebar = () => {
       ></div>
     </>
   )
+}
+
+const Sidebar = () => {
+  const menus = useStaticQuery(
+    graphql`
+      query {
+        allMenuJson {
+          edges {
+            node {
+              title
+              items {
+                title
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  ).allMenuJson.edges
+
+  return <SidebarPure menus={menus} />
 }
 
 export default Sidebar

@@ -5,7 +5,7 @@ import Footer from "./Footer"
 import { SidebarPure } from "./Sidebar"
 import { SEOPure } from "./Seo"
 
-describe("Header", () => {
+describe("Layout/Header", () => {
   it("renders correctly", () => {
     // mock navs
     const navs = [
@@ -48,14 +48,14 @@ describe("Header", () => {
   })
 })
 
-describe("Footer", () => {
+describe("Layout/Footer", () => {
   it("renders correctly", () => {
     const tree = renderer.create(<Footer />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })
 
-describe("Sidebar", () => {
+describe("Layout/Sidebar", () => {
   it("renders correctly", () => {
     const menus = [
       {
@@ -209,7 +209,7 @@ describe("Sidebar", () => {
   })
 })
 
-describe("SEO", () => {
+describe("Layout/SEO", () => {
   it("renders correctly", () => {
     const seo = {
       titls: "哈羅世界, hello world",

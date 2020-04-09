@@ -1,5 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Footer renders correctly 1`] = `
+<footer>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="logo col-lg-6"
+      >
+        <h2
+          className="is-2 bold"
+        >
+          We Are HSNUer
+        </h2>
+      </div>
+      <div
+        className="icons col-lg-6"
+      >
+        <a
+          href="https://twitter.com"
+        >
+          <img
+            alt="twitter"
+            src="test-file-stub"
+          />
+        </a>
+        <a
+          href="https://medium.com"
+        >
+          <img
+            alt="medium"
+            src="test-file-stub"
+          />
+        </a>
+        <a
+          href="https://github.com"
+        >
+          <img
+            alt="github"
+            src="test-file-stub"
+          />
+        </a>
+        <a
+          href="https://patreon.com"
+        >
+          <img
+            alt="patreon"
+            src="test-file-stub"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+
 exports[`Header renders correctly 1`] = `
 <nav
   className="navbar navbar-expand-xl navbar-light"

@@ -7,25 +7,7 @@ import hsnu from "../../images/icons/HSNU.svg"
 import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
-const Header = () => {
-  // source header items
-  const navs = useStaticQuery(
-    graphql`
-      {
-        allWordpressWpHeader(limit: 4, sort: { order: ASC, fields: date }) {
-          edges {
-            node {
-              acf {
-                name
-                url
-              }
-            }
-          }
-        }
-      }
-    `
-  ).allWordpressWpHeader.edges
-
+export const HeaderPure = ({ navs }) => {
   // hide when scroll down (add/remove ".header-hide" to "#header")
   useEffect(() => {
     var lastScrollTop = 0
@@ -127,6 +109,28 @@ const Header = () => {
       </div>
     </Navbar>
   )
+}
+
+const Header = () => {
+  // source header items
+  const navs = useStaticQuery(
+    graphql`
+      {
+        allWordpressWpHeader(limit: 4, sort: { order: ASC, fields: date }) {
+          edges {
+            node {
+              acf {
+                name
+                url
+              }
+            }
+          }
+        }
+      }
+    `
+  ).allWordpressWpHeader.edges
+
+  return <HeaderPure navs={navs} />
 }
 
 export default Header

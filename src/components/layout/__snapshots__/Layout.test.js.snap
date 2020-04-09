@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<nav
+  className="navbar navbar-expand-xl navbar-light"
+  id="header"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    <img
+      alt="師大附中"
+      src="test-file-stub"
+    />
+  </a>
+  <button
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+  >
+    <div
+      className="navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="nav-item"
+      >
+        <a
+          className="is-5 bold nav-link"
+          data-rb-event-key="https://ilearning.hs.ntnu.edu.tw/"
+          href="https://ilearning.hs.ntnu.edu.tw/"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          iLearn
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="is-5 bold nav-link"
+          data-rb-event-key="https://e-portfolio.cooc.tp.edu.tw/Portal.do"
+          href="https://e-portfolio.cooc.tp.edu.tw/Portal.do"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          學習歷程
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="is-5 bold nav-link"
+          data-rb-event-key="http://artlife.hs.ntnu.edu.tw/case122/index.php"
+          href="http://artlife.hs.ntnu.edu.tw/case122/index.php"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          報修
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="is-5 bold nav-link"
+          data-rb-event-key="https://sschool.tp.edu.tw/Login.action"
+          href="https://sschool.tp.edu.tw/Login.action"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          二代校務
+        </a>
+      </div>
+      <div
+        className="nav-item"
+      >
+        <a
+          className="is-5 bold nav-link"
+          data-rb-event-key="/english"
+          href="/english"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          English
+        </a>
+      </div>
+      <div
+        className="nav-item"
+        onClick={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key={null}
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          <img
+            alt="search"
+            src="test-file-stub"
+          />
+        </a>
+      </div>
+      <div
+        className="nav-item"
+        onClick={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key={null}
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          <img
+            alt="menu"
+            src="test-file-stub"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    id="nav-search"
+  >
+    <form
+      action="/search"
+      className=""
+      method="get"
+    >
+      <input
+        className="is-3 bold form-control"
+        id="nav-search-box"
+        name="search"
+        placeholder="Search"
+        type="text"
+      />
+    </form>
+  </div>
+</nav>
+`;

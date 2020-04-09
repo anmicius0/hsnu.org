@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 // style
 import "./NewsSlider.scss"
 
-export const newsSliderPure = ({ news }) => {
+const newsSlider = () => {
   // config of swiper
   const params = {
     loop: "true",
@@ -17,11 +17,30 @@ export const newsSliderPure = ({ news }) => {
     },
   }
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const newses = useStaticQuery(graphql`
+    {
+      allWordpressWpNews(limit: 4, skip: 1) {
+        edges {
+          node {
+            title
+            acf {
+              image {
+                source_url
+              }
+              link
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpNews.edges
+
   return (
     <>
       <div id="news-slider">
         <Swiper {...params}>
-          {news.map(news => (
+          {newses.map(news => (
             <div className={"news-card-l"} key={news.node.title}>
               <a href={news.node.acf.link}>
                 {/* cover */}
@@ -44,29 +63,6 @@ export const newsSliderPure = ({ news }) => {
       </div>
     </>
   )
-}
-
-const newsSlider = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const news = useStaticQuery(graphql`
-    {
-      allWordpressWpNews(limit: 4, skip: 1) {
-        edges {
-          node {
-            title
-            acf {
-              image {
-                source_url
-              }
-              link
-            }
-          }
-        }
-      }
-    }
-  `).allWordpressWpNews.edges
-
-  return <newsSliderPure news={news} />
 }
 
 export default newsSlider

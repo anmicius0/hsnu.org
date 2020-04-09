@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section/Clubs renders correctly 1`] = `
+<section
+  id="clubs"
+>
+  <h2
+    className="is-2 bold"
+  >
+    社團
+  </h2>
+  <span
+    className=""
+    style={
+      Object {
+        "display": "inline-block",
+        "height": 0,
+        "width": 0,
+      }
+    }
+  />
+</section>
+`;

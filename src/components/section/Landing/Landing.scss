@@ -1,4 +1,4 @@
-.jumbotron {
+#landing {
   // position
   position: relative;
 
@@ -60,7 +60,7 @@
 }
 
 @media (min-width: 992px) {
-  .jumbotron {
+  #landing {
     // box
     height: 100vh;
 

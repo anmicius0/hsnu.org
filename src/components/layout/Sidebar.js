@@ -52,7 +52,7 @@ export const SidebarPure = ({ menus }) => {
 const Sidebar = () => {
   const menus = useStaticQuery(
     graphql`
-      query {
+      {
         allMenuJson {
           edges {
             node {

@@ -6,26 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 // style
 import "./NewsSlider.scss"
 
-const newsSlider = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const news = useStaticQuery(graphql`
-    {
-      allWordpressWpNews(limit: 4, skip: 1) {
-        edges {
-          node {
-            title
-            acf {
-              image {
-                source_url
-              }
-              link
-            }
-          }
-        }
-      }
-    }
-  `).allWordpressWpNews.edges
-
+export const newsSliderPure = ({ news }) => {
   // config of swiper
   const params = {
     loop: "true",
@@ -63,6 +44,29 @@ const newsSlider = () => {
       </div>
     </>
   )
+}
+
+const newsSlider = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const news = useStaticQuery(graphql`
+    {
+      allWordpressWpNews(limit: 4, skip: 1) {
+        edges {
+          node {
+            title
+            acf {
+              image {
+                source_url
+              }
+              link
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpNews.edges
+
+  return <newsSliderPure news={news} />
 }
 
 export default newsSlider

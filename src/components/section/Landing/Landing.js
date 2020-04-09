@@ -7,7 +7,7 @@ import "./Landing.scss"
 
 export const LandingPure = ({ headline }) => {
   return (
-    <Jumbotron fluid>
+    <Jumbotron id="landing" fluid>
       <img
         rel="preload"
         src={headline.node.acf.image.source_url + ".webp"}

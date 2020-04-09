@@ -44,13 +44,19 @@
     "swiper": "^5.3.6"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.0",
+    "axe-core": "^3.5.3",
     "babel-jest": "^25.3.0",
     "babel-preset-gatsby": "^0.3.1",
+    "cypress": "^4.3.0",
+    "cypress-axe": "^0.8.1",
     "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-cypress": "^2.10.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.3.0",
     "prettier": "^1.19.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "start-server-and-test": "^1.10.11"
   },
   "keywords": [
     "gatsby"
@@ -63,7 +69,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "repository": {
     "type": "git",

@@ -3,6 +3,7 @@ import renderer from "react-test-renderer"
 import { HeaderPure } from "./Header"
 import Footer from "./Footer"
 import { SidebarPure } from "./Sidebar"
+import { SEOPure } from "./Seo"
 
 describe("Header", () => {
   it("renders correctly", () => {
@@ -204,6 +205,22 @@ describe("Sidebar", () => {
     ]
 
     const tree = renderer.create(<SidebarPure menus={menus} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
+
+describe("SEO", () => {
+  it("renders correctly", () => {
+    const seo = {
+      titls: "哈羅世界, hello world",
+      titleTemplate: "%s | HSNU",
+      description: "Hello world",
+      url: "/",
+      image: "https://i.ytimg.com/vi/2fb-g_V-UT4/hqdefault.jpg",
+      article: true,
+    }
+
+    const tree = renderer.create(<SEOPure seo={seo} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

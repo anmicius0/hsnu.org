@@ -213,6 +213,8 @@ exports[`Header renders correctly 1`] = `
 </nav>
 `;
 
+exports[`SEO renders correctly 1`] = `null`;
+
 exports[`Sidebar renders correctly 1`] = `
 Array [
   <div

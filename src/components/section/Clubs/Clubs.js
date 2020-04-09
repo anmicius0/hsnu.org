@@ -18,8 +18,8 @@ import youtube from "../../../images/icons/socialMedia-colored/youtube-colored.s
 // style
 import "./Clubs.scss"
 
-const Clubs = () => {
-  // config of swiper
+export const ClubsPure = ({ clubs }) => {
+  // Swiper config
   const params = {
     loop: "true",
     slidesPerView: "auto",
@@ -30,30 +30,6 @@ const Clubs = () => {
       el: ".swiper-pagination",
     },
   }
-
-  // get clubs data from wordpress
-  const clubs = useStaticQuery(graphql`
-    {
-      allWordpressWpClubs {
-        edges {
-          node {
-            title
-            acf {
-              image {
-                sizes {
-                  large
-                }
-              }
-              social_medias {
-                media_type
-                media_link
-              }
-            }
-          }
-        }
-      }
-    }
-  `).allWordpressWpClubs.edges
 
   // switch type to icon
   function type_to_icon(type) {
@@ -128,6 +104,34 @@ const Clubs = () => {
       </LazyLoadComponent>
     </section>
   )
+}
+
+const Clubs = () => {
+  // get clubs data from wordpress
+  const clubs = useStaticQuery(graphql`
+    {
+      allWordpressWpClubs {
+        edges {
+          node {
+            title
+            acf {
+              image {
+                sizes {
+                  large
+                }
+              }
+              social_medias {
+                media_type
+                media_link
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpClubs.edges
+
+  return <ClubsPure clubs={clubs} />
 }
 
 export default Clubs

@@ -18,7 +18,7 @@ export const HeaderPure = ({ navs }) => {
         if (st > lastScrollTop) {
           // downscroll code
           document.querySelector("#navbar").classList.add("navbar-hide")
-          document.querySelector("#nav-search").classList.remove("active")
+          document.querySelector("#nav-search-box").classList.remove("active")
         } else {
           // upscroll code
           document.querySelector("#navbar").classList.remove("navbar-hide")
@@ -67,8 +67,10 @@ export const HeaderPure = ({ navs }) => {
           <Nav.Item
             id="nav-search-button"
             onClick={() => {
-              const navsearch = document.querySelector("#nav-search")
-              const searbox = document.querySelector("#nav-search-box")
+              const navsearch = document.querySelector("#nav-search-box")
+              const searbox = document.querySelector(
+                "#nav-search-box input[name='search']"
+              )
               navsearch.classList.toggle("active")
               if (navsearch.classList.contains("active")) {
                 searbox.focus()
@@ -98,10 +100,9 @@ export const HeaderPure = ({ navs }) => {
       </Navbar.Collapse>
 
       {/* search box in the nav */}
-      <div id="nav-search">
+      <div id="nav-search-box">
         <Form action="/search" method="get">
           <FormControl
-            id="nav-search-box"
             type="text"
             placeholder="Search"
             name="search"

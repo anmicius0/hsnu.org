@@ -3,7 +3,30 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-export const SEOPure = ({ seo }) => {
+const SEO = ({ title, description, pathname, article }) => {
+  const meta = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          defaultTitle: title
+          titleTemplate
+          defaultDescription: description
+          siteUrl: siteUrl
+          image
+        }
+      }
+    }
+  `).site.siteMetadata
+
+  const seo = {
+    title: title || meta.defaultTitle,
+    titleTemplate: meta.titleTemplate,
+    description: description || meta.defaultDescription,
+    url: `${meta.siteUrl}${pathname || "/"}`,
+    image: meta.siteImage,
+    article: article,
+  }
+
   return (
     <>
       <Helmet title={seo.title} titleTemplate={seo.titleTemplate}>
@@ -44,33 +67,6 @@ export const SEOPure = ({ seo }) => {
       </Helmet>
     </>
   )
-}
-
-const SEO = ({ title, description, pathname, article }) => {
-  const meta = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          defaultTitle: title
-          titleTemplate
-          defaultDescription: description
-          siteUrl: siteUrl
-          image
-        }
-      }
-    }
-  `).site.siteMetadata
-
-  const seo = {
-    title: title || meta.defaultTitle,
-    titleTemplate: meta.titleTemplate,
-    description: description || meta.defaultDescription,
-    url: `${meta.siteUrl}${pathname || "/"}`,
-    image: meta.siteImage,
-    article: article,
-  }
-
-  return <SEOPure seo={seo} />
 }
 
 export default SEO

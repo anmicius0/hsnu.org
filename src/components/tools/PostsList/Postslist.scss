@@ -30,12 +30,12 @@
 
         // animation
         transition: all ease 0.5s;
-      }
 
-      // the current genre
-      &.active h2 {
-        // color change
-        color: black;
+        // the current genre
+        &.active {
+          // color change
+          color: black;
+        }
       }
 
       //  hide other genres ( on mobile )
@@ -75,11 +75,6 @@
   .posts {
     // genres
     .genres .genre {
-      // active
-      &.active h2 {
-        font-size: 2.5rem;
-      }
-
       // deactive
       &:not(.active):not(.more) {
         display: flex;

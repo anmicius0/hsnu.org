@@ -8,7 +8,7 @@ import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
 export const HeaderPure = ({ navs }) => {
-  // hide when scroll down (add/remove ".header-hide" to "#header")
+  // hide when scroll down (add/remove ".navbar-hide" to "#navbar")
   useEffect(() => {
     var lastScrollTop = 0
     window.addEventListener(
@@ -17,11 +17,11 @@ export const HeaderPure = ({ navs }) => {
         var st = window.pageYOffset || document.documentElement.scrollTop
         if (st > lastScrollTop) {
           // downscroll code
-          document.querySelector("#header").classList.add("header-hide")
+          document.querySelector("#navbar").classList.add("navbar-hide")
           document.querySelector("#nav-search").classList.remove("active")
         } else {
           // upscroll code
-          document.querySelector("#header").classList.remove("header-hide")
+          document.querySelector("#navbar").classList.remove("navbar-hide")
         }
         lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
       },
@@ -30,7 +30,7 @@ export const HeaderPure = ({ navs }) => {
   }, [])
 
   return (
-    <Navbar expand="xl" id="header">
+    <Navbar expand="xl" id="navbar">
       {/* Brand */}
       <Navbar.Brand href="/">
         <img src={hsnu} alt="師大附中"></img>
@@ -65,6 +65,7 @@ export const HeaderPure = ({ navs }) => {
 
           {/* search */}
           <Nav.Item
+            id="nav-search-button"
             onClick={() => {
               const navsearch = document.querySelector("#nav-search")
               const searbox = document.querySelector("#nav-search-box")
@@ -81,6 +82,7 @@ export const HeaderPure = ({ navs }) => {
 
           {/* menu */}
           <Nav.Item
+            id="nav-menu-button"
             onClick={() => {
               const sidebar = document.querySelector("#sidebar")
               const overlay = document.querySelector("#sidebar-overlay")
@@ -112,7 +114,7 @@ export const HeaderPure = ({ navs }) => {
 }
 
 const Header = () => {
-  // source header items
+  // source navbar items
   const navs = useStaticQuery(
     graphql`
       {

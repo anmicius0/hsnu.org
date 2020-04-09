@@ -1,4 +1,4 @@
-#header {
+#navbar {
   flex-wrap: wrap;
   z-index: 5;
   background-color: white;
@@ -28,17 +28,22 @@
 
   // search box in navbar
   #nav-search {
-    display: none;
+    display: nonenavbar;
   }
 
   // Navbar Collapse
   .navbar-collapse {
     display: none;
   }
+
+  // Navbar Search Box
+  #nav-search {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {
-  #header {
+  #navbar {
     // box
     width: 90vw;
 
@@ -58,7 +63,7 @@
     // animation
     transition: all ease-in-out 0.4s;
 
-    &.header-hide {
+    &.navbar-hide {
       top: -20%;
     }
 

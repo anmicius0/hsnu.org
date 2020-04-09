@@ -8,7 +8,8 @@ import "./Postslist.scss"
 const PostsList = ({ posts }) => {
   // toggle tabs
   useEffect(() => {
-    const genres = document.querySelectorAll(".genre:not(.more)")
+    // please select the test inside .genre (.genre > h2
+    const genres = document.querySelectorAll(".genre:not(.more) h2")
     for (var i = 0; i < genres.length; i++) {
       genres[i].addEventListener("click", e => {
         // clear all .active
@@ -18,7 +19,7 @@ const PostsList = ({ posts }) => {
           }
         }
 
-        e.target.parentElement.classList.add("active")
+        e.target.classList.add("active")
       })
     }
   }, [])
@@ -40,9 +41,9 @@ const PostsList = ({ posts }) => {
       <Nav variant="tabs" className={"genres"}>
         {genreTabs.map((item, index) =>
           index === 0 ? (
-            <Nav.Item className={"genre active"} key={item.name}>
+            <Nav.Item className={"genre"} key={item.name}>
               <h2
-                className={"is-3 bold"}
+                className={"is-3 bold active"}
                 onClick={() => {
                   setCurrent_posts(posts[item.codeName].edges)
                 }}

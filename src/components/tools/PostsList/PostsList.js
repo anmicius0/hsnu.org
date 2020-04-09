@@ -71,7 +71,7 @@ const PostsList = ({ posts }) => {
         </Nav.Item>
       </Nav>
 
-      <Container>
+      <Container id="post-list">
         <Row className={"flex-column"}>
           {current_posts.map(post => (
             <Col className={"post"} key={post.node.title}>

@@ -9,7 +9,7 @@ module.exports = {
     {
       userAgent: "OtherBot",
       allow: "/",
-      disallow: ["/search"],
+      disallow: [""],
       crawlDelay: 2,
     },
     {

@@ -61,7 +61,7 @@ exports[`Layout/Footer renders correctly 1`] = `
 exports[`Layout/Header renders correctly 1`] = `
 <nav
   className="navbar navbar-expand-xl navbar-light"
-  id="header"
+  id="navbar"
 >
   <a
     className="navbar-brand"
@@ -157,6 +157,7 @@ exports[`Layout/Header renders correctly 1`] = `
       </div>
       <div
         className="nav-item"
+        id="nav-search-button"
         onClick={[Function]}
       >
         <a
@@ -175,6 +176,7 @@ exports[`Layout/Header renders correctly 1`] = `
       </div>
       <div
         className="nav-item"
+        id="nav-menu-button"
         onClick={[Function]}
       >
         <a
@@ -194,7 +196,7 @@ exports[`Layout/Header renders correctly 1`] = `
     </div>
   </div>
   <div
-    id="nav-search"
+    id="nav-search-box"
   >
     <form
       action="/search"
@@ -203,7 +205,6 @@ exports[`Layout/Header renders correctly 1`] = `
     >
       <input
         className="is-3 bold form-control"
-        id="nav-search-box"
         name="search"
         placeholder="Search"
         type="text"
@@ -212,8 +213,6 @@ exports[`Layout/Header renders correctly 1`] = `
   </div>
 </nav>
 `;
-
-exports[`Layout/SEO renders correctly 1`] = `null`;
 
 exports[`Layout/Sidebar renders correctly 1`] = `
 Array [

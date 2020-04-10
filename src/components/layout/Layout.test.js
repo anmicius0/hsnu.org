@@ -208,19 +208,3 @@ describe("Layout/Sidebar", () => {
     expect(tree).toMatchSnapshot()
   })
 })
-
-describe("Layout/SEO", () => {
-  it("renders correctly", () => {
-    const seo = {
-      titls: "哈羅世界, hello world",
-      titleTemplate: "%s | HSNU",
-      description: "Hello world",
-      url: "/",
-      image: "https://i.ytimg.com/vi/2fb-g_V-UT4/hqdefault.jpg",
-      article: true,
-    }
-
-    const tree = renderer.create(<SEOPure seo={seo} />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})

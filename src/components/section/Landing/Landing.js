@@ -15,7 +15,7 @@ export const LandingPure = ({ headline }) => {
       ></img>
       <div className={"fade-layer"}></div>
       <a href={headline.node.acf.link}>
-        <h1 className={"is-1 bold"}>{headline.node.title}</h1>
+        <h1 className={"is-1"}>{headline.node.title}</h1>
       </a>
     </Jumbotron>
   )

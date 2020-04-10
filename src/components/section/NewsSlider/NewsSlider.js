@@ -54,7 +54,7 @@ const newsSlider = () => {
                 {/* title and sub-title */}
                 <div className={"text"}>
                   {/* title */}
-                  <h3 className={"is-3  bold"}>{news.node.title}</h3>
+                  <h3 className={"is-3"}>{news.node.title}</h3>
                 </div>
               </a>
             </div>

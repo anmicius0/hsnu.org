@@ -10,7 +10,7 @@ export const LandingPure = ({ headline }) => {
     <Jumbotron id="landing" fluid>
       <img
         rel="preload"
-        src={headline.node.acf.image.source_url + ".webp"}
+        src={headline.node.acf.image.sizes.wordpress_1536x1536}
         alt={"Headline"}
       ></img>
       <div className={"fade-layer"}></div>
@@ -29,7 +29,9 @@ const Landing = () => {
             title
             acf {
               image {
-                source_url
+                sizes {
+                  wordpress_1536x1536
+                }
               }
               link
             }

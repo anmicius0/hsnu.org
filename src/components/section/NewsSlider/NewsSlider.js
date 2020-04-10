@@ -26,7 +26,9 @@ const newsSlider = () => {
             title
             acf {
               image {
-                source_url
+                sizes {
+                  large
+                }
               }
               link
             }
@@ -46,7 +48,7 @@ const newsSlider = () => {
                 {/* cover */}
                 <figure>
                   <LazyLoadImage
-                    src={news.node.acf.image.source_url + ".webp"}
+                    src={news.node.acf.image.sizes.large}
                     alt="feature news"
                   />
                 </figure>

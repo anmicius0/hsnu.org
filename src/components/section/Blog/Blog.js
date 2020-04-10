@@ -29,14 +29,16 @@ export const BlogPure = ({ posts, news }) => {
 const Blog = ({ posts }) => {
   const news = useStaticQuery(graphql`
     {
-      allWordpressWpNews(limit: 4, skip: 1) {
+      allWordpressWpNews(limit: 4) {
         edges {
           node {
             title
             acf {
               link
               image {
-                source_url
+                sizes {
+                  thumbnail
+                }
               }
             }
           }

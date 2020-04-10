@@ -21,7 +21,7 @@ const SideNews = ({ newses }) => {
               {/* cover */}
               <figure>
                 <LazyLoadImage
-                  src={news.node.acf.image.source_url + ".webp"}
+                  src={news.node.acf.image.sizes.thumbnail}
                   alt={news.node.title}
                 />
               </figure>

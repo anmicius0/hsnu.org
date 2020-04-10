@@ -28,7 +28,7 @@ const SideNews = ({ newses }) => {
 
               {/* title */}
               <div className={"title"}>
-                <h4 className={"is-4 bold"}>{news.node.title}</h4>
+                <h4 className={"is-4"}>{news.node.title}</h4>
               </div>
             </a>
           ))
@@ -51,7 +51,7 @@ const SideNews = ({ newses }) => {
               {/* title */}
               <div className={"title"}>
                 <h4
-                  className={"is-4 bold"}
+                  className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: news.title.rendered }}
                 />
               </div>

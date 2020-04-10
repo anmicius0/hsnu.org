@@ -19,10 +19,10 @@ exports[`Section/Blog renders correctly 1`] = `
           onKeyDown={[Function]}
         >
           <div
-            className="genre active nav-item"
+            className="genre nav-item"
           >
             <h2
-              className="is-3 bold"
+              className="is-3 bold active"
               onClick={[Function]}
             >
               最新
@@ -84,6 +84,7 @@ exports[`Section/Blog renders correctly 1`] = `
         </div>
         <div
           className="container"
+          id="post-list"
         >
           <div
             className="flex-column row"
@@ -95,7 +96,7 @@ exports[`Section/Blog renders correctly 1`] = `
                 href="/post/97"
               >
                 <p
-                  className="is-4 bold"
+                  className="is-4"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "【新冠肺炎防疫】109年3月15日(日) 室內空間消毒作業，禁止進入校園。(高三自習暫停)",
@@ -111,7 +112,7 @@ exports[`Section/Blog renders correctly 1`] = `
                 href="/post/96"
               >
                 <p
-                  className="is-4 bold"
+                  className="is-4"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "狂賀 本校1502班詹可德同學 榮獲109年台北市中等學校運動會田徑錦標賽 高男組十項全能 成績5880分 第1名!",
@@ -127,7 +128,7 @@ exports[`Section/Blog renders correctly 1`] = `
                 href="/post/31"
               >
                 <p
-                  className="is-4 bold"
+                  className="is-4"
                   dangerouslySetInnerHTML={
                     Object {
                       "__html": "哈囉，世界",
@@ -171,7 +172,7 @@ exports[`Section/Blog renders correctly 1`] = `
             className="title"
           >
             <h4
-              className="is-4 bold"
+              className="is-4"
             >
               他不是「新聞神話」──韓國傳奇主播孫石熙如何帶領公眾思考，產生改變？
             </h4>
@@ -197,7 +198,7 @@ exports[`Section/Blog renders correctly 1`] = `
             className="title"
           >
             <h4
-              className="is-4 bold"
+              className="is-4"
             >
               海苔熊／讀《成為一個新人》，重新思考精神疾病「康復」的意義
             </h4>
@@ -223,7 +224,7 @@ exports[`Section/Blog renders correctly 1`] = `
             className="title"
           >
             <h4
-              className="is-4 bold"
+              className="is-4"
             >
               【投書】戒菸新希望？菸害新風暴？電子菸防制的考驗與思考
             </h4>
@@ -249,7 +250,7 @@ exports[`Section/Blog renders correctly 1`] = `
             className="title"
           >
             <h4
-              className="is-4 bold"
+              className="is-4"
             >
               野島剛／日本如何看2020台灣大選？解析日媒選前社論關注焦點
             </h4>

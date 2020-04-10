@@ -77,7 +77,7 @@ const PostsList = ({ posts }) => {
             <Col className={"post"} key={post.node.title}>
               <Link to={"/post/" + post.node.wordpress_id}>
                 <p
-                  className={"is-4 bold"}
+                  className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
                 />
               </Link>

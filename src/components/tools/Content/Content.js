@@ -10,10 +10,7 @@ const Content = ({ title, genre, date, content, files, urls }) => {
   return (
     <article className={"content"}>
       {/* title */}
-      <h1
-        className={"is-2 bold"}
-        dangerouslySetInnerHTML={{ __html: title }}
-      />
+      <h1 className={"is-2 bold"} dangerouslySetInnerHTML={{ __html: title }} />
 
       {/* meta */}
       <div className={"meta"}>

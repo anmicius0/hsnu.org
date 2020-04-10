@@ -3,6 +3,7 @@
 exports[`Section/Landing renders correctly 1`] = `
 <div
   className="jumbotron jumbotron-fluid"
+  id="landing"
 >
   <img
     alt="Headline"
@@ -16,7 +17,7 @@ exports[`Section/Landing renders correctly 1`] = `
     href="https://www.twreporter.org/a/bookreview-counter-attack-on-the-fear-of-demising-nation"
   >
     <h1
-      className="is-1 bold"
+      className="is-1"
     >
       樂園的選擇：從言論與資訊自由被剝奪，看亡國感的生成 | The reporter
     </h1>

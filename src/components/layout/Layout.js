@@ -15,7 +15,7 @@ import "bootstrap/scss/bootstrap.scss"
 const Layout = ({ children, title, description, article }) => {
   return (
     <>
-      <Helmet defer={false}>
+      <Helmet defer={false} htmlAttributes={{ lang: "zh-Hans-TW" }}>
         {/* Google Fonts */}
         <link
           rel="stylesheet"

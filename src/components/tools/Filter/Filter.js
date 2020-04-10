@@ -39,7 +39,7 @@ export default ({ id }) => {
     var submit_search =
       new URL(document.URL).searchParams.get("search") || false
 
-    window.location = `http://localhost:8000/search/?${
+    window.location = `http://hsnu.org/search/?${
       submit_search ? "search=" + submit_search : ""
     }${submit_genre !== "全部" ? "&genre=" + submit_genre : ""}${
       submit_subgenre !== "全部" ? "&subgenre=" + submit_subgenre : ""

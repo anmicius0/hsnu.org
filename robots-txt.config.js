@@ -3,13 +3,11 @@ module.exports = {
     {
       userAgent: "Googlebot",
       allow: "/",
-      disallow: [""],
       crawlDelay: 2,
     },
     {
       userAgent: "OtherBot",
       allow: "/",
-      disallow: [""],
       crawlDelay: 2,
     },
     {

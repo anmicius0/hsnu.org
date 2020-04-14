@@ -67,14 +67,31 @@ describe("Section/Blog", () => {
     const news = [
       {
         node: {
+          title: "樂園的選擇：從言論與資訊自由被剝奪，看亡國感的生成",
+          acf: {
+            link:
+              "https://www.twreporter.org/a/bookreview-counter-attack-on-the-fear-of-demising-nation",
+            image: {
+              sizes: {
+                thumbnail:
+                  "https://i1.wp.com/wordpress.hsnu.org/wp-content/uploads/2020/03/20191126170557-6072c73cbfb5c0301e948f36af2cf1e0-desktop.jpg?resize=150%2C150&ssl=1",
+              },
+            },
+          },
+        },
+      },
+      {
+        node: {
           title:
             "他不是「新聞神話」──韓國傳奇主播孫石熙如何帶領公眾思考，產生改變？",
           acf: {
             link:
               "https://www.twreporter.org/a/bookreview-recommendation-sohn-suk-hee",
             image: {
-              source_url:
-                "https://wordpress.hsnu.org/wp-content/uploads/2020/03/20191210155653-3e9da990d7b73480242f9356c37659e1-desktop.jpg",
+              sizes: {
+                thumbnail:
+                  "https://i1.wp.com/wordpress.hsnu.org/wp-content/uploads/2020/03/20191210155653-3e9da990d7b73480242f9356c37659e1-desktop.jpg?resize=150%2C150&ssl=1",
+              },
             },
           },
         },
@@ -86,8 +103,10 @@ describe("Section/Blog", () => {
             link:
               "https://www.twreporter.org/a/bookreview-recommendation-be-a-new-creation-haitaibear",
             image: {
-              source_url:
-                "https://wordpress.hsnu.org/wp-content/uploads/2020/03/20191215234815-e30f042653064c821f5cf69a8db705de-desktop.jpg",
+              sizes: {
+                thumbnail:
+                  "https://i2.wp.com/wordpress.hsnu.org/wp-content/uploads/2020/03/20191215234815-e30f042653064c821f5cf69a8db705de-desktop.jpg?resize=150%2C150&ssl=1",
+              },
             },
           },
         },
@@ -99,21 +118,10 @@ describe("Section/Blog", () => {
             link:
               "https://www.twreporter.org/a/opinion-electronic-cigarette-problems-tobacco-industry-never-say",
             image: {
-              source_url:
-                "https://wordpress.hsnu.org/wp-content/uploads/2020/03/20191225102911-41f3c1090c05229f3328d794b7fe63ec-desktop.jpg",
-            },
-          },
-        },
-      },
-      {
-        node: {
-          title: "野島剛／日本如何看2020台灣大選？解析日媒選前社論關注焦點",
-          acf: {
-            link:
-              "https://www.twreporter.org/a/opinion-2020-election-japan-newspaper-editorial",
-            image: {
-              source_url:
-                "https://wordpress.hsnu.org/wp-content/uploads/2020/03/20191230132946-35e29933c2a77d4f3891e6ff41056d95-desktop.jpg",
+              sizes: {
+                thumbnail:
+                  "https://i0.wp.com/wordpress.hsnu.org/wp-content/uploads/2020/03/20191225102911-41f3c1090c05229f3328d794b7fe63ec-desktop.jpg?resize=150%2C150&ssl=1",
+              },
             },
           },
         },

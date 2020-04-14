@@ -154,6 +154,32 @@ exports[`Section/Blog renders correctly 1`] = `
         </h2>
         <a
           className="news-card-s"
+          href="https://www.twreporter.org/a/bookreview-counter-attack-on-the-fear-of-demising-nation"
+        >
+          <figure>
+            <span
+              className=""
+              style={
+                Object {
+                  "display": "inline-block",
+                  "height": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </figure>
+          <div
+            className="title"
+          >
+            <h4
+              className="is-4"
+            >
+              樂園的選擇：從言論與資訊自由被剝奪，看亡國感的生成
+            </h4>
+          </div>
+        </a>
+        <a
+          className="news-card-s"
           href="https://www.twreporter.org/a/bookreview-recommendation-sohn-suk-hee"
         >
           <figure>
@@ -227,32 +253,6 @@ exports[`Section/Blog renders correctly 1`] = `
               className="is-4"
             >
               【投書】戒菸新希望？菸害新風暴？電子菸防制的考驗與思考
-            </h4>
-          </div>
-        </a>
-        <a
-          className="news-card-s"
-          href="https://www.twreporter.org/a/opinion-2020-election-japan-newspaper-editorial"
-        >
-          <figure>
-            <span
-              className=""
-              style={
-                Object {
-                  "display": "inline-block",
-                  "height": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </figure>
-          <div
-            className="title"
-          >
-            <h4
-              className="is-4"
-            >
-              野島剛／日本如何看2020台灣大選？解析日媒選前社論關注焦點
             </h4>
           </div>
         </a>

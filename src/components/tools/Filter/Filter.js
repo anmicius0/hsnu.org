@@ -5,7 +5,7 @@ import { Form, Button } from "react-bootstrap"
 import "./Filter.scss"
 
 export default ({ id }) => {
-  //          dynamic options         //
+  // dynamic options
 
   const [genre, setGenre] = useState("全部")
   const [subgenre, setSubgenre] = useState(["全部"])
@@ -39,7 +39,7 @@ export default ({ id }) => {
     var submit_search =
       new URL(document.URL).searchParams.get("search") || false
 
-    window.location = `http://hsnu.org/search/?${
+    window.location = `${process.env.SITE_URL}/search/?${
       submit_search ? "search=" + submit_search : ""
     }${submit_genre !== "全部" ? "&genre=" + submit_genre : ""}${
       submit_subgenre !== "全部" ? "&subgenre=" + submit_subgenre : ""

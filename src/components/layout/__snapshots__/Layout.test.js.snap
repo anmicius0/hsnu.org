@@ -220,7 +220,7 @@ Array [
     id="sidebar"
   >
     <h3
-      className="is-3 bold"
+      className="is-3 bold serif"
     >
       國立臺灣大學附屬高級中學
     </h3>

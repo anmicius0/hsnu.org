@@ -64,8 +64,8 @@ module.exports = {
           "**/wp/v2/settings",
           "**/wp/v2/themes",
           // jetpack
-          "**jetpack**",
-          "**wpcom**",
+          "**/jetpack/**",
+          "**/wpcom/**",
         ],
       },
     },

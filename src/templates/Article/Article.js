@@ -74,7 +74,7 @@ export default ({ data }) => {
                 date={data.allWordpressWpSpost.edges[0].node.date}
                 content={data.allWordpressWpSpost.edges[0].node.content}
                 urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
-                files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
+                // files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
               />
               <LazyLoadComponent>
                 <RecommandVideo />
@@ -101,14 +101,6 @@ export const query = graphql`
           content
           acf {
             genre
-            repeater_file {
-              file {
-                url {
-                  source_url
-                }
-                filename
-              }
-            }
             repeater_link {
               description
               url

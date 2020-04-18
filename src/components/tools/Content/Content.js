@@ -3,7 +3,7 @@ import React from "react"
 import "./Content.scss"
 import Files from "../Files/Files"
 
-const Content = ({ title, genre, date, content, files, urls }) => {
+const Content = ({ title, genre, date, content, files = null, urls }) => {
   // format
   const date2 = new Date(date)
 

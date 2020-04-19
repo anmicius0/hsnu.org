@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout/Layout"
+import Layout from "../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 // style
-import "./Article.scss"
+import "../styles/scss/article/Article.scss"
 
 // tools
-import SideNews from "../../components/tools/SidewNews/SideNews"
-import Content from "../../components/tools/Content/Content"
-import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
+import SideNews from "../components/tools/SidewNews/SideNews"
+import Content from "../components/tools/Content/Content"
+import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
   //  when scroll near the bottom, add news

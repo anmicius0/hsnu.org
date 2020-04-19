@@ -13,7 +13,10 @@ import SideNews from "../components/tools/SidewNews/SideNews"
 import Content from "../components/tools/Content/Content"
 import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 
-export default ({ data }) => {
+export default () => {
+  // get slug
+  const slug = new URL(location.href).searchParams.get("slug")
+
   //  when scroll near the bottom, add news
   const [newses, setNewses] = useState(null)
   const [page_now, setPage_now] = useState(1)
@@ -57,25 +60,33 @@ export default ({ data }) => {
     }
   }, [newses])
 
+  var [content_obj, setContentObj] = useState()
+  useEffect(() => {
+    axios
+      .get(
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?slug=${slug}`
+      )
+      .then(res => {
+        console.log(res.data[0])
+        setContentObj(res.data[0])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [content_obj])
+
   return (
     <>
       <Layout
-        title={data.allWordpressWpSpost.edges[0].node.title}
-        description={data.allWordpressWpSpost.edges[0].node.content}
+        title={content_obj ? content_obj.title.rendered : null}
+        description={content_obj ? content_obj.content.rendered : null}
         article
       >
         <div id="header-padding" />
         <Container id="article" fluid>
           <Row>
             <Col lg="7">
-              <Content
-                title={data.allWordpressWpSpost.edges[0].node.title}
-                genre={data.allWordpressWpSpost.edges[0].node.acf.genre}
-                date={data.allWordpressWpSpost.edges[0].node.date}
-                content={data.allWordpressWpSpost.edges[0].node.content}
-                urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
-                // files={data.allWordpressWpSpost.edges[0].node.acf.repeater_file}
-              />
+              {content_obj ? <Content content_obj={content_obj} /> : null}
               <LazyLoadComponent>
                 <RecommandVideo />
               </LazyLoadComponent>
@@ -89,25 +100,3 @@ export default ({ data }) => {
     </>
   )
 }
-
-export const query = graphql`
-  query($id: Int!) {
-    allWordpressWpSpost(filter: { wordpress_id: { eq: $id } }) {
-      edges {
-        node {
-          title
-          date
-          wordpress_id
-          content
-          acf {
-            genre
-            repeater_link {
-              description
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`

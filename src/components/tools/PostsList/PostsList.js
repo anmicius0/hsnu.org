@@ -75,7 +75,7 @@ const PostsList = ({ posts }) => {
         <Row className={"flex-column"}>
           {current_posts.map(post => (
             <Col className={"post"} key={post.node.title}>
-              <Link to={"/post/" + post.node.wordpress_id}>
+              <Link to={"/post/?slug=" + post.node.slug}>
                 <p
                   className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: post.node.title }}

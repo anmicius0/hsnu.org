@@ -83,13 +83,6 @@ module.exports = {
     },
     // css
     `gatsby-plugin-sass`,
-    "gatsby-plugin-minify-html",
-    {
-      resolve: "gatsby-plugin-zopfli",
-      options: {
-        extensions: ["css", "html", "js", "svg"],
-      },
-    },
     `gatsby-plugin-offline`,
   ],
 }

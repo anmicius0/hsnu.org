@@ -77,9 +77,12 @@ const Content = ({ files, urls }) => {
           ? urls.map(url => (
               <>
                 <a href={url.url}>
-                  <div className={"file link"}>
+                  <div className={`file ${identity_file(url.description)}`}>
                     {/* icon */}
-                    <img src={link} alt={"Link icon"}></img>
+                    <img
+                      src={get_icon(url.description)}
+                      alt={"Link icon"}
+                    ></img>
                     {/* name */}
                     <p className={"is-5"}>{url.description}</p>
                   </div>

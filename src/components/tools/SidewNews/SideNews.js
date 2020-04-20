@@ -38,7 +38,6 @@ const SideNews = ({ infinity = false }) => {
           `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=5&per_page=20&page=1`
         )
         .then(res => {
-          console.log(res.data)
           setPage_now(page_now + 1)
           setRestNews(res.data)
         })

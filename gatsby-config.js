@@ -23,6 +23,12 @@ module.exports = {
         icon: `src/images/icons/HSNU.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/Layout.js`),
+      },
+    },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,

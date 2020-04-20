@@ -11,12 +11,12 @@ export default ({ data }) => {
   console.log(data)
 
   return (
-    <Layout>
+    <>
       <Landing />
       <NewsSlider />
       <Blog posts={data} />
       <Clubs />
-    </Layout>
+    </>
   )
 }
 

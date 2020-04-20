@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
-import Layout from "../components/layout/Layout"
+import Seo from "../components/layout/Seo"
 
 // style
 import "../styles/scss/search/search.scss"
@@ -63,7 +63,8 @@ export default ({ location }) => {
   }, [])
 
   return (
-    <Layout title={`搜尋「${search_param}」`}>
+    <>
+      <Seo title={`搜尋「${search_param}」`} />
       <div id="header-padding" />
       <Container id="search-page" fluid>
         <Row>
@@ -88,6 +89,6 @@ export default ({ location }) => {
           </Col>
         </Row>
       </Container>
-    </Layout>
+    </>
   )
 }

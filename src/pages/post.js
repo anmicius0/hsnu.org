@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout/Layout"
+import Seo from "../components/layout/Seo"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
@@ -34,26 +34,25 @@ export default () => {
 
   return (
     <>
-      <Layout
+      <Seo
         title={contentObj ? contentObj.title.rendered : null}
         description={contentObj ? contentObj.content.rendered : null}
         article
-      >
-        <div id="header-padding" />
-        <Container id="article" fluid>
-          <Row>
-            <Col lg="7">
-              {contentObj ? <Content contentObj={contentObj} /> : null}
-              <LazyLoadComponent>
-                <RecommandVideo />
-              </LazyLoadComponent>
-            </Col>
-            <Col lg={{ span: 4, offset: 1 }}>
-              <SideNews infinity={true} />
-            </Col>
-          </Row>
-        </Container>
-      </Layout>
+      />
+      <div id="header-padding" />
+      <Container id="article" fluid>
+        <Row>
+          <Col lg="7">
+            {contentObj ? <Content contentObj={contentObj} /> : null}
+            <LazyLoadComponent>
+              <RecommandVideo />
+            </LazyLoadComponent>
+          </Col>
+          <Col lg={{ span: 4, offset: 1 }}>
+            <SideNews infinity={true} />
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

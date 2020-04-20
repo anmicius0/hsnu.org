@@ -1,6 +1,6 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import { BlogPure } from "./Blog"
+import BLog from "./Blog"
 
 describe("Section/Blog", () => {
   it("renders correctly", () => {
@@ -128,9 +128,7 @@ describe("Section/Blog", () => {
       },
     ]
 
-    const tree = renderer
-      .create(<BlogPure posts={posts} news={news} />)
-      .toJSON()
+    const tree = renderer.create(<BLog posts={posts} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

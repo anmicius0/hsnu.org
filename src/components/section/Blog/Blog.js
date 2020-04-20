@@ -8,7 +8,7 @@ import "./Blog.scss"
 import PostLists from "../../tools/PostsList/PostsList"
 import SideNews from "../../tools/SidewNews/SideNews"
 
-export const BlogPure = ({ posts, news }) => {
+const Blog = ({ posts }) => {
   return (
     <Container as="section" id="Blog">
       <Row>
@@ -19,35 +19,11 @@ export const BlogPure = ({ posts, news }) => {
 
         {/* side news (component) */}
         <Col lg={{ span: 4, offset: 1 }}>
-          <SideNews newses={news} />
+          <SideNews />
         </Col>
       </Row>
     </Container>
   )
-}
-
-const Blog = ({ posts }) => {
-  const news = useStaticQuery(graphql`
-    {
-      allWordpressWpNews(limit: 4) {
-        edges {
-          node {
-            title
-            acf {
-              link
-              image {
-                sizes {
-                  thumbnail
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `).allWordpressWpNews.edges
-
-  return <BlogPure posts={posts} news={news} />
 }
 
 export default Blog

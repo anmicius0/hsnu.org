@@ -11,7 +11,6 @@ export default ({ id }) => {
   const [subgenre, setSubgenre] = useState(["全部"])
 
   function handle_change(event) {
-    console.log(event.target.value)
     setGenre(event.target.value)
   }
 
@@ -28,8 +27,6 @@ export default ({ id }) => {
       }
     })
   }, [genre])
-
-  //               End                //
 
   // handle submit
   function handle_submit(event) {

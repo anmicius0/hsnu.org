@@ -15,7 +15,7 @@ import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 
 export default () => {
   // get slug
-  const slug = new URL(location.href).searchParams.get("slug")
+  const slug = new URL(location.href).searchParams.get("slug") || false
 
   //  when scroll near the bottom, add news
   const [newses, setNewses] = useState(null)

@@ -39,31 +39,21 @@ const PostsList = ({ posts }) => {
     <div className={"posts"}>
       {/* genres */}
       <Nav variant="tabs" className={"genres"}>
-        {genreTabs.map((item, index) =>
-          index === 0 ? (
-            <Nav.Item className={"genre"} key={item.name}>
-              <h2
-                className={"is-3 bold active"}
-                onClick={() => {
-                  setCurrent_posts(posts[item.codeName].edges)
-                }}
-              >
-                {item.name}
-              </h2>
-            </Nav.Item>
-          ) : (
-            <Nav.Item className={"genre"} key={item.name}>
-              <h2
-                className={"is-3 bold"}
-                onClick={() => {
-                  setCurrent_posts(posts[item.codeName].edges)
-                }}
-              >
-                {item.name}
-              </h2>
-            </Nav.Item>
-          )
-        )}
+        {/* run through genres */}
+        {genreTabs.map((item, index) => (
+          <Nav.Item className={"genre"} key={item.name}>
+            <h2
+              className={`is-3 bold ${index == 0 ? "active" : null}`}
+              onClick={() => {
+                setCurrent_posts(posts[item.codeName].edges)
+              }}
+            >
+              {item.name}
+            </h2>
+          </Nav.Item>
+        ))}
+
+        {/* more tab */}
         <Nav.Item className={"genre"}>
           <Link to="/search">
             <h2 className={"is-3 bold more"}>更多...</h2>

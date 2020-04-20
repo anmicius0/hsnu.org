@@ -64,13 +64,14 @@ const PostsList = ({ posts }) => {
             </Nav.Item>
           )
         )}
-        <Nav.Item className={"genre more"}>
+        <Nav.Item className={"genre"}>
           <Link to="/search">
-            <h2 className={"is-3 bold"}>更多...</h2>
+            <h2 className={"is-3 bold more"}>更多...</h2>
           </Link>
         </Nav.Item>
       </Nav>
 
+      {/* List of post */}
       <Container id="post-list">
         <Row className={"flex-column"}>
           {current_posts.map(post => (

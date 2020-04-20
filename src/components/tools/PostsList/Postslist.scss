@@ -36,11 +36,11 @@
           // color change
           color: black;
         }
-      }
 
-      //  hide other genres ( on mobile )
-      &:not(.active):not(.more) {
-        display: none;
+        //  hide other genres ( on mobile )
+        &:not(.active):not(.more) {
+          display: none;
+        }
       }
     }
   }
@@ -74,7 +74,7 @@
 @media (min-width: 992px) {
   .posts {
     // genres
-    .genres .genre {
+    .genres .genre h2 {
       // deactive
       &:not(.active):not(.more) {
         display: flex;

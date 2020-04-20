@@ -14,11 +14,11 @@ import Content from "../components/tools/Content/Content"
 import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 
 export default () => {
-  // get slug
-  const slug = new URL(document.URL).searchParams.get("slug") || false
-
   var [contentObj, setContentObj] = useState()
   useEffect(() => {
+    // get slug
+    const slug = new URL(document.URL).searchParams.get("slug") || false
+
     axios
       .get(
         `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?slug=${slug}`

@@ -73,17 +73,15 @@ export default ({ location }) => {
       ) {
         axios
           .get(
-            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
-              search_param ? "&search=" + search_param : ""
+            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=${page_now}${
+              search_param ? `&search=${search_param}` : ""
             }${
               genre_param
-                ? "&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=" +
-                  genre_param
+                ? `&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=${genre_param}`
                 : ""
             }${
               subgenre_param
-                ? "&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=" +
-                  subgenre_param
+                ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
                 : ""
             }`
           )

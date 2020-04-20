@@ -16,6 +16,7 @@ export default ({ location }) => {
   //  search
   const [results, setResults] = useState([])
   const [status, setStatus] = useState("Searching...")
+  const [page_now, setPage_now] = useState(1)
 
   // get search paramaters
   // (remember, there is no browser at build time)
@@ -36,31 +37,67 @@ export default ({ location }) => {
   useEffect(() => {
     axios
       .get(
-        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?${
-          search_param ? "search=" + search_param : ""
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
+          search_param ? `&search=${search_param}` : ""
         }${
           genre_param
-            ? "&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=" +
-              genre_param
+            ? `&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=${genre_param}`
             : ""
         }${
           subgenre_param
-            ? "&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=" +
-              subgenre_param
+            ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
             : ""
         }
       `
       )
       .then(res => {
         console.log(res.data)
-        res.data.length === 0
-          ? setStatus("Nothing Found (´･_･`)")
-          : setResults(res.data)
+        if (res.data.length === 0) {
+          setStatus("Nothing Found (´･_･`)")
+        } else {
+          setResults(res.data)
+          setPage_now(page_now + 1)
+        }
       })
       .catch(err => {
         console.log(err)
       })
   }, [])
+
+  // load when hit the (1/2) bottom
+  useEffect(() => {
+    window.onscroll = function() {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight / 2
+      ) {
+        axios
+          .get(
+            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
+              search_param ? "&search=" + search_param : ""
+            }${
+              genre_param
+                ? "&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=" +
+                  genre_param
+                : ""
+            }${
+              subgenre_param
+                ? "&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=" +
+                  subgenre_param
+                : ""
+            }`
+          )
+          .then(res => {
+            console.log(res.data)
+            setPage_now(page_now + 1)
+            setResults(results.concat(res.data))
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    }
+  }, [results])
 
   return (
     <>

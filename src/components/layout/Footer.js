@@ -1,6 +1,5 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
-import { LazyLoadImage } from "react-lazy-load-image-component"
 
 // icons
 import medium from "../../images/icons/socialMedia/medium.svg"

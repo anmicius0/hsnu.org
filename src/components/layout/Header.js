@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
+import { Link } from "gatsby"
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
-import { LazyLoadImage } from "react-lazy-load-image-component"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"
@@ -33,8 +33,10 @@ export const HeaderPure = ({ navs }) => {
   return (
     <Navbar expand="xl" fixed="top" id="navbar">
       {/* Brand */}
-      <Navbar.Brand href="/">
-        <LazyLoadImage src={hsnu} alt="師大附中" />
+      <Navbar.Brand>
+        <Link to="/">
+          <img src={hsnu} alt="師大附中" />
+        </Link>
       </Navbar.Brand>
 
       {/* Toggler */}
@@ -79,7 +81,7 @@ export const HeaderPure = ({ navs }) => {
             }}
           >
             <Nav.Link>
-              <LazyLoadImage src={search} alt="search" />
+              <img src={search} alt="search" />
             </Nav.Link>
           </Nav.Item>
 
@@ -94,7 +96,7 @@ export const HeaderPure = ({ navs }) => {
             }}
           >
             <Nav.Link>
-              <LazyLoadImage src={menu} alt="menu" />
+              <img src={menu} alt="menu" />
             </Nav.Link>
           </Nav.Item>
         </Nav>

@@ -31,7 +31,7 @@ export const HeaderPure = ({ navs }) => {
   }, [])
 
   return (
-    <Navbar expand="xl" id="navbar">
+    <Navbar expand="xl" fixed="top" id="navbar">
       {/* Brand */}
       <Navbar.Brand href="/">
         <LazyLoadImage src={hsnu} alt="師大附中" />

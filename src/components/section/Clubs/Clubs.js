@@ -81,19 +81,21 @@ export const ClubsPure = ({ clubs }) => {
                   {/* social media */}
                   <Container>
                     <Row className={"icons"}>
-                      {club.node.acf.social_medias.map(media => (
-                        <Col
-                          className={"icon col-4 col-sm-3"}
-                          key={media.media_link}
-                        >
-                          <a href={media.media_link}>
-                            <img
-                              src={type_to_icon(media.media_type)}
-                              alt={media.media_type}
-                            />
-                          </a>
-                        </Col>
-                      ))}
+                      {club.node.acf.social_medias
+                        ? club.node.acf.social_medias.map(media => (
+                            <Col
+                              className={"icon col-4 col-sm-3"}
+                              key={media.media_link}
+                            >
+                              <a href={media.media_link}>
+                                <img
+                                  src={type_to_icon(media.media_type)}
+                                  alt={media.media_type}
+                                />
+                              </a>
+                            </Col>
+                          ))
+                        : null}
                     </Row>
                   </Container>
                 </div>

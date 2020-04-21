@@ -110,7 +110,7 @@ const SideNews = ({ infinity = false }) => {
             >
               {/* cover */}
               <figure>
-                <img
+                <LazyLoadImage
                   src={news.acf.image.sizes.thumbnail}
                   alt={news.title.rendered}
                 />

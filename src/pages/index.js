@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 import Landing from "../components/section/Landing/Landing"
 import NewsSlider from "../components/section/NewsSlider/NewsSlider"
@@ -11,10 +12,18 @@ export default ({ data }) => {
 
   return (
     <>
-      <Landing />
-      <NewsSlider />
-      <Blog posts={data} />
-      <Clubs />
+      <LazyLoadComponent>
+        <Landing />
+      </LazyLoadComponent>
+      <LazyLoadComponent>
+        <NewsSlider />
+      </LazyLoadComponent>
+      <LazyLoadComponent>
+        <Blog posts={data} />
+      </LazyLoadComponent>
+      <LazyLoadComponent>
+        <Clubs />
+      </LazyLoadComponent>
     </>
   )
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { graphql } from "gatsby"
 import Seo from "../components/layout/Seo"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"

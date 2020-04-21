@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout/Layout"
 
 import Landing from "../components/section/Landing/Landing"
 import NewsSlider from "../components/section/NewsSlider/NewsSlider"

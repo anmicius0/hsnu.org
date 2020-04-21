@@ -78,7 +78,7 @@ module.exports = {
     // sitemap
     {
       resolve: `gatsby-plugin-sitemap`,
-      options: { exclude: [`/search/*`] },
+      options: { exclude: [`/search`] },
     },
     // robot.txt
     {

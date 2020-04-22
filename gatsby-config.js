@@ -98,6 +98,21 @@ module.exports = {
     },
     // css
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Sans TC`,
+            variants: [`300`, `400`, `700`],
+          },
+          {
+            family: `Noto Serif TC`,
+            variants: [`700`],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

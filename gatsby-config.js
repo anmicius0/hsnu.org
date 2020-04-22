@@ -80,11 +80,20 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: { exclude: [`/search`] },
     },
+    // canonical link
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://hsnu.org`,
+      },
+    },
     // robot.txt
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        configFile: "robots-txt.config.js",
+        host: "https://hsnu.org",
+        sitemap: "https://hsnu.org/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     // css

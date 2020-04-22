@@ -9,6 +9,7 @@ import "./NewsSlider.scss"
 const newsSlider = () => {
   // config of swiper
   const params = {
+    loop: "true",
     slidesPerView: "auto",
     navigation: {
       nextEl: ".swiper-button-next",

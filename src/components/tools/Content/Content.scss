@@ -22,7 +22,7 @@
 
       &.tag {
         color: white;
-        background-color: red;
+        background-color: #000000;
         padding: 0.3rem 1rem;
         border-radius: 20px;
       }
@@ -46,11 +46,20 @@
 
     strong {
       font-weight: 700;
+      // background-color: #2bfabc;
+    }
+
+    em {
+      font-style: normal;
     }
 
     a {
       color: #212529 !important;
-      text-decoration: underline black;
+      text-decoration: underline #525252;
+
+      &:hover {
+        text-decoration: underline #2bfabc;
+      }
     }
   }
 }
@@ -59,7 +68,7 @@
   .content {
     // meta
     .meta {
-      width: 45%;
+      max-width: 70%;
     }
 
     // files

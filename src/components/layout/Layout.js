@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
         {/* Google Fonts */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=`Noto+Serif+TC`:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Serif+TC:wght@700&display=swap"
         />
 
         {/* swiper */}

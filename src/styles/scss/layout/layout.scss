@@ -3,60 +3,76 @@
 @import "footer";
 
 // font uses
-body {
+html body {
   font-family: "Noto Sans TC", sans-serif !important;
-}
+  color: #000000;
 
-.serif {
-  font-family: "Noto Serif TC", serif !important;
-}
+  .serif {
+    font-family: "Noto Serif TC", serif !important;
+  }
 
-// font sizes
-.is-1 {
-  font-size: 2rem;
-  line-height: 150%;
-}
-.is-2 {
-  font-size: 2rem;
-  line-height: 130%;
-}
-.is-3 {
-  font-size: 1.4rem;
-  line-height: 130%;
-}
-.is-4 {
-  font-size: 1.15rem;
-  line-height: 150%;
-}
-.is-5 {
-  font-size: 1rem;
-  line-height: 150%;
-}
-
-@media (min-width: 720px) {
+  // font sizes
   .is-1 {
-    font-size: 2.5rem !important ;
+    font-size: 2rem;
+    line-height: 150%;
   }
   .is-2 {
-    font-size: 2rem !important ;
+    font-size: 2rem;
+    line-height: 130%;
   }
   .is-3 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem;
+    line-height: 130%;
   }
   .is-4 {
-    font-size: 1.2rem !important;
+    font-size: 1.15rem;
+    line-height: 150%;
   }
   .is-5 {
-    font-size: 1.2rem !important;
+    font-size: 1rem;
+    line-height: 150%;
   }
-}
 
-// font weight
-.light {
-  font-weight: 300;
-}
-.bold {
-  font-weight: 700;
+  @media (min-width: 720px) {
+    .is-1 {
+      font-size: 2.5rem !important ;
+    }
+    .is-2 {
+      font-size: 2rem !important ;
+    }
+    .is-3 {
+      font-size: 1.5rem !important;
+    }
+    .is-4 {
+      font-size: 1.2rem !important;
+    }
+    .is-5 {
+      font-size: 1.2rem !important;
+    }
+  }
+
+  // font weight
+  .light {
+    font-weight: 300;
+  }
+  .bold {
+    font-weight: 700;
+  }
+
+  // text selection
+  ::selection {
+    background: #2bfabc; /* WebKit/Blink Browsers */
+    color: #000000;
+  }
+  ::-moz-selection {
+    background: #2bfabc; /* Gecko Browsers */
+    color: #000000;
+  }
+
+  // links
+  a:hover {
+    text-decoration: underline #2bfabc;
+  }
 }
 
 // header padding

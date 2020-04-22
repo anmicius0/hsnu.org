@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 // components
-import Seo from "./Seo"
 import Header from "./Header"
 import Footer from "./Footer"
 import Sidebar from "./Sidebar"

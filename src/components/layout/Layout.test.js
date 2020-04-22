@@ -3,7 +3,6 @@ import renderer from "react-test-renderer"
 import { HeaderPure } from "./Header"
 import Footer from "./Footer"
 import { SidebarPure } from "./Sidebar"
-import { SEOPure } from "./Seo"
 
 describe("Layout/Header", () => {
   it("renders correctly", () => {

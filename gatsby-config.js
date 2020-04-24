@@ -10,15 +10,22 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `師大附中`,
         short_name: `HSNU`,
         start_url: `/`,
-        background_color: `#000000`,
-        theme_color: `#000000`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
         display: `standalone`,
         icon: `src/images/icons/HSNU.png`,
       },
@@ -27,13 +34,6 @@ module.exports = {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/components/layout/Layout.js`),
-      },
-    },
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
       },
     },
     // source from WordPress
@@ -97,6 +97,21 @@ module.exports = {
       },
     },
     // css
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Sans TC`,
+            variants: [`300`, `400`, `700`],
+          },
+          {
+            family: `Noto Serif TC`,
+            variants: [`700`],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
   ],

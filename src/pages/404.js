@@ -15,7 +15,7 @@ import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 export default () => {
   const wordpress_id =
     typeof document !== "undefined"
-      ? new URL(document.URL).pathname.match(/(\d+)/g)[0]
+      ? new URL(document.URL).searchParams.get("id")
       : ""
   const [post, setPost] = useState()
   const [status, setStatus] = useState("Loading...")
@@ -74,6 +74,15 @@ export default () => {
           </Col>
         </Row>
       </Container>
+
+      <script>
+        if (new URL(document.URL).pathname.test(/.*\/post\/(\d+)/g)){" "}
+        {window.location.replace(
+          `${process.env.SITE_URL}/404?id=${new URL(
+            document.URL
+          ).pathname.match(/(\d+)/g)}`
+        )}
+      </script>
     </>
   )
 }

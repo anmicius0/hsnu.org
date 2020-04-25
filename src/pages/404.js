@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import Seo from "../components/layout/Seo"
 import { Container, Row, Col } from "react-bootstrap"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
+import axios from "axios"
 
 // style
 import "../styles/scss/404/404.scss"
@@ -20,21 +21,19 @@ export default () => {
   const [status, setStatus] = useState("Loading...")
 
   useEffect(() => {
-    fetch(
-      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?include=${wordpress_id}`
-    )
+    axios
+      .get(
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?include=${wordpress_id}`
+      )
       .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        console.log(data[0])
+        console.log(res.data[0])
         setPost({
           wordpress_id: wordpress_id,
-          title: data[0].title.rendered,
-          content: data[0].content.rendered,
-          genre: data[0].acf.genre,
-          date: data[0].date,
-          urls: data[0].acf.repeater_link,
+          title: res.data[0].title.rendered,
+          content: res.data[0].content.rendered,
+          genre: res.data[0].acf.genre,
+          date: res.data[0].date,
+          urls: res.data[0].acf.repeater_link,
         })
       })
       .catch(err => {

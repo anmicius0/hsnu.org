@@ -12,9 +12,10 @@ import Content from "../components/tools/Content/Content"
 import RecommandVideo from "../components/tools/RecommandVideo/RecommandVideo"
 
 export default () => {
-  const wordpress_id = document
-    ? new URL(document.URL).pathname.match(/(\d+)/g)[0]
-    : false
+  const wordpress_id =
+    typeof document !== "undefined"
+      ? new URL(document.URL).pathname.match(/(\d+)/g)[0]
+      : ""
   const [post, setPost] = useState()
   const [status, setStatus] = useState("Loading...")
 

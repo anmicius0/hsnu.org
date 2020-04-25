@@ -8,7 +8,7 @@ import "./Postslist.scss"
 const PostsList = ({ posts }) => {
   // toggle tabs
   useEffect(() => {
-    // please select the test inside .genre (.genre > h2
+    // please select the text inside .genre (.genre > h2)
     const genres = document.querySelectorAll(".genre:not(.more) h2")
     for (var i = 0; i < genres.length; i++) {
       genres[i].addEventListener("click", e => {
@@ -26,14 +26,13 @@ const PostsList = ({ posts }) => {
 
   // tabs
   const genreTabs = [
-    { name: "最新", codeName: "allPosts" },
     { name: "學生", codeName: "studentPosts" },
     { name: "研習", codeName: "researchPosts" },
     { name: "競賽", codeName: "racePosts" },
     { name: "教師", codeName: "teacherPosts" },
   ]
 
-  const [current_posts, setCurrent_posts] = useState(posts.allPosts.edges)
+  const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
 
   return (
     <div className={"posts"}>
@@ -43,7 +42,7 @@ const PostsList = ({ posts }) => {
         {genreTabs.map((item, index) => (
           <Nav.Item className={"genre"} key={item.name}>
             <h2
-              className={`is-3 bold ${index == 0 ? "active" : null}`}
+              className={`is-3 bold ${index === 0 ? "active" : null}`}
               onClick={() => {
                 setCurrent_posts(posts[item.codeName].edges)
               }}

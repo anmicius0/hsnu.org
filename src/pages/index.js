@@ -30,17 +30,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allPosts: allWordpressWpSpost(
-      limit: 10
-      sort: { fields: date, order: DESC }
-    ) {
-      edges {
-        node {
-          title
-          wordpress_id
-        }
-      }
-    }
     studentPosts: allWordpressWpSpost(
       filter: { acf: { genre: { eq: "學生" } } }
       limit: 10

@@ -27,12 +27,32 @@ const PostsList = ({ posts }) => {
   // tabs
   const genreTabs = [
     { name: "學生", codeName: "studentPosts" },
+    { name: "最新", codeName: "allPosts" },
     { name: "研習", codeName: "researchPosts" },
     { name: "競賽", codeName: "racePosts" },
     { name: "教師", codeName: "teacherPosts" },
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
+  const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
+  const [genreNow, setGenreNow] = useState("studentPosts")
+
+  useEffect(() => {
+    fetch(`https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost`)
+      .then(res => res.json())
+      .then(data => {
+        setNew_post(
+          data.map(post => {
+            return {
+              title: post.title.rendered,
+              id: post.id,
+            }
+          })
+        )
+
+        console.log(new_post)
+      })
+  }, [])
 
   return (
     <div className={"posts"}>
@@ -44,7 +64,10 @@ const PostsList = ({ posts }) => {
             <h2
               className={`is-3 bold ${index === 0 ? "active" : null}`}
               onClick={() => {
-                setCurrent_posts(posts[item.codeName].edges)
+                setGenreNow(item.codeName)
+                if (item.codeName !== "allPosts") {
+                  setCurrent_posts(posts[item.codeName].edges)
+                }
               }}
             >
               {item.name}
@@ -63,16 +86,27 @@ const PostsList = ({ posts }) => {
       {/* List of post */}
       <Container id="post-list">
         <Row className={"flex-column"}>
-          {current_posts.map(post => (
-            <Col className={"post"} key={post.node.title}>
-              <Link to={`/post/${post.node.wordpress_id}`}>
-                <p
-                  className={"is-4"}
-                  dangerouslySetInnerHTML={{ __html: post.node.title }}
-                />
-              </Link>
-            </Col>
-          ))}
+          {genreNow === "allPosts"
+            ? new_post.map(post => (
+                <Col className={"post"} key={post.id}>
+                  <Link to={`/preview?id=${post.id}`}>
+                    <p
+                      className={"is-4"}
+                      dangerouslySetInnerHTML={{ __html: post.title }}
+                    />
+                  </Link>
+                </Col>
+              ))
+            : current_posts.map(post => (
+                <Col className={"post"} key={post.node.wordpress_id}>
+                  <Link to={`/post/${post.node.wordpress_id}`}>
+                    <p
+                      className={"is-4"}
+                      dangerouslySetInnerHTML={{ __html: post.node.title }}
+                    />
+                  </Link>
+                </Col>
+              ))}
         </Row>
       </Container>
     </div>

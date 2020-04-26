@@ -48,6 +48,15 @@ export default () => {
           </Col>
         </Row>
       </Container>
+      <script>
+        {/* // check if it's a post */}
+        const wordpress_id = typeof document !== "undefined" ? new
+        RegExp(/\/post\/(\d+)/g).test(new URL(document.URL).pathname) ? new
+        URL(document.URL).pathname.match(/(\d+)/g) : "" : ""
+        {/* // redirect to preview page */}
+        if (typeof window !== "undefined" && wordpress_id)
+        {(window.location = `/preview?id=${wordpress_id}`)}
+      </script>
     </>
   )
 }

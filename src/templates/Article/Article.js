@@ -32,6 +32,10 @@ export default ({ data }) => {
               date={data.allWordpressWpSpost.edges[0].node.date}
               content={data.allWordpressWpSpost.edges[0].node.content}
               urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
+              author={
+                data.allWordpressWpSpost.edges[0].node.author_meta
+                  .author_description
+              }
             />
             <LazyLoadComponent>
               <RecommandVideo />
@@ -61,6 +65,9 @@ export const query = graphql`
               description
               url
             }
+          }
+          author_meta {
+            author_description
           }
         }
       }

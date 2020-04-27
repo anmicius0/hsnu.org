@@ -3,7 +3,7 @@ import React from "react"
 import "./Content.scss"
 import Files from "../Files/Files"
 
-const Content = ({ title, genre, date, content, urls }) => {
+const Content = ({ title, genre, date, content, urls, author }) => {
   return (
     <article className={"content"}>
       {/* title */}
@@ -13,7 +13,7 @@ const Content = ({ title, genre, date, content, urls }) => {
       <div className={"meta"}>
         <p className={"is-5 light"}>{genre}</p>
         <p className={"is-5 light"}>{date}</p>
-        <p className={"is-5 tag"}> 熱門</p>
+        <p className={"is-5 tag"}>{author}</p>
       </div>
 
       {/* files */}

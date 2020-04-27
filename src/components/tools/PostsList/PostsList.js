@@ -26,8 +26,8 @@ const PostsList = ({ posts }) => {
 
   // tabs
   const genreTabs = [
-    { name: "學生", codeName: "studentPosts" },
     { name: "最新", codeName: "allPosts" },
+    { name: "學生", codeName: "studentPosts" },
     { name: "研習", codeName: "researchPosts" },
     { name: "競賽", codeName: "racePosts" },
     { name: "教師", codeName: "teacherPosts" },
@@ -35,7 +35,7 @@ const PostsList = ({ posts }) => {
 
   const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
   const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
-  const [genreNow, setGenreNow] = useState("studentPosts")
+  const [genreNow, setGenreNow] = useState("allPosts")
 
   useEffect(() => {
     fetch(`https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost`)

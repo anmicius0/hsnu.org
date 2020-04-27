@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 import Landing from "../components/section/Landing/Landing"
-import NewsSlider from "../components/section/NewsSlider/NewsSlider"
+// import NewsSlider from "../components/section/NewsSlider/NewsSlider"
 import Clubs from "../components/section/Clubs/Clubs"
 import Blog from "../components/section/Blog/Blog"
 
@@ -15,9 +15,9 @@ export default ({ data }) => {
       <LazyLoadComponent>
         <Landing />
       </LazyLoadComponent>
-      <LazyLoadComponent>
+      {/* <LazyLoadComponent>
         <NewsSlider />
-      </LazyLoadComponent>
+      </LazyLoadComponent> */}
       <LazyLoadComponent>
         <Blog posts={data} />
       </LazyLoadComponent>

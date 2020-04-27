@@ -56,7 +56,7 @@ export default () => {
                 genre={post.genre}
                 date={post.date}
                 content={post.content}
-                urls={post.repeater_link}
+                urls={post.urls}
                 author={post.author}
               />
             ) : (

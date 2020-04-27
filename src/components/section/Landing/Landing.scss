@@ -67,10 +67,13 @@
     // title
     a {
       // position
-      top: 80%;
+      top: 75%;
       left: 35%;
-
       width: 60%;
+
+      .is-2 {
+        line-height: 200%;
+      }
     }
   }
 }

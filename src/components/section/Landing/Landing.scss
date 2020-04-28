@@ -1,4 +1,4 @@
-#landing {
+.landing {
   // position
   position: relative;
 
@@ -60,7 +60,7 @@
 }
 
 @media (min-width: 992px) {
-  #landing {
+  .landing {
     // box
     height: 75vh;
 

@@ -6,6 +6,36 @@ import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
 
 export const SidebarPure = ({ menus }) => {
+  const tools = {
+    title: "學生資訊",
+    items: [
+      {
+        title: "升學資訊",
+        url:
+          "https://site.hs.ntnu.edu.tw/guidance/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF2019/",
+      },
+      {
+        title: "微課程",
+        url:
+          "https://www.hs.ntnu.edu.tw/%e5%be%ae%e8%aa%b2%e7%a8%8b%e8%b3%87%e8%a8%8a/",
+      },
+      {
+        title: "獎學金資訊",
+        url:
+          "https://www.hs.ntnu.edu.tw/search/?type=bt&sq=%E7%8D%8E%E5%AD%B8%E9%87%91",
+      },
+      {
+        title: "學生證掛失",
+        url: "https://ecardlost.tp.edu.tw/ecard/Ecard/QueryOfLostEcardAction",
+      },
+      {
+        title: "證明文件申請",
+        url:
+          "https://site.hs.ntnu.edu.tw/academic/hsnureg/%E7%94%B3%E8%AB%8B%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A1%A8%E5%96%AE/",
+      },
+    ],
+  }
+
   return (
     <>
       <div id={"sidebar"}>
@@ -16,7 +46,20 @@ export const SidebarPure = ({ menus }) => {
         <SearchBox />
 
         {/* menu cards*/}
+        {/* frequent tools */}
         <ul className={"menu-cards"}>
+          <li key={tools.title}>
+            <ul className={"menu-card"}>
+              <h4 className={"is-4 bold"}>{tools.title}</h4>
+              {tools.items.map(item => (
+                <li className={"is-5"} key={item.title}>
+                  <a href={item.url}>{item.title}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          {/* tools from WP */}
           {menus.map(menu => (
             <li key={menu.node.title}>
               <ul className={"menu-card"}>

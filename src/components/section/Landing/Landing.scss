@@ -3,7 +3,7 @@
   position: relative;
 
   // box
-  height: 65vh;
+  height: 70vh;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -20,7 +20,7 @@
     // position
     display: inline-block;
     position: absolute;
-    top: 75%;
+    bottom: -5%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -67,7 +67,7 @@
     // title
     a {
       // position
-      top: 75%;
+      bottom: 0;
       left: 35%;
       width: 60%;
 

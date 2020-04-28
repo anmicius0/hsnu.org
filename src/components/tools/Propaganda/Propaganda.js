@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import Swiper from "react-id-swiper"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
@@ -7,12 +6,7 @@ import Jumbotron from "react-bootstrap/Jumbotron"
 import "./Propaganda.scss"
 
 const Propaganda = () => {
-  // config of swiper
-  const params = {
-    slidesPerView: "1",
-  }
-
-  const [images, setImages] = useState()
+  const [image, setImage] = useState()
 
   useEffect(() => {
     fetch(
@@ -22,31 +16,30 @@ const Propaganda = () => {
         return res.json()
       })
       .then(data => {
-        setImages(
-          data.map(datum => {
-            return datum.acf.image.sizes.medium
-          })
-        )
+        setImage(data)
+        console.log(image)
       })
   }, [])
 
   return (
     <Jumbotron id="propaganda">
-      <img
-        rel="preload"
-        src={
-          "https://i0.wp.com/wordpress.hsnu.org/wp-content/uploads/2020/04/242198.jpg?fit=240%2C300&ssl=1"
-        }
-        alt={"Headline"}
-      ></img>
-      <div className={"fade-layer"}></div>
-      <a href={"/"}>
-        <h1 className={"is-1 serif bold"}>
-          <span className={"is-2"}>教師公告｜</span>
-          <br />
-          防疫公告
-        </h1>
-      </a>
+      {image ? (
+        <>
+          <LazyLoadImage
+            rel="preload"
+            src={image[0].acf.image.sizes.medium}
+            alt={"propaganda"}
+          />
+          <div className={"fade-layer"}></div>
+          <a href={"/"}>
+            <h1 className={"is-1 serif bold"}>
+              <span className={"is-3"}>教師公告｜</span>
+              <br />
+              {image[0].title.rendered}
+            </h1>
+          </a>
+        </>
+      ) : null}
     </Jumbotron>
   )
 }

@@ -2,7 +2,6 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import Swiper from "react-id-swiper"
-import { LazyLoadImage } from "react-lazy-load-image-component"
 
 // icons
 import facebook from "../../../images/icons/socialMedia-colored/facebook-colored.svg"

@@ -1,5 +1,5 @@
 import React from "react"
-import { Jumbotron } from "react-bootstrap/Jumbotron"
+import { Jumbotron } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 
 // style
@@ -17,7 +17,7 @@ export const LandingPure = ({ headline }) => {
         <div className={"fade-layer"}></div>
         <a href={headline.node.acf.link}>
           <h1 className={"is-1 serif bold"}>
-            <span className={"is-2"}>附中學生作品｜</span>
+            <span className={"is-3"}>附中學生作品｜</span>
             <br />
             {headline.node.title}
           </h1>

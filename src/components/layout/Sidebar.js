@@ -64,9 +64,9 @@ export const SidebarPure = ({ menus }) => {
             <li key={menu.node.title}>
               <ul className={"menu-card"}>
                 <h4 className={"is-4 bold"}>{menu.node.title}</h4>
-                {menu.node.items.map(item => (
-                  <li className={"is-5"} key={item.title}>
-                    <a href={item.url}>{item.title}</a>
+                {menu.node.acf.items.map(item => (
+                  <li className={"is-5"} key={item.name}>
+                    <a href={item.url}>{item.name}</a>
                   </li>
                 ))}
               </ul>
@@ -96,20 +96,22 @@ const Sidebar = () => {
   const menus = useStaticQuery(
     graphql`
       {
-        allMenuJson {
+        allWordpressWpMenu(sort: { fields: date, order: ASC }) {
           edges {
             node {
               title
-              items {
-                title
-                url
+              acf {
+                items {
+                  name
+                  url
+                }
               }
             }
           }
         }
       }
     `
-  ).allMenuJson.edges
+  ).allWordpressWpMenu.edges
 
   return <SidebarPure menus={menus} />
 }

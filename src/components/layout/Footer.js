@@ -21,7 +21,7 @@ const Footer = () => {
         <Container fluid>
           <Row>
             <Col lg="6" className={"logo"}>
-              <h2 className={"is-2 bold"}>We Are HSNUer</h2>
+              <h2 className={"is-2 bold"}>Made by Anmicius@HSNU</h2>
             </Col>
             <Col lg="6" className={"icons"}>
               {footers.map(icon => (

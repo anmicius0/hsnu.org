@@ -87,7 +87,7 @@ export const ClubsPure = ({ clubs }) => {
                             key={media.media_link}
                           >
                             <a href={media.media_link}>
-                              <LazyLoadImage
+                              <img
                                 src={type_to_icon(media.media_type)}
                                 alt={media.media_type}
                               />

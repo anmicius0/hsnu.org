@@ -38,7 +38,9 @@ const PostsList = ({ posts }) => {
   const [genreNow, setGenreNow] = useState("allPosts")
 
   useEffect(() => {
-    fetch(`https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost`)
+    fetch(
+      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=11`
+    )
       .then(res => res.json())
       .then(data => {
         setNew_post(

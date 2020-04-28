@@ -35,7 +35,7 @@ const SideNews = ({ infinity = false }) => {
     if (infinity) {
       axios
         .get(
-          `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=5&per_page=20&page=1`
+          `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=6&per_page=20&page=1`
         )
         .then(res => {
           setPage_now(page_now + 1)

@@ -1,0 +1,93 @@
+#propaganda {
+  // position
+  position: relative;
+
+  // box
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  // title
+  a {
+    // position
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    // box
+    width: 100%;
+    padding: 0 1rem;
+
+    h1 {
+      color: white;
+    }
+    br {
+      display: none;
+    }
+
+    // limit line
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+  }
+  a:hover {
+    cursor: pointer;
+    text-decoration-color: white;
+  }
+
+  // fade (component)
+  .fade-layer {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.8);
+  }
+}
+
+@media (min-width: 992px) {
+  #propaganda {
+    overflow: hidden;
+    height: 100%;
+
+    // title
+    a {
+      // position
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      // box
+      width: 100%;
+      padding: 0 1rem;
+
+      h1 {
+        color: white;
+      }
+
+      // limit line
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3; /* number of lines to show */
+    }
+    a:hover {
+      cursor: pointer;
+      text-decoration-color: white;
+    }
+  }
+}

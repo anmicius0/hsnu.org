@@ -1,0 +1,43 @@
+#Banner {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  .row {
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+
+    .col-lg-3 {
+      height: 20%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .col-lg-9 {
+      height: 80%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #Banner {
+    height: 40vh;
+    width: 100%;
+    max-width: 100%;
+
+    .row {
+      width: 100%;
+      height: 40vh;
+      margin: 0;
+
+      .col-lg-3,
+      .col-lg-9 {
+        height: 100%;
+      }
+    }
+  }
+}

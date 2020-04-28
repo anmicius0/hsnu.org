@@ -52,6 +52,7 @@
     "react-id-swiper": "^2.4.0",
     "react-lazy-load": "^3.0.13",
     "react-lazy-load-image-component": "^1.4.3",
+    "react-scroll-parallax": "^2.3.2",
     "swiper": "^5.3.7"
   },
   "devDependencies": {

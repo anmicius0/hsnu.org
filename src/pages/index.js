@@ -5,6 +5,7 @@ import { LazyLoadComponent } from "react-lazy-load-image-component"
 import Landing from "../components/section/Landing/Landing"
 // import NewsSlider from "../components/section/NewsSlider/NewsSlider"
 import Clubs from "../components/section/Clubs/Clubs"
+import Banner from "../components/section/Banner/Banner"
 import Blog from "../components/section/Blog/Blog"
 
 export default ({ data }) => {
@@ -20,6 +21,9 @@ export default ({ data }) => {
       </LazyLoadComponent> */}
       <LazyLoadComponent>
         <Blog posts={data} />
+      </LazyLoadComponent>
+      <LazyLoadComponent>
+        <Banner />
       </LazyLoadComponent>
       <LazyLoadComponent>
         <Clubs />

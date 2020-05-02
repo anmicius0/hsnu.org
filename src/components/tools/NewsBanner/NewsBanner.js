@@ -1,18 +1,17 @@
 import React from "react"
-import Jumbotron from "react-bootstrap/Jumbotron"
 import { useStaticQuery, graphql } from "gatsby"
+import { Parallax } from "react-parallax"
 
 // style
 import "./NewsBanner.scss"
 
 export const NewsBanner = ({ headline }) => {
   return (
-    <Jumbotron id="NewsBanner">
-      <img
-        rel="preload"
-        src={headline.node.acf.image.sizes.wordpress_1536x1536}
-        alt={"Headline"}
-      ></img>
+    <Parallax
+      className={"NewsBanner"}
+      bgImage={headline.node.acf.image.sizes.wordpress_1536x1536}
+      strength={500}
+    >
       <div className={"fade-layer"}></div>
       <a href={headline.node.acf.link}>
         <h1 className={"is-1 serif bold"}>
@@ -21,7 +20,7 @@ export const NewsBanner = ({ headline }) => {
           {headline.node.title}
         </h1>
       </a>
-    </Jumbotron>
+    </Parallax>
   )
 }
 const Landing = () => {

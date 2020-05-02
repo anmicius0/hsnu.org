@@ -1,4 +1,4 @@
-#NewsBanner {
+.NewsBanner {
   // position
   position: relative;
 
@@ -8,6 +8,10 @@
   padding: 0;
   margin: 0;
   border-radius: 0;
+
+  .react-parallax-content {
+    height: 100%;
+  }
 
   // cover
   img {
@@ -61,7 +65,7 @@
 }
 
 @media (min-width: 992px) {
-  #NewsBanner {
+  .NewsBanner {
     // title
     a {
       // position
@@ -71,6 +75,10 @@
 
       .is-2 {
         line-height: 200%;
+
+        .react-parallax-content {
+          height: 100%;
+        }
       }
     }
 

@@ -1,0 +1,43 @@
+#Shortcut {
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+
+  .col-lg-3 {
+    margin: 1rem 0;
+    padding: 0 0.5rem;
+
+    // title
+    h2 {
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0.7rem 0;
+        padding: 0 1.5rem;
+        border: none;
+
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #Shortcut {
+    margin: 3rem auto;
+
+    .col-lg-3 {
+      margin: 1rem 0;
+      padding: 1rem 0.5rem;
+    }
+  }
+}

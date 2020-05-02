@@ -7,6 +7,7 @@ import Landing from "../components/section/Landing/Landing"
 import Clubs from "../components/section/Clubs/Clubs"
 import Banner from "../components/section/Banner/Banner"
 import Blog from "../components/section/Blog/Blog"
+import Shortcut from "../components/section/Shortcut/Shortcut"
 
 export default ({ data }) => {
   console.log(data)
@@ -16,11 +17,11 @@ export default ({ data }) => {
       <LazyLoadComponent>
         <Landing />
       </LazyLoadComponent>
-      {/* <LazyLoadComponent>
-        <NewsSlider />
-      </LazyLoadComponent> */}
       <LazyLoadComponent>
         <Blog posts={data} />
+      </LazyLoadComponent>
+      <LazyLoadComponent>
+        <Shortcut />
       </LazyLoadComponent>
       <LazyLoadComponent>
         <Banner />

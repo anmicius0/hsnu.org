@@ -1,12 +1,11 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
 
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
 
-export const SidebarPure = ({ menus }) => {
-  const tools = {
+export const Sidebar = () => {
+  const frequent = {
     title: "學生資訊",
     items: [
       {
@@ -36,6 +35,17 @@ export const SidebarPure = ({ menus }) => {
     ],
   }
 
+  const [blocks, setBlocks] = useState()
+  useEffect(() => {
+    fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?per_page=1")
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        setBlocks(data[0].acf.block)
+      })
+  }, [])
+
   return (
     <>
       <div id={"sidebar"}>
@@ -46,12 +56,12 @@ export const SidebarPure = ({ menus }) => {
         <SearchBox />
 
         {/* menu cards*/}
-        {/* frequent tools */}
         <ul className={"menu-cards"}>
-          <li key={tools.title}>
+          {/* frequents */}
+          <li key={frequent.title}>
             <ul className={"menu-card"}>
-              <h4 className={"is-4 bold"}>{tools.title}</h4>
-              {tools.items.map(item => (
+              <h4 className={"is-4 bold"}>{frequent.title}</h4>
+              {frequent.items.map(item => (
                 <li className={"is-5"} key={item.title}>
                   <a href={item.url}>{item.title}</a>
                 </li>
@@ -60,18 +70,20 @@ export const SidebarPure = ({ menus }) => {
           </li>
 
           {/* tools from WP */}
-          {menus.map(menu => (
-            <li key={menu.node.title}>
-              <ul className={"menu-card"}>
-                <h4 className={"is-4 bold"}>{menu.node.title}</h4>
-                {menu.node.acf.items.map(item => (
-                  <li className={"is-5"} key={item.name}>
-                    <a href={item.url}>{item.name}</a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          {blocks
+            ? blocks.map(block => (
+                <li key={block.title}>
+                  <ul className={"menu-card"}>
+                    <h4 className={"is-4 bold"}>{block.title}</h4>
+                    {block.item.map(item => (
+                      <li className={"is-5"} key={item.title}>
+                        <a href={item.url}>{item.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))
+            : null}
         </ul>
         {/* end of menucards */}
       </div>
@@ -90,30 +102,6 @@ export const SidebarPure = ({ menus }) => {
       ></div>
     </>
   )
-}
-
-const Sidebar = () => {
-  const menus = useStaticQuery(
-    graphql`
-      {
-        allWordpressWpMenu(sort: { fields: date, order: ASC }) {
-          edges {
-            node {
-              title
-              acf {
-                items {
-                  name
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  ).allWordpressWpMenu.edges
-
-  return <SidebarPure menus={menus} />
 }
 
 export default Sidebar

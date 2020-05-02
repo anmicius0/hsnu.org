@@ -2,7 +2,7 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { HeaderPure } from "./Header"
 import Footer from "./Footer"
-import { SidebarPure } from "./Sidebar"
+import Sidebar from "./Sidebar"
 
 describe("Layout/Header", () => {
   it("renders correctly", () => {
@@ -203,7 +203,7 @@ describe("Layout/Sidebar", () => {
       },
     ]
 
-    const tree = renderer.create(<SidebarPure menus={menus} />).toJSON()
+    const tree = renderer.create(<Sidebar menus={menus} />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -26,6 +26,7 @@ const PostsList = ({ posts }) => {
 
   // tabs
   const genreTabs = [
+    { name: "置頂", codeName: "topPosts" },
     { name: "最新", codeName: "allPosts" },
     { name: "學生", codeName: "studentPosts" },
     { name: "研習", codeName: "researchPosts" },
@@ -34,12 +35,13 @@ const PostsList = ({ posts }) => {
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
-  const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
-  const [genreNow, setGenreNow] = useState("allPosts")
+  const [genreNow, setGenreNow] = useState("topPosts")
 
+  // get latest posts
+  const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
   useEffect(() => {
     fetch(
-      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=11`
+      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=10`
     )
       .then(res => res.json())
       .then(data => {
@@ -51,8 +53,23 @@ const PostsList = ({ posts }) => {
             }
           })
         )
+      })
+  }, [])
 
-        console.log(new_post)
+  // get top posts
+  const [top, setTop] = useState([{ title: "loading...", id: 1 }])
+  useEffect(() => {
+    fetch(`https://wordpress.hsnu.org/index.php/wp-json/wp/v2/top?per_page=10`)
+      .then(res => res.json())
+      .then(data => {
+        setTop(
+          data.map(post => {
+            return {
+              title: post.title.rendered,
+              id: post.id,
+            }
+          })
+        )
       })
   }, [])
 
@@ -67,7 +84,7 @@ const PostsList = ({ posts }) => {
               className={`is-3 bold ${index === 0 ? "active" : null}`}
               onClick={() => {
                 setGenreNow(item.codeName)
-                if (item.codeName !== "allPosts") {
+                if (!["allPosts", "topPosts"].includes(item.codeName)) {
                   setCurrent_posts(posts[item.codeName].edges)
                 }
               }}
@@ -88,17 +105,28 @@ const PostsList = ({ posts }) => {
       {/* List of post */}
       <Container id="post-list">
         <Row className={"flex-column"}>
-          {genreNow === "allPosts"
-            ? new_post.map(post => (
-                <Col className={"post"} key={post.id}>
-                  <Link to={`/preview?id=${post.id}`}>
-                    <p
-                      className={"is-4"}
-                      dangerouslySetInnerHTML={{ __html: post.title }}
-                    />
-                  </Link>
-                </Col>
-              ))
+          {["allPosts", "topPosts"].includes(genreNow)
+            ? genreNow === "allPosts"
+              ? new_post.map(post => (
+                  <Col className={"post"} key={post.id}>
+                    <Link to={`/preview?id=${post.id}`}>
+                      <p
+                        className={"is-4"}
+                        dangerouslySetInnerHTML={{ __html: post.title }}
+                      />
+                    </Link>
+                  </Col>
+                ))
+              : top.map(post => (
+                  <Col className={"post"} key={post.id}>
+                    <Link to={`/top?id=${post.id}`}>
+                      <p
+                        className={"is-4"}
+                        dangerouslySetInnerHTML={{ __html: post.title }}
+                      />
+                    </Link>
+                  </Col>
+                ))
             : current_posts.map(post => (
                 <Col className={"post"} key={post.node.wordpress_id}>
                   <Link to={`/post/${post.node.wordpress_id}`}>

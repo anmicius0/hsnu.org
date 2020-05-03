@@ -47,7 +47,16 @@ export default () => {
 
   return (
     <>
-      <Seo />
+      {post ? (
+        <Seo
+          title={post.title}
+          description={post.content}
+          pathname={`/top?id=${wordpress_id}`}
+          article
+        />
+      ) : (
+        <Seo article />
+      )}
 
       <div id="header-padding" />
       <Container id="article" fluid>

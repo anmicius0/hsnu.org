@@ -16,9 +16,7 @@ export default ({ data }) => {
   return (
     <>
       <Seo title={"師大附中"} />
-      <LazyLoadComponent>
-        <Landing />
-      </LazyLoadComponent>
+      <Landing />
       <LazyLoadComponent>
         <Blog posts={data} />
       </LazyLoadComponent>

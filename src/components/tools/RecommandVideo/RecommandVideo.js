@@ -1,10 +1,11 @@
 import React from "react"
+import Sticky from "react-sticky-el"
 
 import "./RecommandVideo.scss"
 
 const RecommandVideo = () => {
   return (
-    <div className={"RecommandVideo"}>
+    <Sticky className={"RecommandVideo"} topOffset={80}>
       {/* title */}
       <h2 className={"is-2 bold"}>推薦內容</h2>
 
@@ -18,7 +19,7 @@ const RecommandVideo = () => {
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-    </div>
+    </Sticky>
   )
 }
 

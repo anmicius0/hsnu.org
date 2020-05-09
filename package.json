@@ -55,6 +55,8 @@
     "react-lazy-load-image-component": "^1.4.3",
     "react-parallax": "^3.0.3",
     "react-scroll-parallax": "^2.3.2",
+    "react-sticky": "^6.0.3",
+    "react-sticky-el": "^2.0.5",
     "swiper": "^5.3.7"
   },
   "devDependencies": {

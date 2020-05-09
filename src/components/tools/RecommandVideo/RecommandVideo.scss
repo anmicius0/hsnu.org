@@ -3,9 +3,10 @@
   height: auto;
   margin-bottom: 3rem;
 
-  // position
-  position: sticky;
-  top: 10rem;
+  .sticky {
+    // position
+    top: 5rem !important;
+  }
 
   h2 {
     margin-bottom: 1.3rem;

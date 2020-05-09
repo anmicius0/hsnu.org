@@ -18,7 +18,7 @@ const Blog = ({ posts }) => {
 
         {/* side news (component) */}
         <Col lg={{ span: 4, offset: 1 }}>
-          <SideNews />
+          <SideNews hideMobile />
         </Col>
       </Row>
     </Container>

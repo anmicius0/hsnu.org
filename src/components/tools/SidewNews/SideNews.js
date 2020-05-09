@@ -6,7 +6,7 @@ import axios from "axios"
 
 import "./SideNews.scss"
 
-const SideNews = ({ infinity = false }) => {
+const SideNews = ({ infinity = false, hideMobile = false }) => {
   const GraphqlNews = useStaticQuery(graphql`
     {
       allWordpressWpNews(limit: 5, skip: 2) {
@@ -73,7 +73,7 @@ const SideNews = ({ infinity = false }) => {
   }, [RestNews])
 
   return (
-    <section className={"side-news"}>
+    <section className={`side-news ${hideMobile ? "hideMobile" : null}`}>
       <h2 className={"is-2 bold"}>更多作品</h2>
 
       {/* from GraphQl */}

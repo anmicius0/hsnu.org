@@ -1,4 +1,9 @@
 section.side-news {
+  // hide on mobile
+  &.hideMobile {
+    display: none;
+  }
+
   height: auto;
   width: 100%;
   margin: 1.5rem 0;
@@ -59,5 +64,11 @@ section.side-news {
         line-height: 180%;
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  section.side-news.hideMobile {
+    display: block;
   }
 }

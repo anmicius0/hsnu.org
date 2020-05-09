@@ -27,7 +27,12 @@ export default () => {
                 <ListGroup as="ul">
                   {block.item.slice(0, 5).map(item => (
                     <ListGroup.Item as="li">
-                      <a href={item.url} className={"is-4"}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={"is-4"}
+                      >
                         {item.title}
                       </a>
                     </ListGroup.Item>

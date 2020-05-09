@@ -77,7 +77,13 @@ export const Sidebar = () => {
                     <h4 className={"is-4 bold"}>{block.title}</h4>
                     {block.item.map(item => (
                       <li className={"is-5"} key={item.title}>
-                        <a href={item.url}>{item.title}</a>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.title}
+                        </a>
                       </li>
                     ))}
                   </ul>

@@ -10,7 +10,7 @@ const Propaganda = () => {
 
   useEffect(() => {
     fetch(
-      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/propaganda?per_page=3`
+      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/propaganda?filter[orderby]=rand&filter[posts_per_page]=1`
     )
       .then(res => {
         return res.json()
@@ -31,7 +31,11 @@ const Propaganda = () => {
             alt={"propaganda"}
           />
           <div className={"fade-layer"}></div>
-          <a href={"/"}>
+          <a
+            href={image[0].acf.image.sizes.medium}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <h1 className={"is-1 serif bold"}>
               <span className={"is-3"}>教師公告｜</span>
               <br />

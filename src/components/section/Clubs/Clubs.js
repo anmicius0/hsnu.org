@@ -86,7 +86,11 @@ export const ClubsPure = ({ clubs }) => {
                             className={"icon col-4 col-sm-3"}
                             key={media.media_link}
                           >
-                            <a href={media.media_link}>
+                            <a
+                              href={media.media_link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <img
                                 src={type_to_icon(media.media_type)}
                                 alt={media.media_type}

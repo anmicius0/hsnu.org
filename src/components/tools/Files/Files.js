@@ -57,7 +57,11 @@ const Content = ({ files, urls }) => {
         {files
           ? files.map(file => (
               <>
-                <a href={file.file.url.source_url}>
+                <a
+                  href={file.file.url.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className={`file ${identity_file(file.file.filename)}`}>
                     {/* icon */}
                     <img
@@ -76,7 +80,7 @@ const Content = ({ files, urls }) => {
         {urls
           ? urls.map(url => (
               <>
-                <a href={url.url}>
+                <a href={url.url} target="_blank" rel="noopener noreferrer">
                   <div className={`file ${identity_file(url.description)}`}>
                     {/* icon */}
                     <img

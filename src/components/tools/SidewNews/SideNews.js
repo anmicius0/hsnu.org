@@ -81,6 +81,8 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
         // news card small (component)
         <a
           href={news.node.acf.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className={"news-card-s"}
           key={news.node.title}
         >
@@ -105,6 +107,8 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
             // news card small (component)
             <a
               href={news.acf.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className={"news-card-s"}
               key={news.title.rendered}
             >

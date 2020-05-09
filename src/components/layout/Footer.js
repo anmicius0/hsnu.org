@@ -25,7 +25,12 @@ const Footer = () => {
             </Col>
             <Col lg="6" className={"icons"}>
               {footers.map(icon => (
-                <a href={icon.link} key={icon.name}>
+                <a
+                  href={icon.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={icon.name}
+                >
                   <img src={icon.icon} alt={icon.name}></img>
                 </a>
               ))}

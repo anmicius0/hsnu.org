@@ -44,7 +44,11 @@ const newsSlider = () => {
         <Swiper {...params}>
           {newses.map(news => (
             <div className={"news-card-l"} key={news.node.title}>
-              <a href={news.node.acf.link}>
+              <a
+                href={news.node.acf.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {/* cover */}
                 <figure>
                   <LazyLoadImage

@@ -43,7 +43,7 @@
     "gatsby-transformer-sharp": "^2.4.6",
     "gsap": "^3.2.6",
     "html-to-react": "^1.4.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-async": "^10.0.1",

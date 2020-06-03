@@ -26,8 +26,8 @@ const PostsList = ({ posts }) => {
 
   // tabs
   const genreTabs = [
-    { name: "置頂", codeName: "topPosts" },
     { name: "最新", codeName: "allPosts" },
+    { name: "置頂", codeName: "topPosts" },
     { name: "學生", codeName: "studentPosts" },
     { name: "研習", codeName: "researchPosts" },
     { name: "競賽", codeName: "racePosts" },
@@ -35,7 +35,7 @@ const PostsList = ({ posts }) => {
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
-  const [genreNow, setGenreNow] = useState("topPosts")
+  const [genreNow, setGenreNow] = useState("allPosts")
 
   // get latest posts
   const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])

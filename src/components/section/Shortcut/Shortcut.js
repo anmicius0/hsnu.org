@@ -4,6 +4,7 @@ import { Container, Row, Col, ListGroup } from "react-bootstrap"
 import "./Shortcut.scss"
 
 export default () => {
+  // fetch data from wordpress
   const [blocks, setBlocks] = useState()
   useEffect(() => {
     fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?per_page=1")

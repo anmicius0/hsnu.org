@@ -52,117 +52,120 @@ export const HeaderPure = ({ navs }) => {
   }
 
   return (
-    <Navbar expand="xl" fixed="top" id="navbar">
-      {/* Brand */}
-      <Navbar.Brand>
-        <Link to="/">
-          <img src={hsnu} alt="師大附中" />
-        </Link>
-      </Navbar.Brand>
+    <>
+      <Navbar expand="xl" fixed="top" id="navbar">
+        {/* Brand */}
+        <Navbar.Brand>
+          <Link to="/">
+            <img src={hsnu} alt="師大附中" />
+          </Link>
+        </Navbar.Brand>
 
-      {/* Toggler */}
-      <Navbar.Toggle
-        onClick={() => {
-          const sidebar = document.querySelector("#sidebar")
-          const overlay = document.querySelector("#sidebar-overlay")
-          sidebar.classList.toggle("active")
-          overlay.classList.toggle("active")
-        }}
-      />
+        {/* Toggler */}
+        <Navbar.Toggle
+          onClick={() => {
+            const sidebar = document.querySelector("#sidebar")
+            const overlay = document.querySelector("#sidebar-overlay")
+            sidebar.classList.toggle("active")
+            overlay.classList.toggle("active")
+          }}
+        />
 
-      {/* Navbar Items */}
-      <Navbar.Collapse>
-        <Nav>
-          {navs.map(nav => (
-            <Nav.Item key={nav.node.acf.name}>
-              <Nav.Link className={"is-5 bold"} href={nav.node.acf.url}>
-                {nav.node.acf.name}
+        {/* Navbar Items */}
+        <Navbar.Collapse>
+          <Nav>
+            {navs.map(nav => (
+              <Nav.Item key={nav.node.acf.name}>
+                <Nav.Link className={"is-5 bold"} href={nav.node.acf.url}>
+                  {nav.node.acf.name}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
+
+            <Nav.Item
+              onClick={() => {
+                // clear navbar
+                clear_navbar("drop")
+
+                const navdropdown = document.querySelector("#nav-drop-down")
+                navdropdown.classList.toggle("active")
+              }}
+            >
+              <Nav.Link className={"is-5 bold"}>相關單位</Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link className={"is-5 bold"} href="/english">
+                English
               </Nav.Link>
             </Nav.Item>
-          ))}
 
-          <Nav.Item
-            onClick={() => {
-              // clear navbar
-              clear_navbar("drop")
+            {/* search */}
+            <Nav.Item
+              onClick={() => {
+                // clear navbar
+                clear_navbar("search")
 
-              const navdropdown = document.querySelector("#nav-drop-down")
-              navdropdown.classList.toggle("active")
-            }}
-          >
-            <Nav.Link className={"is-5 bold"}>相關單位</Nav.Link>
-          </Nav.Item>
+                const navsearch = document.querySelector("#nav-search-box")
+                const searbox = document.querySelector(
+                  "#nav-search-box input[name='search']"
+                )
+                navsearch.classList.toggle("active")
+                if (navsearch.classList.contains("active")) {
+                  searbox.focus()
+                }
+              }}
+            >
+              <Nav.Link>
+                <img src={search} alt="search" />
+              </Nav.Link>
+            </Nav.Item>
 
-          <Nav.Item>
-            <Nav.Link className={"is-5 bold"} href="/english">
-              English
-            </Nav.Link>
-          </Nav.Item>
+            {/* menu */}
+            <Nav.Item
+              id="nav-menu-button"
+              onClick={() => {
+                const sidebar = document.querySelector("#sidebar")
+                const overlay = document.querySelector("#sidebar-overlay")
+                sidebar.classList.toggle("active")
+                overlay.classList.toggle("active")
+              }}
+            >
+              <Nav.Link>
+                <img src={menu} alt="menu" />
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
 
-          {/* search */}
-          <Nav.Item
-            onClick={() => {
-              // clear navbar
-              clear_navbar("search")
+        {/* search box in the nav */}
+        <div id="nav-search-box">
+          <Form action="/search" method="get">
+            <FormControl
+              type="text"
+              placeholder="Search"
+              name="search"
+              className={"is-3 bold"}
+            />
+          </Form>
+        </div>
 
-              const navsearch = document.querySelector("#nav-search-box")
-              const searbox = document.querySelector(
-                "#nav-search-box input[name='search']"
-              )
-              navsearch.classList.toggle("active")
-              if (navsearch.classList.contains("active")) {
-                searbox.focus()
-              }
-            }}
-          >
-            <Nav.Link>
-              <img src={search} alt="search" />
-            </Nav.Link>
-          </Nav.Item>
-
-          {/* menu */}
-          <Nav.Item
-            onClick={() => {
-              const sidebar = document.querySelector("#sidebar")
-              const overlay = document.querySelector("#sidebar-overlay")
-              sidebar.classList.toggle("active")
-              overlay.classList.toggle("active")
-            }}
-          >
-            <Nav.Link>
-              <img src={menu} alt="menu" />
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-
-      {/* search box in the nav */}
-      <div id="nav-search-box">
-        <Form action="/search" method="get">
-          <FormControl
-            type="text"
-            placeholder="Search"
-            name="search"
-            className={"is-3 bold"}
-          />
-        </Form>
-      </div>
-
-      {/* search box in the nav */}
-      <div id="nav-drop-down">
-        <Container fluid>
-          <Row>
-            {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map(x => {
-              return (
-                <Col xl={2} className={"is-5 bold"}>
-                  教務處
-                </Col>
-              )
-            })}
-          </Row>
-        </Container>
-      </div>
-    </Navbar>
+        {/* search box in the nav */}
+        <div id="nav-drop-down">
+          <Container fluid>
+            <Row>
+              {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map(x => {
+                return (
+                  <Col xl={2} className={"is-5 bold"}>
+                    教務處
+                  </Col>
+                )
+              })}
+            </Row>
+          </Container>
+        </div>
+      </Navbar>
+    </>
   )
 }
 

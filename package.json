@@ -55,9 +55,14 @@
     "react-lazy-load-image-component": "^1.4.3",
     "react-parallax": "^3.0.3",
     "react-scroll-parallax": "^2.3.2",
+    "react-shepherd": "^3.2.0",
     "react-sticky": "^6.0.3",
     "react-sticky-el": "^2.0.5",
-    "swiper": "^5.3.7"
+    "reactour": "^1.17.0",
+    "shepherd.js": "^8.0.1",
+    "styled-components": "^4.4.1",
+    "swiper": "^5.3.7",
+    "tourguidejs": "^0.2.1"
   },
   "devDependencies": {
     "@testing-library/cypress": "^6.0.0",

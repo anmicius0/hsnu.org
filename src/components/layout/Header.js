@@ -1,6 +1,14 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 
 // icon and images
@@ -19,7 +27,7 @@ export const HeaderPure = ({ navs }) => {
         if (st > lastScrollTop) {
           // downscroll code
           document.querySelector("#navbar").classList.add("navbar-hide")
-          document.querySelector("#nav-search-box").classList.remove("active")
+          clear_navbar()
         } else {
           // upscroll code
           document.querySelector("#navbar").classList.remove("navbar-hide")
@@ -29,6 +37,19 @@ export const HeaderPure = ({ navs }) => {
       false
     )
   }, [])
+
+  function clear_navbar(item) {
+    if (item !== "search") {
+      // clear nav search bar
+      const navsearch = document.querySelector("#nav-search-box")
+      navsearch.classList.remove("active")
+    }
+    if (item !== "drop") {
+      // clear nav drop down
+      const navdropdown = document.querySelector("#nav-drop-down")
+      navdropdown.classList.remove("active")
+    }
+  }
 
   return (
     <Navbar expand="xl" fixed="top" id="navbar">
@@ -60,6 +81,18 @@ export const HeaderPure = ({ navs }) => {
             </Nav.Item>
           ))}
 
+          <Nav.Item
+            onClick={() => {
+              // clear navbar
+              clear_navbar("drop")
+
+              const navdropdown = document.querySelector("#nav-drop-down")
+              navdropdown.classList.toggle("active")
+            }}
+          >
+            <Nav.Link className={"is-5 bold"}>相關單位</Nav.Link>
+          </Nav.Item>
+
           <Nav.Item>
             <Nav.Link className={"is-5 bold"} href="/english">
               English
@@ -68,8 +101,10 @@ export const HeaderPure = ({ navs }) => {
 
           {/* search */}
           <Nav.Item
-            id="nav-search-button"
             onClick={() => {
+              // clear navbar
+              clear_navbar("search")
+
               const navsearch = document.querySelector("#nav-search-box")
               const searbox = document.querySelector(
                 "#nav-search-box input[name='search']"
@@ -87,7 +122,6 @@ export const HeaderPure = ({ navs }) => {
 
           {/* menu */}
           <Nav.Item
-            id="nav-menu-button"
             onClick={() => {
               const sidebar = document.querySelector("#sidebar")
               const overlay = document.querySelector("#sidebar-overlay")
@@ -112,6 +146,21 @@ export const HeaderPure = ({ navs }) => {
             className={"is-3 bold"}
           />
         </Form>
+      </div>
+
+      {/* search box in the nav */}
+      <div id="nav-drop-down">
+        <Container fluid>
+          <Row>
+            {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map(x => {
+              return (
+                <Col xl={2} className={"is-5 bold"}>
+                  教務處
+                </Col>
+              )
+            })}
+          </Row>
+        </Container>
       </div>
     </Navbar>
   )

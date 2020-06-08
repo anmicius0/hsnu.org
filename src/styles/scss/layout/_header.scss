@@ -35,6 +35,11 @@
   #nav-search-box {
     display: none;
   }
+
+  // Navbar drop-down
+  #nav-drop-down {
+    display: none;
+  }
 }
 
 @media (min-width: 992px) {
@@ -126,6 +131,33 @@
         height: auto;
         margin: 1rem 0 0 0;
         padding: 0.5rem;
+        border-top: solid rgba(0, 0, 0, 0.3) 0.5px;
+      }
+    }
+
+    #nav-drop-down {
+      display: initial;
+      width: 100%;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+
+      // animation
+      transition: all 0.25s ease-in-out;
+
+      .row {
+        width: 100%;
+
+        .col-xl-2 {
+          margin: 1rem 0;
+          text-align: center;
+        }
+      }
+
+      &.active {
+        height: auto;
+        margin: 1rem 0 0 0;
+        padding: 0.5rem 0;
         border-top: solid rgba(0, 0, 0, 0.3) 0.5px;
       }
     }

@@ -9,6 +9,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap"
+import Cookies from "js-cookie"
 import { useStaticQuery, graphql } from "gatsby"
 
 // icon and images
@@ -38,6 +39,23 @@ export const HeaderPure = ({ navs }) => {
     )
   }, [])
 
+  // if it's first visit, expand the menu
+  useEffect(() => {
+    if (!Cookies.get("visited")) {
+      toggle_sidebar()
+    }
+  }, [])
+
+  // toggle menu
+  function toggle_sidebar() {
+    Cookies.set("visited", true, { expires: 31 })
+    const sidebar = document.querySelector("#sidebar")
+    const overlay = document.querySelector("#sidebar-overlay")
+    sidebar.classList.toggle("active")
+    overlay.classList.toggle("active")
+  }
+
+  // close every thing on navbar
   function clear_navbar(item) {
     if (item !== "search") {
       // clear nav search bar
@@ -64,10 +82,7 @@ export const HeaderPure = ({ navs }) => {
         {/* Toggler */}
         <Navbar.Toggle
           onClick={() => {
-            const sidebar = document.querySelector("#sidebar")
-            const overlay = document.querySelector("#sidebar-overlay")
-            sidebar.classList.toggle("active")
-            overlay.classList.toggle("active")
+            toggle_sidebar()
           }}
         />
 
@@ -121,14 +136,10 @@ export const HeaderPure = ({ navs }) => {
               </Nav.Link>
             </Nav.Item>
 
-            {/* menu */}
+            {/* sidebar */}
             <Nav.Item
-              id="nav-menu-button"
               onClick={() => {
-                const sidebar = document.querySelector("#sidebar")
-                const overlay = document.querySelector("#sidebar-overlay")
-                sidebar.classList.toggle("active")
-                overlay.classList.toggle("active")
+                toggle_sidebar()
               }}
             >
               <Nav.Link>
@@ -150,7 +161,7 @@ export const HeaderPure = ({ navs }) => {
           </Form>
         </div>
 
-        {/* search box in the nav */}
+        {/* drop down in the nav */}
         <div id="nav-drop-down">
           <Container fluid>
             <Row>

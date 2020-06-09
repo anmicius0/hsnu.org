@@ -5,36 +5,34 @@ import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
 
 export const Sidebar = () => {
+  // frequent used tools
   const frequent = {
-    title: "學生資訊",
+    title: "常用功能",
     items: [
       {
-        title: "升學資訊",
-        url:
-          "https://site.hs.ntnu.edu.tw/guidance/%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF2019/",
+        title: "二代校務",
+        url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
       },
       {
-        title: "微課程",
-        url:
-          "https://www.hs.ntnu.edu.tw/%e5%be%ae%e8%aa%b2%e7%a8%8b%e8%b3%87%e8%a8%8a/",
+        title: "高三成績查詢",
+        url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
       },
       {
-        title: "獎學金資訊",
-        url:
-          "https://www.hs.ntnu.edu.tw/search/?type=bt&sq=%E7%8D%8E%E5%AD%B8%E9%87%91",
+        title: "段考資訊",
+        url: "https://hsnu.org/search/?search=%E6%AE%B5%E8%80%83",
       },
       {
-        title: "學生證掛失",
-        url: "https://ecardlost.tp.edu.tw/ecard/Ecard/QueryOfLostEcardAction",
+        title: "行事曆",
+        url: "https://hsnu.org/search/?search=%E8%A1%8C%E4%BA%8B%E6%9B%86",
       },
       {
-        title: "證明文件申請",
-        url:
-          "https://site.hs.ntnu.edu.tw/academic/hsnureg/%E7%94%B3%E8%AB%8B%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A1%A8%E5%96%AE/",
+        title: "閱覽室預約",
+        url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
       },
     ],
   }
 
+  // get tools from Wordpress
   const [blocks, setBlocks] = useState()
   useEffect(() => {
     fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?per_page=1")

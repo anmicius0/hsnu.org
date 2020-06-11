@@ -62,7 +62,7 @@
     "reactour": "^1.17.0",
     "shepherd.js": "^8.0.1",
     "styled-components": "^4.4.1",
-    "swiper": "^5.3.7",
+    "swiper": "^5.4.1",
     "tourguidejs": "^0.2.1"
   },
   "devDependencies": {

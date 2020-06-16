@@ -32,8 +32,12 @@ export default ({ location }) => {
     typeof window !== "undefined"
       ? new URL(location.href).searchParams.get("subgenre")
       : ""
+  var author_param =
+    typeof window !== "undefined"
+      ? new URL(location.href).searchParams.get("author")
+      : ""
 
-  // request wordpress api
+  // search query to wordpress api
   useEffect(() => {
     axios
       .get(

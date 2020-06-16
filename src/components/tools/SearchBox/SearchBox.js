@@ -26,7 +26,7 @@ const SearchBox = ({ showFilter = false }) => {
 
         {/* submit */}
         <Button type="submit" variant="light">
-          <img src={search} alt={"search!"}></img>
+          <img src={search} alt={"search"}></img>
         </Button>
 
         {/* filter button on mobile */}

@@ -6,10 +6,35 @@ import "./Filter.scss"
 
 export default ({ id }) => {
   // dynamic options
+  const genreList = [
+    "全部",
+    "學生",
+    "榮譽榜",
+    "講座及課程",
+    "教師",
+    "競賽",
+    "微課程",
+    "菜單",
+    "來文",
+  ]
+
+  const authotrList = [
+    "全部",
+    "教務處",
+    "學務處",
+    "總務處",
+    "輔導室",
+    "圖書館",
+    "教官室",
+    "資訊室",
+    "人事室",
+    "主計室",
+  ]
 
   const [genre, setGenre] = useState("全部")
   const [subgenre, setSubgenre] = useState(["全部"])
 
+  // when genre change
   function handle_change(event) {
     setGenre(event.target.value)
   }
@@ -30,17 +55,22 @@ export default ({ id }) => {
 
   // handle submit
   function handle_submit(event) {
+    // stop from posting request
     event.preventDefault()
+
+    // get args
     const submit_genre = event.target.genre.value
     const submit_subgenre = event.target.subgenre.value
+    const submit_author = event.target.author.value
     var submit_search =
       new URL(document.URL).searchParams.get("search") || false
 
+    // modify url
     window.location = `${process.env.SITE_URL}/search/?${
       submit_search ? `search=${submit_search}` : ""
     }${submit_genre !== "全部" ? `&genre=${submit_genre}` : ""}${
       submit_subgenre !== "全部" ? `&subgenre=${submit_subgenre}` : ""
-    }`
+    }${submit_author !== "全部" ? `&author=${submit_author}` : ""}`
   }
 
   return (
@@ -53,16 +83,9 @@ export default ({ id }) => {
       <Form.Group controlId="genre">
         <Form.Label className={"is-5 bold"}>大分類:</Form.Label>
         <Form.Control as="select" name="genre" onChange={handle_change}>
-          <option value="全部">全部</option>
-          <option value="學生">學生</option>
-          <option value="榮譽榜">榮譽榜</option>
-          <option value="講座及課程">講座及課程</option>
-          <option value="教師">教師</option>
-          <option value="競賽">競賽</option>
-          <option value="微課程">微課程</option>
-          <option value="菜單">菜單</option>
-          <option value="來文">來文</option>
-          <option value="頁面">頁面</option>
+          {genreList.map(genre => (
+            <option value={genre}>{genre}</option>
+          ))}
         </Form.Control>
       </Form.Group>
 
@@ -72,6 +95,16 @@ export default ({ id }) => {
         <Form.Control as="select" name="subgenre">
           {subgenre.map(subgenre => (
             <option value={subgenre}>{subgenre}</option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+
+      {/* author */}
+      <Form.Group controlId="author">
+        <Form.Label className={"is-5 bold"}>作者:</Form.Label>
+        <Form.Control as="select" name="author">
+          {authotrList.map(author => (
+            <option value={author}>{author}</option>
           ))}
         </Form.Control>
       </Form.Group>

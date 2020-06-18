@@ -13,12 +13,6 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `師大附中`,

@@ -61,7 +61,9 @@ export const Sidebar = () => {
               <h4 className={"is-4 bold"}>{frequent.title}</h4>
               {frequent.items.map(item => (
                 <li className={"is-5"} key={item.title}>
-                  <a href={item.url}>{item.title}</a>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.title}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -73,7 +75,7 @@ export const Sidebar = () => {
                 <li key={block.title}>
                   <ul className={"menu-card"}>
                     <h4 className={"is-4 bold"}>{block.title}</h4>
-                    {block.item.map(item => (
+                    {block.items.map(item => (
                       <li className={"is-5"} key={item.title}>
                         <a
                           href={item.url}

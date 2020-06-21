@@ -10,7 +10,7 @@ export default ({ results }) => {
     <Container fluid id="search-result-container">
       <Row>
         {results.map(result => (
-          <Col className={"search-result"}>
+          <Col className={"search-result"} key={result.id}>
             <Link to={`/post/${result.id}`}>
               {/* title */}
               <h3

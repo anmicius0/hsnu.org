@@ -66,7 +66,7 @@ export default ({ id }) => {
       new URL(document.URL).searchParams.get("search") || false
 
     // modify url
-    window.location = `${process.env.SITE_URL}/search/?${
+    window.location = `${process.env.SITE_URL}/search?${
       submit_search ? `search=${submit_search}` : ""
     }${submit_genre !== "全部" ? `&genre=${submit_genre}` : ""}${
       submit_subgenre !== "全部" ? `&subgenre=${submit_subgenre}` : ""

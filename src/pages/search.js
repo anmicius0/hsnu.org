@@ -16,7 +16,7 @@ export default ({ location }) => {
   //  search
   const [results, setResults] = useState([])
   const [status, setStatus] = useState("Searching...")
-  const [page_now, setPage_now] = useState(1)
+  const [page_now, setPage_now] = useState(2)
 
   // get search paramaters
   // (remember, there is no browser at build time)
@@ -41,7 +41,7 @@ export default ({ location }) => {
   useEffect(() => {
     axios
       .get(
-        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
+        `https://wordpress.hsnu.org/wp-json/wp/v2/spost?per_page=20&page=1${
           search_param ? `&search=${search_param}` : ""
         }${
           genre_param
@@ -51,8 +51,11 @@ export default ({ location }) => {
           subgenre_param
             ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
             : ""
-        }
-      `
+        }${
+          author_param
+            ? `&filter[meta_query][2][key]=last_name&filter[meta_query][2][value]=${author_param}`
+            : ""
+        }`
       )
       .then(res => {
         console.log(res.data)
@@ -86,6 +89,10 @@ export default ({ location }) => {
             }${
               subgenre_param
                 ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
+                : ""
+            }${
+              author_param
+                ? `&filter[meta_query][2][key]=last_name&filter[meta_query][2][value]=${author_param}`
                 : ""
             }`
           )

@@ -34,7 +34,7 @@ export default () => {
           genre: res.data[0].acf.genre,
           date: res.data[0].date,
           urls: res.data[0].acf.repeater_link,
-          author: res.data[0].author_meta.author_description,
+          author: res.data[0].author_meta.author_last_name,
         })
       })
       .catch(err => {

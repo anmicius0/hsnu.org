@@ -34,7 +34,7 @@ export default ({ data }) => {
               urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
               author={
                 data.allWordpressWpSpost.edges[0].node.author_meta
-                  .author_description
+                  .author_last_name
               }
             />
             <LazyLoadComponent>

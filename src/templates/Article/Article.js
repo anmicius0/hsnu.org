@@ -67,7 +67,7 @@ export const query = graphql`
             }
           }
           author_meta {
-            author_description
+            author_last_name
           }
         }
       }

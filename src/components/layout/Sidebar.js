@@ -75,7 +75,7 @@ export const Sidebar = () => {
                 <li key={block.title}>
                   <ul className={"menu-card"}>
                     <h4 className={"is-4 bold"}>{block.title}</h4>
-                    {block.items.map(item => (
+                    {block.item.map(item => (
                       <li className={"is-5"} key={item.title}>
                         <a
                           href={item.url}

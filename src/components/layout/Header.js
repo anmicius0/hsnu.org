@@ -162,7 +162,7 @@ export const HeaderPure = ({ navs }) => {
         </div>
 
         {/* drop down in the nav */}
-        <div id="nav-drop-down">
+        {/* <div id="nav-drop-down">
           <Container fluid>
             <Row>
               {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map(x => {
@@ -174,7 +174,7 @@ export const HeaderPure = ({ navs }) => {
               })}
             </Row>
           </Container>
-        </div>
+        </div> */}
       </Navbar>
     </>
   )
@@ -185,7 +185,7 @@ const Header = () => {
   const navs = useStaticQuery(
     graphql`
       {
-        allWordpressWpHeader(limit: 4, sort: { order: ASC, fields: date }) {
+        allWordpressWpHeader(limit: 5, sort: { order: ASC, fields: date }) {
           edges {
             node {
               acf {

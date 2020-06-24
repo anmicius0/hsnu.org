@@ -41,7 +41,7 @@ export default ({ location }) => {
   useEffect(() => {
     axios
       .get(
-        `https://wordpress.hsnu.org/wp-json/wp/v2/spost?per_page=20&page=1${
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
           search_param ? `&search=${search_param}` : ""
         }${
           genre_param

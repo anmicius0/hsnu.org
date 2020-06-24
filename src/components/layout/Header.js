@@ -1,23 +1,30 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap"
+import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
 import Cookies from "js-cookie"
 import { useStaticQuery, graphql } from "gatsby"
+import axios from "axios"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"
 import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
-export const HeaderPure = ({ navs }) => {
+export const Header = () => {
+  const [navs, setNavs] = useState()
+  useEffect(() => {
+    axios
+      .get(
+        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/header?per_page=5`
+      )
+      .then(res => {
+        setNavs(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+
   // hide when scroll down (add/remove ".navbar-hide" to "#navbar")
   useEffect(() => {
     var lastScrollTop = 0
@@ -62,11 +69,11 @@ export const HeaderPure = ({ navs }) => {
       const navsearch = document.querySelector("#nav-search-box")
       navsearch.classList.remove("active")
     }
-    if (item !== "drop") {
-      // clear nav drop down
-      const navdropdown = document.querySelector("#nav-drop-down")
-      navdropdown.classList.remove("active")
-    }
+    // if (item !== "drop") {
+    //   // clear nav drop down
+    //   const navdropdown = document.querySelector("#nav-drop-down")
+    //   navdropdown.classList.remove("active")
+    // }
   }
 
   return (
@@ -89,13 +96,15 @@ export const HeaderPure = ({ navs }) => {
         {/* Navbar Items */}
         <Navbar.Collapse>
           <Nav>
-            {navs.map(nav => (
-              <Nav.Item key={nav.node.acf.name}>
-                <Nav.Link className={"is-5 bold"} href={nav.node.acf.url}>
-                  {nav.node.acf.name}
-                </Nav.Link>
-              </Nav.Item>
-            ))}
+            {navs
+              ? navs.map(nav => (
+                  <Nav.Item key={nav.acf.name}>
+                    <Nav.Link className={"is-5 bold"} href={nav.acf.url}>
+                      {nav.acf.name}
+                    </Nav.Link>
+                  </Nav.Item>
+                ))
+              : null}
 
             <Nav.Item
               onClick={() => {
@@ -178,28 +187,6 @@ export const HeaderPure = ({ navs }) => {
       </Navbar>
     </>
   )
-}
-
-const Header = () => {
-  // source navbar items
-  const navs = useStaticQuery(
-    graphql`
-      {
-        allWordpressWpHeader(limit: 5, sort: { order: ASC, fields: date }) {
-          edges {
-            node {
-              acf {
-                name
-                url
-              }
-            }
-          }
-        }
-      }
-    `
-  ).allWordpressWpHeader.edges
-
-  return <HeaderPure navs={navs} />
 }
 
 export default Header

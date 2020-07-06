@@ -106,7 +106,7 @@ export const Header = () => {
                 ))
               : null}
 
-            <Nav.Item
+            {/* <Nav.Item
               onClick={() => {
                 // clear navbar
                 clear_navbar("drop")
@@ -116,7 +116,7 @@ export const Header = () => {
               }}
             >
               <Nav.Link className={"is-5 bold"}>相關單位</Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
             <Nav.Item>
               <Nav.Link className={"is-5 bold"} href="/english">

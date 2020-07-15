@@ -11,7 +11,7 @@ const Footer = () => {
   const footers = [
     { name: "twitter", link: "https://twitter.com", icon: twitter },
     { name: "medium", link: "https://medium.com", icon: medium },
-    { name: "github", link: "https://github.com", icon: github },
+    { name: "github", link: "https://github.com/HSNU-ORG", icon: github },
     { name: "patreon", link: "https://patreon.com", icon: patreon },
   ]
 

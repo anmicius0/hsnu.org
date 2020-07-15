@@ -11,19 +11,32 @@ import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
 export const Header = () => {
-  const [navs, setNavs] = useState()
-  useEffect(() => {
-    axios
-      .get(
-        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/header?per_page=5`
-      )
-      .then(res => {
-        setNavs(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }, [])
+  const [navs, setNavs] = useState([
+    {
+      name: "二代校務",
+      url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
+    },
+    {
+      name: "閱覽室",
+      url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
+    },
+    {
+      name: "行事曆",
+      url: "https://ecosia.org",
+    },
+    {
+      name: "段考",
+      url: "https://ecosia.org",
+    },
+    {
+      name: "國中部",
+      url: "https://ecosia.org",
+    },
+    {
+      name: "English",
+      url: "https://ecosia.org",
+    },
+  ])
 
   // hide when scroll down (add/remove ".navbar-hide" to "#navbar")
   useEffect(() => {
@@ -69,11 +82,6 @@ export const Header = () => {
       const navsearch = document.querySelector("#nav-search-box")
       navsearch.classList.remove("active")
     }
-    // if (item !== "drop") {
-    //   // clear nav drop down
-    //   const navdropdown = document.querySelector("#nav-drop-down")
-    //   navdropdown.classList.remove("active")
-    // }
   }
 
   return (
@@ -96,33 +104,13 @@ export const Header = () => {
         {/* Navbar Items */}
         <Navbar.Collapse>
           <Nav>
-            {navs
-              ? navs.map(nav => (
-                  <Nav.Item key={nav.acf.name}>
-                    <Nav.Link className={"is-5 bold"} href={nav.acf.url}>
-                      {nav.acf.name}
-                    </Nav.Link>
-                  </Nav.Item>
-                ))
-              : null}
-
-            {/* <Nav.Item
-              onClick={() => {
-                // clear navbar
-                clear_navbar("drop")
-
-                const navdropdown = document.querySelector("#nav-drop-down")
-                navdropdown.classList.toggle("active")
-              }}
-            >
-              <Nav.Link className={"is-5 bold"}>相關單位</Nav.Link>
-            </Nav.Item> */}
-
-            <Nav.Item>
-              <Nav.Link className={"is-5 bold"} href="/english">
-                English
-              </Nav.Link>
-            </Nav.Item>
+            {navs.map(nav => (
+              <Nav.Item key={nav.name}>
+                <Nav.Link className={"is-5 bold"} href={nav.url}>
+                  {nav.name}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
 
             {/* search */}
             <Nav.Item
@@ -169,21 +157,6 @@ export const Header = () => {
             />
           </Form>
         </div>
-
-        {/* drop down in the nav */}
-        {/* <div id="nav-drop-down">
-          <Container fluid>
-            <Row>
-              {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map(x => {
-                return (
-                  <Col xl={2} className={"is-5 bold"}>
-                    教務處
-                  </Col>
-                )
-              })}
-            </Row>
-          </Container>
-        </div> */}
       </Navbar>
     </>
   )

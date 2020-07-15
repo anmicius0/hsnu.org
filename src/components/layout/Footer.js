@@ -21,8 +21,8 @@ const Footer = () => {
         <Container fluid>
           <Row>
             <Col lg="6" className={"logo"}>
-              <h2 className={"is-2 bold"}>
-                Made by team <a href="https://hsnu.org">hsnu.org</a>
+              <h2 className={"is-3 bold"}>
+                網管小組辛苦製作的非官方網站，不追蹤一下嗎 🠮
               </h2>
             </Col>
             <Col lg="6" className={"icons"}>

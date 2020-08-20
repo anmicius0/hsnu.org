@@ -7,13 +7,13 @@ import "./Blog.scss"
 import PostLists from "../../tools/PostsList/PostsList"
 import SideNews from "../../tools/SidewNews/SideNews"
 
-const Blog = ({ posts }) => {
+const Blog = () => {
   return (
     <Container as="section" id="Blog">
       <Row>
         {/* posts */}
         <Col lg="7">
-          <PostLists posts={posts} />
+          <PostLists />
         </Col>
 
         {/* side news (component) */}

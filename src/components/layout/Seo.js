@@ -40,7 +40,7 @@ const SEO = ({ title, description, pathname, article }) => {
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
 
-        {/* open graph (Face Book)*/}
+        {/* open graph (FaceBook)*/}
         {seo.url && <meta property="og:url" content={seo.url} />}
         {(seo.article ? true : null) && (
           <meta property="og:type" content="article" />

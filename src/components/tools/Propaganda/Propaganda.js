@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component"
+import { useStaticQuery, graphql } from "gatsby"
 import Jumbotron from "react-bootstrap/Jumbotron"
 
 // style
 import "./Propaganda.scss"
 
 const Propaganda = () => {
-  const [image, setImage] = useState()
-
-  useEffect(() => {
-    fetch(
-      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/propaganda?filter[orderby]=rand&filter[posts_per_page]=1`
-    )
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setImage(data)
-        console.log(image)
-      })
-  }, [])
+  // get image
+  const image = useStaticQuery(graphql`
+    query MyQuery {
+      allWordpressWpPropaganda(limit: 1) {
+        edges {
+          node {
+            title
+            acf {
+              image {
+                sizes {
+                  medium
+                  large
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpPropaganda.edges[0].node
 
   return (
     <Jumbotron id="propaganda">
@@ -27,19 +34,19 @@ const Propaganda = () => {
         <>
           <LazyLoadImage
             rel="preload"
-            src={image[0].acf.image.sizes.medium}
+            src={image.acf.image.sizes.medium}
             alt={"propaganda"}
           />
           <div className={"fade-layer"}></div>
           <a
-            href={image[0].acf.image.sizes.medium}
+            href={image.acf.image.sizes.large}
             target="_blank"
             rel="noopener noreferrer"
           >
             <h1 className={"is-1 serif bold"}>
-              <span className={"is-3"}>教師公告｜</span>
+              <span className={"is-3"}>近期活動｜</span>
               <br />
-              {image[0].title.rendered}
+              {image.title}
             </h1>
           </a>
         </>

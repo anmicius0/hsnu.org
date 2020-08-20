@@ -15,7 +15,7 @@ export default () => {
       <Seo title={"師大附中"} />
       <Landing />
       <LazyLoadComponent>
-        <Blog posts={data} />
+        <Blog />
       </LazyLoadComponent>
       <LazyLoadComponent>
         <Shortcut />

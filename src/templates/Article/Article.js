@@ -13,12 +13,13 @@ import Content from "../../components/tools/Content/Content"
 import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
+  const post = data.allWordpressWpSpost.edges[0].node
   return (
     <>
       <Seo
-        title={data.allWordpressWpSpost.edges[0].node.title}
-        description={data.allWordpressWpSpost.edges[0].node.content}
-        pathname={`/post/${data.allWordpressWpSpost.edges[0].node.wordpress_id}`}
+        title={post.title}
+        description={post.content}
+        pathname={`/post/${post.wordpress_id}`}
         article
       />
 
@@ -27,15 +28,14 @@ export default ({ data }) => {
         <Row>
           <Col lg="7">
             <Content
-              title={data.allWordpressWpSpost.edges[0].node.title}
-              genre={data.allWordpressWpSpost.edges[0].node.acf.genre}
-              date={data.allWordpressWpSpost.edges[0].node.date}
-              content={data.allWordpressWpSpost.edges[0].node.content}
-              urls={data.allWordpressWpSpost.edges[0].node.acf.repeater_link}
-              author={
-                data.allWordpressWpSpost.edges[0].node.author_meta
-                  .author_last_name
-              }
+              title={post.title}
+              genre={post.acf.genre}
+              date={post.date}
+              content={post.content}
+              urls={post.acf.repeater_link}
+              files={post.acf.repeater_file}
+              office={post.acf.last_name}
+              section={post.acf.first_name}
             />
             <LazyLoadComponent>
               <RecommandVideo />
@@ -60,14 +60,19 @@ export const query = graphql`
           content
           wordpress_id
           acf {
+            first_name
+            last_name
             genre
             repeater_link {
-              description
               url
+              description
             }
-          }
-          author_meta {
-            author_last_name
+            repeater_file {
+              file {
+                filename
+                link
+              }
+            }
           }
         }
       }

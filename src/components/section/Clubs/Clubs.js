@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import Swiper from "react-id-swiper"
-import { LazyLoadImage } from "react-lazy-load-image-component"
+import shuffle from "shuffle-array"
 
 // icons
 import facebook from "../../../images/icons/socialMedia-colored/facebook-colored.svg"
@@ -61,50 +61,52 @@ export const ClubsPure = ({ clubs }) => {
     <section id="clubs">
       <h2 className={"is-2 bold"}>社團</h2>
       <Swiper {...params}>
-        {clubs.map(club => (
-          <div key={club.node.title}>
-            <div className={"club-card"}>
-              {/* cover */}
-              <figure>
-                <img
-                  src={club.node.acf.image.sizes.wordpress_1536x1536}
-                  alt={club.node.title}
-                />
-              </figure>
+        {shuffle(clubs)
+          .slice(0, 9)
+          .map(club => (
+            <div key={club.node.title}>
+              <div className={"club-card"}>
+                {/* cover */}
+                <figure>
+                  <img
+                    src={club.node.acf.image.sizes.wordpress_1536x1536}
+                    alt={club.node.title}
+                  />
+                </figure>
 
-              {/* club info card */}
-              <div className={"club-info"}>
-                {/* title */}
-                <h3 className={"is-3 bold"}>{club.node.title}</h3>
+                {/* club info card */}
+                <div className={"club-info"}>
+                  {/* title */}
+                  <h3 className={"is-3 bold"}>{club.node.title}</h3>
 
-                {/* social media */}
-                <Container>
-                  <Row className={"icons"}>
-                    {club.node.acf.social_medias
-                      ? club.node.acf.social_medias.map(media => (
-                          <Col
-                            className={"icon col-4 col-sm-3"}
-                            key={media.media_link}
-                          >
-                            <a
-                              href={media.media_link}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                  {/* social media */}
+                  <Container>
+                    <Row className={"icons"}>
+                      {club.node.acf.social_medias
+                        ? club.node.acf.social_medias.map(media => (
+                            <Col
+                              className={"icon col-4 col-sm-3"}
+                              key={media.media_link}
                             >
-                              <img
-                                src={type_to_icon(media.media_type)}
-                                alt={media.media_type}
-                              />
-                            </a>
-                          </Col>
-                        ))
-                      : null}
-                  </Row>
-                </Container>
+                              <a
+                                href={media.media_link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <img
+                                  src={type_to_icon(media.media_type)}
+                                  alt={media.media_type}
+                                />
+                              </a>
+                            </Col>
+                          ))
+                        : null}
+                    </Row>
+                  </Container>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Swiper>
     </section>
   )

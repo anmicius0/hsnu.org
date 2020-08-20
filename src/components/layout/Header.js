@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap"
 import Cookies from "js-cookie"
-import { useStaticQuery, graphql } from "gatsby"
-import axios from "axios"
 
 // icon and images
 import hsnu from "../../images/icons/HSNU.svg"

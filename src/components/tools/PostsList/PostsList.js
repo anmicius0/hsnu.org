@@ -12,6 +12,25 @@ const PostsList = () => {
   // get other post type by graphql
   const posts = useStaticQuery(graphql`
     {
+      allPosts: allWordpressWpSpost(
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
+        edges {
+          node {
+            title
+            wordpress_id
+          }
+        }
+      }
+      topPosts: allWordpressWpTop {
+        edges {
+          node {
+            title
+            wordpress_id
+          }
+        }
+      }
       studentPosts: allWordpressWpSpost(
         filter: { acf: { genre: { eq: "學生" } } }
         limit: 10
@@ -64,42 +83,6 @@ const PostsList = () => {
     }
   `)
 
-  // get latest posts
-  const [new_post, setNew_post] = useState([{ title: "loading...", id: 1 }])
-  useEffect(() => {
-    fetch(
-      `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=10`
-    )
-      .then(res => res.json())
-      .then(data => {
-        setNew_post(
-          data.map(post => {
-            return {
-              title: post.title.rendered,
-              id: post.id,
-            }
-          })
-        )
-      })
-  }, [])
-
-  // get top posts
-  const [top, setTop] = useState([{ title: "loading...", id: 1 }])
-  useEffect(() => {
-    fetch(`https://wordpress.hsnu.org/index.php/wp-json/wp/v2/top?per_page=10`)
-      .then(res => res.json())
-      .then(data => {
-        setTop(
-          data.map(post => {
-            return {
-              title: post.title.rendered,
-              id: post.id,
-            }
-          })
-        )
-      })
-  }, [])
-
   // when toggle tabs
   useEffect(() => {
     // please select the text inside .genre (.genre > h2)
@@ -128,7 +111,7 @@ const PostsList = () => {
     { name: "教師", codeName: "teacherPosts" },
   ]
 
-  const [current_posts, setCurrent_posts] = useState(posts.studentPosts.edges)
+  const [current_posts, setCurrent_posts] = useState(posts.allPosts.edges)
   const [genreNow, setGenreNow] = useState("allPosts")
 
   return (
@@ -142,9 +125,7 @@ const PostsList = () => {
               className={`is-3 bold ${index === 0 ? "active" : null}`}
               onClick={() => {
                 setGenreNow(item.codeName)
-                if (!["allPosts", "topPosts"].includes(item.codeName)) {
-                  setCurrent_posts(posts[item.codeName].edges)
-                }
+                setCurrent_posts(posts[item.codeName].edges)
               }}
             >
               {item.name}
@@ -163,38 +144,16 @@ const PostsList = () => {
       {/* List of post */}
       <Container id="post-list">
         <Row className={"flex-column"}>
-          {["allPosts", "topPosts"].includes(genreNow)
-            ? genreNow === "allPosts"
-              ? new_post.map(post => (
-                  <Col className={"post"} key={post.id}>
-                    <Link to={`/preview?id=${post.id}&post_type=spost`}>
-                      <p
-                        className={"is-4"}
-                        dangerouslySetInnerHTML={{ __html: post.title }}
-                      />
-                    </Link>
-                  </Col>
-                ))
-              : top.map(post => (
-                  <Col className={"post"} key={post.id}>
-                    <Link to={`/preview?id=${post.id}&post_type=top`}>
-                      <p
-                        className={"is-4"}
-                        dangerouslySetInnerHTML={{ __html: post.title }}
-                      />
-                    </Link>
-                  </Col>
-                ))
-            : current_posts.map(post => (
-                <Col className={"post"} key={post.node.wordpress_id}>
-                  <Link to={`/post/${post.node.wordpress_id}`}>
-                    <p
-                      className={"is-4"}
-                      dangerouslySetInnerHTML={{ __html: post.node.title }}
-                    />
-                  </Link>
-                </Col>
-              ))}
+          {current_posts.map(post => (
+            <Col className={"post"} key={post.node.wordpress_id}>
+              <Link to={`/post/${post.node.wordpress_id}`}>
+                <p
+                  className={"is-4"}
+                  dangerouslySetInnerHTML={{ __html: post.node.title }}
+                />
+              </Link>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>

@@ -64,6 +64,14 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    // google tag manager
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        includeInDevelopment: true,
+        id: "GTM-WTBQCB3",
+      },
+    },
     // css
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

@@ -6,31 +6,33 @@ import Endorsement from "../tools/Endorsement/Endorsement"
 
 export const Sidebar = () => {
   // frequent used tools
-  const frequent = {
-    title: "常用功能",
-    items: [
-      {
-        title: "二代校務",
-        url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
-      },
-      {
-        title: "高三成績查詢",
-        url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
-      },
-      {
-        title: "段考資訊",
-        url: "https://hsnu.org/search/?search=%E6%AE%B5%E8%80%83",
-      },
-      {
-        title: "行事曆",
-        url: "https://hsnu.org/search/?search=%E8%A1%8C%E4%BA%8B%E6%9B%86",
-      },
-      {
-        title: "閱覽室預約",
-        url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
-      },
-    ],
-  }
+  const frequent = [
+    {
+      title: "常用功能",
+      item: [
+        {
+          title: "二代校務",
+          url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
+        },
+        {
+          title: "高三成績查詢",
+          url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
+        },
+        {
+          title: "段考資訊",
+          url: "https://hsnu.org/search/?search=%E6%AE%B5%E8%80%83",
+        },
+        {
+          title: "行事曆",
+          url: "https://hsnu.org/search/?search=%E8%A1%8C%E4%BA%8B%E6%9B%86",
+        },
+        {
+          title: "閱覽室預約",
+          url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
+        },
+      ],
+    },
+  ]
 
   const blocks = useStaticQuery(graphql`
     {
@@ -63,41 +65,25 @@ export const Sidebar = () => {
 
         {/* menu cards*/}
         <ul className={"menu-cards"}>
-          {/* frequents */}
-          <li key={frequent.title}>
-            <ul className={"menu-card"}>
-              <h4 className={"is-4 bold"}>{frequent.title}</h4>
-              {frequent.items.map(item => (
-                <li className={"is-5"} key={item.title}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-
           {/* tools from WP */}
-          {blocks
-            ? blocks.map(block => (
-                <li key={block.title}>
-                  <ul className={"menu-card"}>
-                    <h4 className={"is-4 bold"}>{block.title}</h4>
-                    {block.item.map(item => (
-                      <li className={"is-5"} key={item.title}>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {item.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))
-            : null}
+          {frequent.concat(blocks).map(block => (
+            <li key={block.title}>
+              <ul className={"menu-card"}>
+                <h4 className={"is-4 bold"}>{block.title}</h4>
+                {block.item.map(item => (
+                  <li className={"is-5"} key={item.title}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
         </ul>
         {/* end of menucards */}
       </div>

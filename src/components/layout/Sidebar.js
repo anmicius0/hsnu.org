@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import { useStaticQuery, graphql } from "gatsby"
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
 import Endorsement from "../tools/Endorsement/Endorsement"
@@ -32,17 +32,25 @@ export const Sidebar = () => {
     ],
   }
 
-  // get tools from Wordpress
-  const [blocks, setBlocks] = useState()
-  useEffect(() => {
-    fetch("https://wordpress.hsnu.org/index.php/wp-json/wp/v2/menu?per_page=1")
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setBlocks(data[0].acf.block)
-      })
-  }, [])
+  const blocks = useStaticQuery(graphql`
+    {
+      allWordpressWpMenu {
+        edges {
+          node {
+            acf {
+              block {
+                title
+                item {
+                  title
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `).allWordpressWpMenu.edges[0].node.acf.block
 
   return (
     <>

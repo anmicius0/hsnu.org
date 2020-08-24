@@ -14,7 +14,7 @@ const RecommandVideo = () => {
         title="youtube"
         width="560"
         height="315"
-        src="https://www.youtube-nocookie.com/embed/w0mog_xxY9Q?autoplay=1"
+        src="https://www.youtube-nocookie.com/embed/XwI-XhWWhQw"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen

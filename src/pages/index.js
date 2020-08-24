@@ -12,7 +12,7 @@ import Shortcut from "../components/section/Shortcut/Shortcut"
 export default () => {
   return (
     <>
-      <Seo title={"師大附中"} />
+      <Seo title={"國立臺灣師範大學附屬高級中學"} />
       <Landing />
       <LazyLoadComponent>
         <Blog />

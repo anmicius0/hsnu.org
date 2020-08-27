@@ -32,8 +32,7 @@ export const Header = () => {
     },
     {
       name: "English",
-      url:
-        "https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fhsnu.org%2F",
+      url: "https://site.hs.ntnu.edu.tw/english/",
     },
   ])
 
@@ -42,7 +41,7 @@ export const Header = () => {
     var lastScrollTop = 0
     window.addEventListener(
       "scroll",
-      function() {
+      function () {
         var st = window.pageYOffset || document.documentElement.scrollTop
         if (st > lastScrollTop) {
           // downscroll code
@@ -103,7 +102,7 @@ export const Header = () => {
         {/* Navbar Items */}
         <Navbar.Collapse>
           <Nav>
-            {navs.map(nav => (
+            {navs.map((nav) => (
               <Nav.Item key={nav.name}>
                 <Nav.Link className={"is-5 bold"} href={nav.url}>
                   {nav.name}

@@ -58,7 +58,7 @@ export const Sidebar = () => {
     <>
       <div id={"sidebar"}>
         {/* title */}
-        <h3 className={"is-3 bold serif"}>國立臺灣大學附屬高級中學</h3>
+        <h3 className={"is-3 bold serif"}>國立臺灣師範大學附屬高級中學</h3>
 
         <Endorsement />
         <SearchBox />
@@ -66,11 +66,11 @@ export const Sidebar = () => {
         {/* menu cards*/}
         <ul className={"menu-cards"}>
           {/* tools from WP */}
-          {frequent.concat(blocks).map(block => (
+          {frequent.concat(blocks).map((block) => (
             <li key={block.title}>
               <ul className={"menu-card"}>
                 <h4 className={"is-4 bold"}>{block.title}</h4>
-                {block.item.map(item => (
+                {block.item.map((item) => (
                   <li className={"is-5"} key={item.title}>
                     <a
                       href={item.url}

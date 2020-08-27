@@ -21,12 +21,10 @@ const Footer = () => {
         <Container fluid>
           <Row>
             <Col lg="6" className={"logo"}>
-              <h2 className={"is-3 bold"}>
-                網管小組辛苦製作的非官方網站，不追蹤一下嗎 🠮
-              </h2>
+              <h2 className={"is-3 bold"}>總機：(02)2707-5215</h2>
             </Col>
             <Col lg="6" className={"icons"}>
-              {footers.map(icon => (
+              {footers.map((icon) => (
                 <a
                   href={icon.link}
                   target="_blank"

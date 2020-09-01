@@ -44,7 +44,17 @@ export default ({ id }) => {
     setSubgenre(() => {
       switch (genre) {
         case "學生":
-          return ["周輔", "檢定", "活動", "段考", "徵才", "課表", "獎學金"]
+          return [
+            "周輔",
+            "檢定",
+            "活動",
+            "段考",
+            "徵才",
+            "課表",
+            "獎學金",
+            "學習歷程",
+            "其他",
+          ]
         case "競賽":
           return ["語文", "自然", "美術", "資訊", "其他"]
         default:
@@ -83,7 +93,7 @@ export default ({ id }) => {
       <Form.Group controlId="genre">
         <Form.Label className={"is-5 bold"}>大分類:</Form.Label>
         <Form.Control as="select" name="genre" onChange={handle_change}>
-          {genreList.map(genre => (
+          {genreList.map((genre) => (
             <option value={genre}>{genre}</option>
           ))}
         </Form.Control>
@@ -93,7 +103,7 @@ export default ({ id }) => {
       <Form.Group controlId="subgenre">
         <Form.Label className={"is-5 bold"}>小分類:</Form.Label>
         <Form.Control as="select" name="subgenre">
-          {subgenre.map(subgenre => (
+          {subgenre.map((subgenre) => (
             <option value={subgenre}>{subgenre}</option>
           ))}
         </Form.Control>
@@ -103,7 +113,7 @@ export default ({ id }) => {
       <Form.Group controlId="author">
         <Form.Label className={"is-5 bold"}>作者:</Form.Label>
         <Form.Control as="select" name="author">
-          {authotrList.map(author => (
+          {authotrList.map((author) => (
             <option value={author}>{author}</option>
           ))}
         </Form.Control>
@@ -111,7 +121,7 @@ export default ({ id }) => {
 
       {/* submit */}
       <Button variant="primary" type="submit">
-        Submit
+        篩選公告
       </Button>
     </Form>
   )

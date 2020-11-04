@@ -28,14 +28,6 @@ export default ({ location }) => {
     typeof window !== "undefined"
       ? new URL(location.href).searchParams.get("genre")
       : ""
-  var subgenre_param =
-    typeof window !== "undefined"
-      ? new URL(location.href).searchParams.get("subgenre")
-      : ""
-  var author_param =
-    typeof window !== "undefined"
-      ? new URL(location.href).searchParams.get("author")
-      : ""
 
   // search query to wordpress api
   useEffect(() => {
@@ -46,14 +38,6 @@ export default ({ location }) => {
         }${
           genre_param
             ? `&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=${genre_param}`
-            : ""
-        }${
-          subgenre_param
-            ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
-            : ""
-        }${
-          author_param
-            ? `&filter[meta_query][2][key]=last_name&filter[meta_query][2][value]=${author_param}`
             : ""
         }`
       )
@@ -85,14 +69,6 @@ export default ({ location }) => {
             }${
               genre_param
                 ? `&filter[meta_query][0][key]=genre&filter[meta_query][0][value]=${genre_param}`
-                : ""
-            }${
-              subgenre_param
-                ? `&filter[meta_query][1][key]=sub_genre_student&filter[meta_query][1][value]=${subgenre_param}`
-                : ""
-            }${
-              author_param
-                ? `&filter[meta_query][2][key]=last_name&filter[meta_query][2][value]=${author_param}`
                 : ""
             }`
           )

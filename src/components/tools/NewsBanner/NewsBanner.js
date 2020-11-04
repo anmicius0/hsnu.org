@@ -9,7 +9,7 @@ export const NewsBanner = ({ headline }) => {
   return (
     <Parallax
       className={"NewsBanner"}
-      bgImage={headline.node.acf.image.sizes.wordpress_1536x1536}
+      bgImage={headline.node.acf.image.source_url}
       strength={500}
     >
       <div className={"fade-layer"}></div>
@@ -30,26 +30,20 @@ export const NewsBanner = ({ headline }) => {
 const Landing = () => {
   const headline = useStaticQuery(graphql`
     {
-      allWordpressWpNews(
-        limit: 1
-        sort: { fields: date, order: DESC }
-        skip: 1
-      ) {
+      allWordpressWpNews(limit: 1, sort: {fields: date, order: DESC}, skip: 1) {
         edges {
           node {
             title
             acf {
               image {
-                sizes {
-                  wordpress_1536x1536
-                }
+                source_url
               }
               link
             }
           }
         }
       }
-    }
+    }  
   `).allWordpressWpNews.edges[0]
 
   return <NewsBanner headline={headline} />

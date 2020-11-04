@@ -69,7 +69,7 @@ export const ClubsPure = ({ clubs }) => {
                 {/* cover */}
                 <figure>
                   <img
-                    src={club.node.acf.image.sizes.wordpress_1536x1536}
+                    src={club.node.acf.image.source_url}
                     alt={club.node.title}
                   />
                 </figure>
@@ -122,9 +122,7 @@ const Clubs = () => {
             title
             acf {
               image {
-                sizes {
-                  wordpress_1536x1536
-                }
+                source_url
               }
               social_medias {
                 media_type

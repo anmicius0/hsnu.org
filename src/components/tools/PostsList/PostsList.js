@@ -12,10 +12,7 @@ const PostsList = () => {
   // get other post type by graphql
   const posts = useStaticQuery(graphql`
     {
-      allPosts: allWordpressWpSpost(
-        limit: 10
-        sort: { fields: date, order: DESC }
-      ) {
+      allPosts: allWordpressWpSpost(limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
@@ -23,7 +20,7 @@ const PostsList = () => {
           }
         }
       }
-      topPosts: allWordpressWpTop {
+      studentPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "學生"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
@@ -31,11 +28,7 @@ const PostsList = () => {
           }
         }
       }
-      studentPosts: allWordpressWpSpost(
-        filter: { acf: { genre: { eq: "學生" } } }
-        limit: 10
-        sort: { fields: date, order: DESC }
-      ) {
+      teacherPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "教師"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
@@ -43,11 +36,7 @@ const PostsList = () => {
           }
         }
       }
-      teacherPosts: allWordpressWpSpost(
-        filter: { acf: { genre: { eq: "教師" } } }
-        limit: 10
-        sort: { fields: date, order: DESC }
-      ) {
+      honorPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "榮譽榜"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
@@ -55,32 +44,7 @@ const PostsList = () => {
           }
         }
       }
-
-      racePosts: allWordpressWpSpost(
-        filter: { acf: { genre: { eq: "競賽" } } }
-        limit: 10
-        sort: { fields: date, order: DESC }
-      ) {
-        edges {
-          node {
-            title
-            wordpress_id
-          }
-        }
-      }
-      researchPosts: allWordpressWpSpost(
-        filter: { acf: { genre: { eq: "講座及課程" } } }
-        limit: 10
-        sort: { fields: date, order: DESC }
-      ) {
-        edges {
-          node {
-            title
-            wordpress_id
-          }
-        }
-      }
-    }
+    }  
   `)
 
   // when toggle tabs
@@ -104,11 +68,9 @@ const PostsList = () => {
   // tabs
   const genreTabs = [
     { name: "最新", codeName: "allPosts" },
-    { name: "置頂", codeName: "topPosts" },
     { name: "學生", codeName: "studentPosts" },
-    { name: "研習", codeName: "researchPosts" },
-    { name: "競賽", codeName: "racePosts" },
     { name: "教師", codeName: "teacherPosts" },
+    { name: "榮譽榜", codeName: "honorPosts" },
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.allPosts.edges)

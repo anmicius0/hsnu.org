@@ -45,8 +45,7 @@ export default () => {
           date: res.data[0].date,
           urls: res.data[0].acf.repeater_link,
           files: res.data[0].acf.repeater_file,
-          office: res.data[0].acf.last_name,
-          section: res.data[0].acf.first_name,
+          office: "網管小組",
         })
       })
       .catch(err => {
@@ -71,7 +70,6 @@ export default () => {
                 urls={post.urls}
                 files={post.files}
                 office={post.office}
-                section={post.section}
               />
             ) : (
               <Content title={status} />

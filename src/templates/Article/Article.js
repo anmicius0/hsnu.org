@@ -33,9 +33,7 @@ export default ({ data }) => {
               date={post.date}
               content={post.content}
               urls={post.acf.repeater_link}
-              files={post.acf.repeater_file}
-              office={post.acf.last_name}
-              section={post.acf.first_name}
+              office="網管小組"
             />
             <LazyLoadComponent>
               <RecommandVideo />
@@ -51,8 +49,8 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: Int!) {
-    allWordpressWpSpost(filter: { wordpress_id: { eq: $id } }) {
+  query ($id: Int!) {
+    allWordpressWpSpost(filter: {wordpress_id: {eq: $id}}) {
       edges {
         node {
           title
@@ -60,18 +58,10 @@ export const query = graphql`
           content
           wordpress_id
           acf {
-            first_name
-            last_name
             genre
             repeater_link {
               url
               description
-            }
-            repeater_file {
-              file {
-                filename
-                link
-              }
             }
           }
         }

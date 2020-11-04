@@ -16,9 +16,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
             acf {
               link
               image {
-                sizes {
-                  thumbnail
-                }
+                source_url
               }
             }
           }
@@ -89,7 +87,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
           {/* cover */}
           <figure>
             <LazyLoadImage
-              src={news.node.acf.image.sizes.thumbnail}
+              src={news.node.acf.image.source_url}
               alt={news.node.title}
             />
           </figure>
@@ -115,7 +113,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
               {/* cover */}
               <figure>
                 <LazyLoadImage
-                  src={news.acf.image.sizes.thumbnail}
+                  src={news.acf.image.source_url}
                   alt={news.title.rendered}
                 />
               </figure>

@@ -32,7 +32,7 @@ export default ({ data }) => {
               genre={post.acf_sposts.genre}
               date={post.date}
               content={post.content}
-              urls={post.acf_sposts.repeater_link}
+              urls={post.acf_sposts.repeaterLink}
               office="網管小組"
             />
             <LazyLoadComponent>

@@ -14,10 +14,6 @@ export default () => {
           url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
         },
         {
-          title: "高三成績查詢",
-          url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",
-        },
-        {
           title: "段考資訊",
           url: "https://hsnu.org/search/?search=%E6%AE%B5%E8%80%83",
         },

@@ -54,6 +54,23 @@ export const Sidebar = () => {
       ],
     },
     {
+      title: "網路服務",
+      item: [
+        {
+          title: "雲端差勤系統",
+          url: "https://pemis.k12ea.gov.tw/login.aspx",
+        },
+        {
+          title: "校內網路服務",
+          url: "https://hsnu.org/post/36052",
+        },
+        {
+          title: "校園修繕線上通報",
+          url: "http://artlife.hs.ntnu.edu.tw/case122/index.php",
+        },
+      ],
+    },
+    {
       title: "學生專區",
       item: [
         {
@@ -103,7 +120,7 @@ export const Sidebar = () => {
       ],
     },
     {
-      title: "網路服務",
+      title: "相關單位",
       item: [
         {
           title: "家長會",

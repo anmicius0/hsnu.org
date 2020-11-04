@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 // tools
 import SearchBox from "../tools/SearchBox/SearchBox"
@@ -25,6 +25,10 @@ export const Sidebar = () => {
         {
           title: "閱覽室預約",
           url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
+        },
+        {
+          title: "回舊校網",
+          url: "https://old.hsnu.org",
         },
       ],
     },

@@ -25,6 +25,10 @@ export default () => {
           title: "閱覽室預約",
           url: "http://artlife.hs.ntnu.edu.tw/case95_2/index.php",
         },
+        {
+          title: "回舊校網",
+          url: "https://old.hsnu.org",
+        },
       ],
     },
     {

@@ -1,0 +1,33 @@
+query PREVIEW_QUERY($id: ID!) {
+  menu(id: $id, idType: ID, asPreview: true) {
+    acf_menu {
+      block {
+        fieldGroupName
+        item {
+          fieldGroupName
+          title
+          url
+        }
+        title
+      }
+      fieldGroupName
+    }
+    contentType {
+      node {
+        id
+      }
+    }
+    count
+    databaseId
+    id
+    locations
+    menuItems(first: 100) {
+      nodes {
+        id
+      }
+    }
+    name
+    slug
+    __typename
+  }
+}

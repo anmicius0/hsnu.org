@@ -9,21 +9,21 @@ import "./SideNews.scss"
 const SideNews = ({ infinity = false, hideMobile = false }) => {
   const GraphqlNews = useStaticQuery(graphql`
     {
-      allWordpressWpNews(limit: 5, skip: 2) {
+      allWpNews(limit: 5, skip: 2) {
         edges {
           node {
             title
-            acf {
+            acf_news {
               link
               image {
-                source_url
+                sourceUrl
               }
             }
           }
         }
       }
-    }
-  `).allWordpressWpNews.edges
+    }  
+  `).allWpNews.edges
 
   const [RestNews, setRestNews] = useState()
   const [page_now, setPage_now] = useState(1)
@@ -33,7 +33,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
     if (infinity) {
       axios
         .get(
-          `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=6&per_page=20&page=1`
+          `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=7&per_page=20&page=1`
         )
         .then(res => {
           setPage_now(page_now + 1)
@@ -78,7 +78,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
       {GraphqlNews.map(news => (
         // news card small (component)
         <a
-          href={news.node.acf.link}
+          href={news.node.acf_news.link}
           target="_blank"
           rel="noopener noreferrer"
           className={"news-card-s"}
@@ -87,7 +87,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
           {/* cover */}
           <figure>
             <LazyLoadImage
-              src={news.node.acf.image.source_url}
+              src={news.node.acf_news.image.sourceUrl}
               alt={news.node.title}
             />
           </figure>
@@ -113,7 +113,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
               {/* cover */}
               <figure>
                 <LazyLoadImage
-                  src={news.acf.image.source_url}
+                  src={news.acf.image.url}
                   alt={news.title.rendered}
                 />
               </figure>

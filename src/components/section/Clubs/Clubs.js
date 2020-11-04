@@ -69,7 +69,7 @@ export const ClubsPure = ({ clubs }) => {
                 {/* cover */}
                 <figure>
                   <img
-                    src={club.node.acf.image.source_url}
+                    src={club.node.acf_clubs.image.sourceUrl}
                     alt={club.node.title}
                   />
                 </figure>
@@ -82,20 +82,20 @@ export const ClubsPure = ({ clubs }) => {
                   {/* social media */}
                   <Container>
                     <Row className={"icons"}>
-                      {club.node.acf.social_medias
-                        ? club.node.acf.social_medias.map(media => (
+                      {club.node.acf_clubs.socialMedias
+                        ? club.node.acf_clubs.socialMedias.map(media => (
                             <Col
                               className={"icon col-4 col-sm-3"}
-                              key={media.media_link}
+                              key={media.mediaLink}
                             >
                               <a
-                                href={media.media_link}
+                                href={media.mediaLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
                                 <img
-                                  src={type_to_icon(media.media_type)}
-                                  alt={media.media_type}
+                                  src={type_to_icon(media.mediaType)}
+                                  alt={media.mediaType}
                                 />
                               </a>
                             </Col>
@@ -116,24 +116,24 @@ const Clubs = () => {
   // get clubs data from wordpress
   const clubs = useStaticQuery(graphql`
     {
-      allWordpressWpClubs {
+      allWpClub {
         edges {
           node {
             title
-            acf {
+            acf_clubs {
               image {
-                source_url
+                sourceUrl
               }
-              social_medias {
-                media_type
-                media_link
+              socialMedias {
+                mediaType
+                mediaLink
               }
             }
           }
         }
       }
     }
-  `).allWordpressWpClubs.edges
+  `).allWpClub.edges
 
   return <ClubsPure clubs={clubs} />
 }

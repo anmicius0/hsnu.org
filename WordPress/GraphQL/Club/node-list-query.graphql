@@ -1,0 +1,52 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  clubs(first: $first, after: $after) {
+    nodes {
+      acf_clubs {
+        fieldGroupName
+        image {
+          __typename
+          id
+        }
+        socialMedias {
+          fieldGroupName
+          mediaLink
+          mediaType
+        }
+      }
+      contentType {
+        node {
+          id
+        }
+      }
+      databaseId
+      date
+      dateGmt
+      desiredSlug
+      enclosure
+      guid
+      id
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      link
+      modified
+      modifiedGmt
+      slug
+      status
+      template {
+        templateFile
+        templateName
+        __typename
+      }
+      title
+      uri
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

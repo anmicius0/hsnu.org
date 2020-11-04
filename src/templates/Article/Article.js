@@ -13,13 +13,13 @@ import Content from "../../components/tools/Content/Content"
 import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
 export default ({ data }) => {
-  const post = data.allWordpressWpSpost.edges[0].node
+  const post = data.allWpSpost.edges[0].node
   return (
     <>
       <Seo
         title={post.title}
         description={post.content}
-        pathname={`/post/${post.wordpress_id}`}
+        pathname={`/post/${post.databaseId}`}
         article
       />
 
@@ -29,10 +29,10 @@ export default ({ data }) => {
           <Col lg="7">
             <Content
               title={post.title}
-              genre={post.acf.genre}
+              genre={post.acf_sposts.genre}
               date={post.date}
               content={post.content}
-              urls={post.acf.repeater_link}
+              urls={post.acf_sposts.repeater_link}
               office="網管小組"
             />
             <LazyLoadComponent>
@@ -50,16 +50,16 @@ export default ({ data }) => {
 
 export const query = graphql`
   query ($id: Int!) {
-    allWordpressWpSpost(filter: {wordpress_id: {eq: $id}}) {
+    allWpSpost(filter: {databaseId: {eq: $id}}) {
       edges {
         node {
           title
           date
+          databaseId
           content
-          wordpress_id
-          acf {
+          acf_sposts {
             genre
-            repeater_link {
+            repeaterLink {
               url
               description
             }

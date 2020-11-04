@@ -12,35 +12,35 @@ const PostsList = () => {
   // get other post type by graphql
   const posts = useStaticQuery(graphql`
     {
-      allPosts: allWordpressWpSpost(limit: 10, sort: {fields: date, order: DESC}) {
+      allPosts: allWpSpost(limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
-            wordpress_id
+            databaseId
           }
         }
       }
-      studentPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "學生"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      studentPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "學生"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
-            wordpress_id
+            databaseId
           }
         }
       }
-      teacherPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "教師"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      teacherPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "教師"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
-            wordpress_id
+            databaseId
           }
         }
       }
-      honorPosts: allWordpressWpSpost(filter: {acf: {genre: {eq: "榮譽榜"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      honorPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "榮譽榜"}}}, limit: 10, sort: {fields: date, order: DESC}) {
         edges {
           node {
             title
-            wordpress_id
+            databaseId
           }
         }
       }
@@ -107,8 +107,8 @@ const PostsList = () => {
       <Container id="post-list">
         <Row className={"flex-column"}>
           {current_posts.map(post => (
-            <Col className={"post"} key={post.node.wordpress_id}>
-              <Link to={`/post/${post.node.wordpress_id}`}>
+            <Col className={"post"} key={post.node.databaseId}>
+              <Link to={`/post/${post.node.databaseId}`}>
                 <p
                   className={"is-4"}
                   dangerouslySetInnerHTML={{ __html: post.node.title }}

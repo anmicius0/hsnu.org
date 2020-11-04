@@ -11,12 +11,12 @@ export const LandingPure = ({ headline }) => {
       <Jumbotron className="landing" fluid>
         <img
           rel="preload"
-          src={headline.node.acf.image.source_url}
+          src={headline.node.acf_news.image.sourceUrl}
           alt={"Headline"}
         ></img>
         <div className={"fade-layer"}></div>
         <a
-          href={headline.node.acf.link}
+          href={headline.node.acf_news.link}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -32,23 +32,22 @@ export const LandingPure = ({ headline }) => {
 }
 const Landing = () => {
   const headline = useStaticQuery(graphql`
-  {
-    allWordpressWpNews(limit: 1, sort: {fields: date, order: DESC}) {
-      edges {
-        node {
-          title
-          acf {
-            image {
-              source_url
+    {
+      allWpNews(limit: 1, sort: {fields: date, order: DESC}) {
+        edges {
+          node {
+            title
+            acf_news {
+              image {
+                sourceUrl
+              }
+              link
             }
-            link
           }
         }
       }
-    }
-  }
-  
-  `).allWordpressWpNews.edges[0]
+    }  
+  `).allWpNews.edges[0]
 
   return <LandingPure headline={headline} />
 }

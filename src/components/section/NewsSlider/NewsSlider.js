@@ -19,23 +19,23 @@ const newsSlider = () => {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const newses = useStaticQuery(graphql`
-  {
-    allWordpressWpNews(limit: 4, skip: 1) {
-      edges {
-        node {
-          title
-          acf {
-            image {
-              source_url
+    {
+      allWpNews(limit: 4, skip: 1) {
+        edges {
+          node {
+            title
+            acf_news {
+              image {
+                sourceUrl
+              }
+              link
             }
-            link
           }
         }
       }
-    }
-  }
+    }  
   
-  `).allWordpressWpNews.edges
+  `).allWpNews.edges
 
   return (
     <>
@@ -44,14 +44,14 @@ const newsSlider = () => {
           {newses.map(news => (
             <div className={"news-card-l"} key={news.node.title}>
               <a
-                href={news.node.acf.link}
+                href={news.node.acf_news.link}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {/* cover */}
                 <figure>
                   <LazyLoadImage
-                    src={news.node.acf.image.source_url}
+                    src={news.node.acf_news.image.sourceUrl}
                     alt="feature news"
                   />
                 </figure>

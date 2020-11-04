@@ -1,0 +1,46 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  club(id: $id) {
+    acf_clubs {
+      fieldGroupName
+      image {
+        __typename
+        id
+      }
+      socialMedias {
+        fieldGroupName
+        mediaLink
+        mediaType
+      }
+    }
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    guid
+    id
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    modified
+    modifiedGmt
+    slug
+    status
+    template {
+      templateFile
+      templateName
+      __typename
+    }
+    title
+    uri
+    __typename
+  }
+}

@@ -1,0 +1,42 @@
+query PREVIEW_QUERY($id: ID!) {
+  news(id: $id, idType: ID, asPreview: true) {
+    acf_news {
+      fieldGroupName
+      image {
+        __typename
+        id
+      }
+      link
+    }
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    guid
+    id
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    modified
+    modifiedGmt
+    slug
+    status
+    template {
+      templateFile
+      templateName
+      __typename
+    }
+    title
+    uri
+    __typename
+  }
+}

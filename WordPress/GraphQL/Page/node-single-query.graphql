@@ -1,0 +1,81 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  page(id: $id) {
+    ancestors(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    author {
+      node {
+        id
+      }
+    }
+    authorDatabaseId
+    authorId
+    wpChildren: children(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    commentCount
+    commentStatus
+    comments(first: 100) {
+      nodes {
+        id
+      }
+    }
+    content
+    contentType {
+      node {
+        id
+      }
+    }
+    databaseId
+    date
+    dateGmt
+    desiredSlug
+    enclosure
+    featuredImage {
+      node {
+        __typename
+        id
+      }
+    }
+    featuredImageDatabaseId
+    featuredImageId
+    guid
+    id
+    isFrontPage
+    isPostsPage
+    isRevision
+    lastEditedBy {
+      node {
+        id
+      }
+    }
+    link
+    menuOrder
+    modified
+    modifiedGmt
+    wpParent: parent {
+      node {
+        id
+        __typename
+      }
+    }
+    parentDatabaseId
+    parentId
+    slug
+    status
+    template {
+      templateFile
+      templateName
+      __typename
+    }
+    title
+    uri
+    __typename
+  }
+}

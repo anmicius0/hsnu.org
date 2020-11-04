@@ -161,7 +161,7 @@ export default () => {
     <Container as="section" id="Shortcut" fluid>
       <Row>
         {/* blocks from graphql */}
-        {frequent.slice(0, 5).map(block => (
+        {frequent.slice(0, 4).map(block => (
           <Col lg="3">
             <h2 className={"is-2 bold"}>
               <span>{block.title}</span>

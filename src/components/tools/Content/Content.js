@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import "./Content.scss"
 import Files from "../Files/Files"
 
@@ -22,9 +20,7 @@ const Content = ({
       <div className={"meta"}>
         <p className={"is-5 light"}>{genre}</p>
         <p className={"is-5 light"}>{date ? date.slice(0, 10) : null}</p>
-        <p className={"is-5 tag"}>
-          <Link to={`/search?author=${office}`}>{office}</Link>
-        </p>
+        <p className={"is-5 tag"}>{office}</p>
       </div>
 
       {/* files */}

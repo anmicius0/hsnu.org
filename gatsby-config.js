@@ -71,7 +71,7 @@ module.exports = {
         icon: `src/images/icons/HSNU.png`,
       },
     },
-    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-sitemap`,
     // canonical link
     {
       resolve: `gatsby-plugin-canonical-urls`,

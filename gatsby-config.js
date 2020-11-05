@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `師大附中`,
+        name: `國立臺灣師範大學附屬高級中學`,
         short_name: `HSNU`,
         start_url: `/`,
         background_color: `#ffffff`,

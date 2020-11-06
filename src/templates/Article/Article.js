@@ -49,8 +49,8 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query ($id: Int!) {
-    allWpSpost(filter: {databaseId: {eq: $id}}) {
+  query($id: Int!) {
+    allWpSpost(filter: { databaseId: { eq: $id } }) {
       edges {
         node {
           title

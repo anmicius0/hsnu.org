@@ -78,7 +78,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop",
+    "develop": "NODE_TLS_REJECT_UNAUTHORIZED=0 gatsby develop --https",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

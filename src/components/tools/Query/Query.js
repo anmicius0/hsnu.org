@@ -20,8 +20,11 @@ export default ({ results }) => {
 
               {/* meta */}
               <div className={"meta"}>
-                <p className={"is-5 light"}>教務處</p>
-                <p className={"is-5 light"}>2020/1/11</p>
+                <p className={"is-5 light"}>管理者</p>
+                <p 
+                  className={"is-5 light"} 
+                  dangerouslySetInnerHTML={{ __html: result.date.slice(0, 10) }}
+                />
                 {/* <p classNam e={"is-5 tag"}>熱門</p> */}
               </div>
             </Link>

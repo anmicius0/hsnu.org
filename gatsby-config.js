@@ -18,7 +18,7 @@ module.exports = {
       options: {
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://backend.hs.ntnu.edu.tw/graphql`,
+          `https://wordpress.hsnu.org/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,

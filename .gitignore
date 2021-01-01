@@ -56,8 +56,8 @@ typings/
 
 # gatsby files
 .cache/
-.wordpress-cache
-Wordpress/
+.wordpress-cache/
+WordPress/
 public
 
 # Mac files

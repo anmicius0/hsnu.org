@@ -33,7 +33,7 @@ export default ({ data }) => {
               date={post.date}
               content={post.content}
               urls={post.acf_sposts.repeaterLink}
-              office="網管小組"
+              office="管理者"
             />
             <LazyLoadComponent>
               <RecommandVideo />

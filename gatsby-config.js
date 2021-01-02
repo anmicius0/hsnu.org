@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-eslint",
+    `gatsby-plugin-preact`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

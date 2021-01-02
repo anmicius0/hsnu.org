@@ -4,9 +4,9 @@ import { Container, Row, Col, ListGroup } from "react-bootstrap"
 
 import "./Shortcut.scss"
 
-export default () => {
-    // frequent used tools
-    const frequent = useStaticQuery(graphql`
+const Shortcut = () => {
+  // frequent used tools
+  const frequent = useStaticQuery(graphql`
     {
       allMenuJson {
         edges {
@@ -26,13 +26,13 @@ export default () => {
     <Container as="section" id="Shortcut" fluid>
       <Row>
         {/* blocks from graphql */}
-        {frequent.slice(0, 4).map(block => (
+        {frequent.slice(0, 4).map((block) => (
           <Col lg="3">
             <h2 className={"is-2 bold"}>
               <span>{block.node.title}</span>
             </h2>
             <ListGroup as="ul">
-              {block.node.item.slice(0, 5).map(item => (
+              {block.node.item.slice(0, 5).map((item) => (
                 <ListGroup.Item as="li">
                   <a
                     href={item.url}
@@ -51,3 +51,5 @@ export default () => {
     </Container>
   )
 }
+
+export default Shortcut

@@ -12,7 +12,7 @@ const PostsList = () => {
   // get other post type by graphql
   const posts = useStaticQuery(graphql`
     {
-      allPosts: allWpSpost(limit: 10, sort: {fields: date, order: DESC}) {
+      allPosts: allWpSpost(limit: 10, sort: { fields: date, order: DESC }) {
         edges {
           node {
             title
@@ -20,7 +20,11 @@ const PostsList = () => {
           }
         }
       }
-      studentPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "學生"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      studentPosts: allWpSpost(
+        filter: { acf_sposts: { genre: { eq: "學生" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
         edges {
           node {
             title
@@ -28,7 +32,11 @@ const PostsList = () => {
           }
         }
       }
-      teacherPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "教師"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      teacherPosts: allWpSpost(
+        filter: { acf_sposts: { genre: { eq: "教師" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
         edges {
           node {
             title
@@ -36,7 +44,11 @@ const PostsList = () => {
           }
         }
       }
-      honorPosts: allWpSpost(filter: {acf_sposts: {genre: {eq: "榮譽榜"}}}, limit: 10, sort: {fields: date, order: DESC}) {
+      honorPosts: allWpSpost(
+        filter: { acf_sposts: { genre: { eq: "榮譽榜" } } }
+        limit: 10
+        sort: { fields: date, order: DESC }
+      ) {
         edges {
           node {
             title
@@ -44,7 +56,7 @@ const PostsList = () => {
           }
         }
       }
-    }  
+    }
   `)
 
   // when toggle tabs
@@ -52,7 +64,7 @@ const PostsList = () => {
     // please select the text inside .genre (.genre > h2)
     const genres = document.querySelectorAll(".genre:not(.more) h2")
     for (var i = 0; i < genres.length; i++) {
-      genres[i].addEventListener("click", e => {
+      genres[i].addEventListener("click", (e) => {
         // clear all .active
         for (var i = 0; i < genres.length; i++) {
           if (genres[i].classList.contains("active")) {
@@ -74,7 +86,6 @@ const PostsList = () => {
   ]
 
   const [current_posts, setCurrent_posts] = useState(posts.allPosts.edges)
-  const [genreNow, setGenreNow] = useState("allPosts")
 
   return (
     <div className={"posts"}>
@@ -86,7 +97,6 @@ const PostsList = () => {
             <h2
               className={`is-3 bold ${index === 0 ? "active" : null}`}
               onClick={() => {
-                setGenreNow(item.codeName)
                 setCurrent_posts(posts[item.codeName].edges)
               }}
             >
@@ -106,7 +116,7 @@ const PostsList = () => {
       {/* List of post */}
       <Container id="post-list">
         <Row className={"flex-column"}>
-          {current_posts.map(post => (
+          {current_posts.map((post) => (
             <Col className={"post"} key={post.node.databaseId}>
               <Link to={`/post/${post.node.databaseId}`}>
                 <p

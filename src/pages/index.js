@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { LazyLoadComponent } from "react-lazy-load-image-component"
 
 import Seo from "../components/layout/Seo"
@@ -9,7 +8,7 @@ import Banner from "../components/section/Banner/Banner"
 import Blog from "../components/section/Blog/Blog"
 import Shortcut from "../components/section/Shortcut/Shortcut"
 
-export default () => {
+const Index = () => {
   return (
     <>
       <Seo title={"國立臺灣師範大學附屬高級中學"} />
@@ -27,3 +26,5 @@ export default () => {
     </>
   )
 }
+
+export default Index

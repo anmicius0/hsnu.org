@@ -22,7 +22,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
           }
         }
       }
-    }  
+    }
   `).allWpNews.edges
 
   const [RestNews, setRestNews] = useState()
@@ -35,20 +35,20 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
         .get(
           `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=7&per_page=20&page=1`
         )
-        .then(res => {
+        .then((res) => {
           setPage_now(page_now + 1)
           setRestNews(res.data)
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err)
         })
     }
-  }, [])
+  })
 
   // load when hit the (1/2) bottom
   useEffect(() => {
     if (infinity) {
-      window.onscroll = function() {
+      window.onscroll = function () {
         if (
           window.innerHeight + window.scrollY >=
           document.body.offsetHeight / 2
@@ -57,12 +57,12 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
             .get(
               `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
             )
-            .then(res => {
+            .then((res) => {
               console.log(res.data)
               setPage_now(page_now + 1)
               setRestNews(RestNews.concat(res.data))
             })
-            .catch(err => {
+            .catch((err) => {
               console.log(err)
             })
         }
@@ -75,7 +75,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
       <h2 className={"is-2 bold"}>更多作品</h2>
 
       {/* from GraphQl */}
-      {GraphqlNews.map(news => (
+      {GraphqlNews.map((news) => (
         // news card small (component)
         <a
           href={news.node.acf_news.link}
@@ -101,7 +101,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
 
       {/*  from REST */}
       {RestNews
-        ? RestNews.map(news => (
+        ? RestNews.map((news) => (
             // news card small (component)
             <a
               href={news.acf.link}

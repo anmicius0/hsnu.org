@@ -12,7 +12,7 @@ import SideNews from "../../components/tools/SidewNews/SideNews"
 import Content from "../../components/tools/Content/Content"
 import RecommandVideo from "../../components/tools/RecommandVideo/RecommandVideo"
 
-export default ({ data }) => {
+const Article = ({ data }) => {
   const post = data.allWpSpost.edges[0].node
   return (
     <>
@@ -69,3 +69,4 @@ export const query = graphql`
     }
   }
 `
+export default Article

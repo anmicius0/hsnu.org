@@ -12,7 +12,7 @@ import Searchbox from "../components/tools/SearchBox/SearchBox"
 import Filter from "../components/tools/Filter/Filter"
 import SideNews from "../components/tools/SidewNews/SideNews"
 
-export default ({ location }) => {
+const Search = ({ location }) => {
   //  search
   const [results, setResults] = useState([])
   const [status, setStatus] = useState("Searching...")
@@ -41,7 +41,7 @@ export default ({ location }) => {
             : ""
         }`
       )
-      .then(res => {
+      .then((res) => {
         console.log(res.data)
         if (res.data.length === 0) {
           setStatus("Nothing Found (´･_･`)")
@@ -50,14 +50,14 @@ export default ({ location }) => {
           setPage_now(page_now + 1)
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err)
       })
-  }, [])
+  })
 
   // load when hit the (1/2) bottom
   useEffect(() => {
-    window.onscroll = function() {
+    window.onscroll = function () {
       if (
         window.innerHeight + window.scrollY >=
         document.body.offsetHeight / 2
@@ -72,12 +72,12 @@ export default ({ location }) => {
                 : ""
             }`
           )
-          .then(res => {
+          .then((res) => {
             console.log(res.data)
             setPage_now(page_now + 1)
             setResults(results.concat(res.data))
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err)
           })
       }
@@ -114,3 +114,5 @@ export default ({ location }) => {
     </>
   )
 }
+
+export default Search

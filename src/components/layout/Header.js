@@ -9,7 +9,7 @@ import menu from "../../images/icons/functional/menu.svg"
 import search from "../../images/icons/functional/search.svg"
 
 export const Header = () => {
-  const [navs, setNavs] = useState([
+  const [navs] = useState([
     {
       name: "二代校務",
       url: "https://sschool.tp.edu.tw/Login.action?schNo=330301",

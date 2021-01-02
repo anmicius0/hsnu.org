@@ -1,29 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import { Form, Button } from "react-bootstrap"
 
 // stlye
 import "./Filter.scss"
 
-export default ({ id }) => {
+const Filter = ({ id }) => {
   // dynamic options
-  const genreList = [
-    "全部",
-    "學生",
-    "教師",
-    "榮譽榜",
-    "來文",
-    // "講座及課程",
-    // "競賽",
-    // "微課程",
-    // "菜單",
-  ]
-
-  const [genre, setGenre] = useState("全部")
-
-  // when genre change
-  function handle_change(event) {
-    setGenre(event.target.value)
-  }
+  const genreList = ["全部", "學生", "教師", "榮譽榜", "來文"]
 
   // handle submit
   function handle_submit(event) {
@@ -50,7 +33,7 @@ export default ({ id }) => {
       {/* genre */}
       <Form.Group controlId="genre">
         <Form.Label className={"is-5 bold"}>大分類:</Form.Label>
-        <Form.Control as="select" name="genre" onChange={handle_change}>
+        <Form.Control as="select" name="genre">
           {genreList.map((genre) => (
             <option value={genre}>{genre}</option>
           ))}
@@ -64,3 +47,5 @@ export default ({ id }) => {
     </Form>
   )
 }
+
+export default Filter

@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-eslint",
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -16,9 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wordpress.hsnu.org/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://wordpress.hsnu.org/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,

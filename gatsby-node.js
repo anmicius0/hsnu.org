@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const Sposts = result.data.allWpSpost.edges
-  Sposts.forEach(post => {
+  Sposts.forEach((post) => {
     createPage({
       path: `/post/${post.node.databaseId}`,
       component: BlogPostTemplate,

@@ -1,0 +1,8 @@
+pull_request_rules:
+  - name: Automatic merge on check success
+    conditions:
+      - author=dependabot[bot]
+      - check-success=Vercel
+    actions:
+      merge:
+        method: merge

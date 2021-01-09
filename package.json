@@ -13,7 +13,7 @@
     "devcert": "^1.1.3",
     "gatsby": "^2.29.3",
     "gatsby-cli": "^2.16.2",
-    "gatsby-image": "^2.8.0",
+    "gatsby-image": "^2.9.0",
     "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-canonical-urls": "^2.7.0",
     "gatsby-plugin-env-variables": "^2.0.0",

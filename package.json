@@ -34,7 +34,7 @@
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-source-wordpress": "^3.8.1",
     "gatsby-source-wordpress-experimental": "^6.0.0",
-    "gatsby-transformer-json": "^2.8.0",
+    "gatsby-transformer-json": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.0",
     "gsap": "^3.5.1",
     "js-cookie": "^2.2.1",

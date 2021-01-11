@@ -33,7 +33,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-source-wordpress": "^3.9.0",
-    "gatsby-source-wordpress-experimental": "^6.0.0",
+    "gatsby-source-wordpress-experimental": "^6.2.0",
     "gatsby-transformer-json": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.0",
     "gsap": "^3.5.1",

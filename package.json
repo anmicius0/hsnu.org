@@ -18,7 +18,7 @@
     "gatsby-plugin-canonical-urls": "^2.8.0",
     "gatsby-plugin-env-variables": "^2.0.0",
     "gatsby-plugin-google-tagmanager": "^2.8.0",
-    "gatsby-plugin-layout": "^1.7.0",
+    "gatsby-plugin-layout": "^1.8.0",
     "gatsby-plugin-manifest": "^2.9.1",
     "gatsby-plugin-offline": "^3.8.0",
     "gatsby-plugin-preact": "^4.5.0",

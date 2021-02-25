@@ -20,7 +20,7 @@
     "gatsby-plugin-env-variables": "^2.0.0",
     "gatsby-plugin-google-tagmanager": "^2.10.0",
     "gatsby-plugin-layout": "^1.10.0",
-    "gatsby-plugin-manifest": "^2.10.0",
+    "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-offline": "^3.8.0",
     "gatsby-plugin-preact": "^4.5.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",

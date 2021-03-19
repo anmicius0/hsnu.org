@@ -4,7 +4,7 @@ module.exports = {
     titleTemplate: "%s | hsnu.org",
     description: `國立臺灣師範大學附屬高級中學，簡稱為HSNU，是一所位處臺北市大安區信義的高級中學，附屬於國立臺灣師範大學。`,
     siteUrl: "https://hsnu.org", // No trailing slash allowed!
-    image: "https://i.ytimg.com/vi/2fb-g_V-UT4/hqdefault.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/The_Main_Gate_of_The_Affiliated_Senior_High_School_of_NTNU.jpg/1024px-The_Main_Gate_of_The_Affiliated_Senior_High_School_of_NTNU.jpg",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,9 +16,9 @@ module.exports = {
     `gatsby-transformer-json`,
     // source from WordPress
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL || `https://wordpress.hsnu.org/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://35.227.139.215/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,

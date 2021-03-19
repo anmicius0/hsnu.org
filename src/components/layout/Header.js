@@ -20,11 +20,11 @@ export const Header = () => {
     },
     {
       name: "行事曆",
-      url: "https://hsnu.org/search/?search=%E8%A1%8C%E4%BA%8B%E6%9B%86",
+      url: `${process.env.SITE_URL}/search/?search=%E8%A1%8C%E4%BA%8B%E6%9B%86`,
     },
     {
       name: "段考",
-      url: "https://hsnu.org/search?search=%E6%AE%B5%E8%80%83",
+      url: `${process.env.SITE_URL}/search?search=%E6%AE%B5%E8%80%83`,
     },
     {
       name: "國中部",

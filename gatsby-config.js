@@ -3,7 +3,7 @@ module.exports = {
     title: `國立臺灣師範大學附屬高級中學`,
     titleTemplate: "%s | hsnu.org",
     description: `國立臺灣師範大學附屬高級中學，簡稱為HSNU，是一所位處臺北市大安區信義的高級中學，附屬於國立臺灣師範大學。`,
-    siteUrl: "https://hsnu.org", // No trailing slash allowed!
+    siteUrl: `${process.env.SITE_URL}`, // No trailing slash allowed!
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/The_Main_Gate_of_The_Affiliated_Senior_High_School_of_NTNU.jpg/1024px-The_Main_Gate_of_The_Affiliated_Senior_High_School_of_NTNU.jpg",
   },
   plugins: [
@@ -76,15 +76,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://hsnu.org`,
+        siteUrl: `${process.env.SITE_URL}`,
       },
     },
     // robot.txt
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://hsnu.org",
-        sitemap: "https://hsnu.org/sitemap.xml",
+        host: `${process.env.SITE_URL}`,
+        sitemap: `${process.env.SITE_URL}/sitemap.xml`,
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

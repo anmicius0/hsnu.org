@@ -18,7 +18,7 @@ const Propaganda = () => {
           />
           <div className={"fade-layer"}></div>
           <a
-            href={"https://github.com/HSNU-ORG/hsnu.org"}
+            href={"https://github.com/anmicius0/hsnu.org"}
             target="_blank"
             rel="noopener noreferrer"
           >

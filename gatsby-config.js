@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL || `https://35.227.139.215/graphql`,
+        url: process.env.WPGRAPHQL_URL,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
@@ -99,21 +99,6 @@ module.exports = {
     },
 
     // css
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Noto Sans TC`,
-    //         variants: [`300`, `400`, `700`],
-    //       },
-    //       {
-    //         family: `Noto Serif TC`,
-    //         variants: [`700`],
-    //       },
-    //     ],
-    //   },
-    // },
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
   ],

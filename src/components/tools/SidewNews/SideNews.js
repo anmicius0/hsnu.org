@@ -33,7 +33,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
     if (infinity) {
       axios
         .get(
-          `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?offset=7&per_page=20&page=1`
+          `${process.env.WORDPRESS_URL}/index.php/wp-json/wp/v2/news?offset=7&per_page=20&page=1`
         )
         .then((res) => {
           setPage_now(page_now + 1)
@@ -55,7 +55,7 @@ const SideNews = ({ infinity = false, hideMobile = false }) => {
         ) {
           axios
             .get(
-              `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
+              `${process.env.WORDPRESS_URL}/index.php/wp-json/wp/v2/news?per_page=20&page=${page_now}`
             )
             .then((res) => {
               console.log(res.data)

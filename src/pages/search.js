@@ -33,7 +33,7 @@ const Search = ({ location }) => {
   useEffect(() => {
     axios
       .get(
-        `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
+        `${process.env.WORDPRESS_URL}/index.php/wp-json/wp/v2/spost?per_page=20&page=1${
           search_param ? `&search=${search_param}` : ""
         }${
           genre_param
@@ -64,7 +64,7 @@ const Search = ({ location }) => {
       ) {
         axios
           .get(
-            `https://wordpress.hsnu.org/index.php/wp-json/wp/v2/spost?per_page=20&page=${page_now}${
+            `${process.env.WORDPRESS_URL}/index.php/wp-json/wp/v2/spost?per_page=20&page=${page_now}${
               search_param ? `&search=${search_param}` : ""
             }${
               genre_param

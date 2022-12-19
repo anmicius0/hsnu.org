@@ -64,7 +64,7 @@
     "babel-jest": "^26.6.3",
     "babel-preset-gatsby": "^1.1.0",
     "cypress": "^7.0.0",
-    "cypress-axe": "^0.12.2",
+    "cypress-axe": "^1.2.0",
     "eslint": "^7.22.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-loader": "^4.0.2",
